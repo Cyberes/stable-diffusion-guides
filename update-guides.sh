@@ -7,7 +7,7 @@
 
 download() {
 	for i in {1...10}; do
-		wget -T 15 -N "$1" -O "$2" && break
+		wget -T 15 "$1" -O "$2" && break
 	done
 }
 
