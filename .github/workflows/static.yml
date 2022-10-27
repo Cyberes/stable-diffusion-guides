@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress:   true
 
 jobs:
-  update-guides:
+  install:
     runs-on:            ubuntu-latest
     steps:
     - name:             Checkout
@@ -32,8 +32,15 @@ jobs:
       with:
         repository:     ${{ github.repository }}
 
+    - name:             Install Packages
+      run:              sudo apt update && bash ${{ github.workspace }}/install.sh
+      shell:            sh
+
+  update-guides:
+    runs-on:            ubuntu-latest
+    steps:
     - name:             Update Guides
-      run:              sudo apt update && bash ${{ github.workspace }}/install.sh && bash ${{ github.workspace }}/update-guides.sh
+      run:              bash ${{ github.workspace }}/update-guides.sh
       shell:            sh
 
     - name:             Commit Changes
