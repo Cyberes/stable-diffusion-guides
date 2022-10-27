@@ -40,17 +40,8 @@ jobs:
       shell:            sh
 
     - name: Commit Changes
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-
-    - name: Push Changes
-      run: |
-        cd "${{ github.workspace }}"
-        git add --all
-        git commit -m "[AUTO] Update guides"
-        git push origin master
-
+      run:              bash ${{ github.workspace }}/push.sh
+      
 #       uses:             devops-infra/action-commit-push@master
 #       with:
 #         github_token:   "${{ secrets.GITHUB_TOKEN }}"
