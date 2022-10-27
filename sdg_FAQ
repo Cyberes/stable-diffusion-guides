@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+<title>FAQ</title>
+<link rel="canonical" href="https://rentry.co/sdg_FAQ" />
+
+    
+<meta name="description" content="How do I setup the leaked NovelAI model?
+NAIFU: NovelAI model + backend + frontend
+Using a different model in NAIFU
+xformers (increase your it/s) (MORE CARDS SUPPORTED)
+Prebuilt xformers
+Building xformers
+Common problems
+What does ()/[]/{} or (word:number) mean?
+float16 vs. float32?
+What does mod...">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="How do I setup the leaked NovelAI model?
+NAIFU: NovelAI model + backend + frontend
+Using a different model in NAIFU
+xformers (increase your it/s) (MORE CARDS SUPPORTED)
+Prebuilt xformers
+Building xformers
+Common problems
+What does ()/[]/{} or (word:number) mean?
+float16 vs. float32?
+What does mod..." />
+<meta name="twitter:title" content="FAQ" />
+<meta name="twitter:site" content="@rentry_co" />
+
+<meta property="og:url" content="https://rentry.co/sdg_faq" />
+<meta property="og:description" content="How do I setup the leaked NovelAI model?
+NAIFU: NovelAI model + backend + frontend
+Using a different model in NAIFU
+xformers (increase your it/s) (MORE CARDS SUPPORTED)
+Prebuilt xformers
+Building xformers
+Common problems
+What does ()/[]/{} or (word:number) mean?
+float16 vs. float32?
+What does mod..." />
+<meta property="og:title" content="FAQ" />
+<meta property="og:type" content="article" />
+
+
+<meta name="twitter:image" content="https://rentry.co/static/icons/512.png" />
+<meta property="og:image" content="https://rentry.co/static/icons/512.png" />
+
+
+
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css?v=84">
+    <link rel="manifest" href="/static/manifest.json?v=8">
+    <script>document.documentElement.classList.toggle("dark-mode", (localStorage.getItem("dark-mode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches || localStorage.getItem("dark-mode") == "true"));</script>
+    <script>const script = document.createElement("script"); const hn = window.location.hostname === 'rentry.org' && 'rentry.org' || 'rentry.co'; script.src = 'https://a.' + hn + '/js/plausible.js'; script.defer = true; script.setAttribute('data-domain', hn + ',rentry'); document.head.appendChild(script);</script>
+</head>
+
+<body class="m-0 p-0">
+
+    <div class="container container-smooth">
+        <div class="row no-gutters">
+            
+<div class="col-12">
+    <div class="row no-gutters">
+        <div class="col-12 long-words">
+            
+
+            <div class="entry-text my-2 px-2 px-sm-4" style="min-height: 15rem; padding-top:0.1px; padding-bottom:0.1px">
+                <article>
+                    <div><h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link"> </a></h1>
+<div class="toc">
+<ol>
+<li><a href="#how-do-i-setup-the-leaked-novelai-model">How do I setup the leaked NovelAI model?</a></li>
+<li><a href="#naifu-novelai-model-backend-frontend">NAIFU: NovelAI model + backend + frontend</a><ol>
+<li><a href="#using-a-different-model-in-naifu">Using a different model in NAIFU</a></li>
+</ol>
+</li>
+<li><a href="#xformers-increase-your-its-more-cards-supported">xformers (increase your it/s) (MORE CARDS SUPPORTED)</a><ol>
+<li><a href="#prebuilt-xformers">Prebuilt xformers</a></li>
+<li><a href="#building-xformers">Building xformers</a></li>
+<li><a href="#common-problems">Common problems</a></li>
+</ol>
+</li>
+<li><a href="#what-does-or-wordnumber-mean">What does ()/[]/{} or (word:number) mean?</a></li>
+<li><a href="#float16-vs-float32">float16 vs. float32?</a></li>
+<li><a href="#what-does-model1model2-wdyiffy50-sd-50-wd-mean">What does model1+model2 (WD+yiffy/50% SD + 50% WD) mean?</a></li>
+<li><a href="#what-is-the-best-model">What is the best model?</a></li>
+<li><a href="#and-syntax">AND syntax</a></li>
+</ol>
+</div>
+<h4 id="how-do-i-setup-the-leaked-novelai-model">How do I setup the leaked NovelAI model?<a class="headerlink" href="#how-do-i-setup-the-leaked-novelai-model" title="Permanent link"> </a></h4>
+<ol start="0">
+<li>Download the leak:<br>
+<code>magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc&amp;dn=novelaileak&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce</code></li>
+<li>Move one of the model files (model.ckpt) from stableckpt to webui/models/Stable-diffusion<ul>
+<li>Feel free to rename it</li>
+</ul>
+</li>
+<li>Move stableckpt/animevae.pt to webui/models/Stable-diffusion and rename it to be the same name as your NovelAI model but with .vae.pt<ul>
+<li>Note: optional, it may be worth experimenting with/without vae as sometimes non-vae results can be better</li>
+</ul>
+</li>
+<li>Move stableckpt/modules/modules/*.pt (anime.pt, anime_2.pt, etc) to webui/models/hypernetworks<ul>
+<li>Create the directory if it does not exist</li>
+</ul>
+</li>
+<li>Launch the webui and the model should appear with the others in the settings</li>
+</ol>
+<p>Preface prompt with: Masterpiece, best quality,<br>
+NovelAI's default negative prompt:<br>
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry<br>
+CFG scale of 12<br>
+CLIP skip 2<br>
+Eta noise seed delta 31337</p>
+<p><mark>Leak pt2</mark> (not required, including it here just for those that are interested):<br>
+<a href="https://pastebin.com/6wX7Bx7w" rel="nofollow noopener">https://pastebin.com/6wX7Bx7w</a></p>
+<h4 id="naifu-novelai-model-backend-frontend">NAIFU: NovelAI model + backend + frontend<a class="headerlink" href="#naifu-novelai-model-backend-frontend" title="Permanent link"> </a></h4>
+<p>From an anon (&gt;&gt;&gt;/g/89097704):</p>
+<blockquote>
+<p>Runs on Windows/Linux on Nvidia with 8GB RAM. Entirely offline after installing python dependencies.<br>
+Web frontend is really good, with danbooru tag suggestions, past generation history, and mobile support.<br>
+<code>magnet:?xt=urn:btih:4a4b483d4a5840b6e1fee6b0ca1582c979434e4d&amp;dn=naifu&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce</code></p>
+</blockquote>
+<p>Looks like it comes with some of the same models/hypernetworks from the first leak, so if you already downloaded that you can save yourself some time.</p>
+<p>See the README.txt in the torrent for setup/usage instructions.<br>
+Extract it like this: <a href="https://imgur.com/a/gvUCiCy.gif" rel="nofollow noopener">https://imgur.com/a/gvUCiCy.gif</a></p>
+<h6 id="using-a-different-model-in-naifu">Using a different model in NAIFU<a class="headerlink" href="#using-a-different-model-in-naifu" title="Permanent link"> </a></h6>
+<ol>
+<li>Copy the directory of the one you want from stableckpt (the first leak) into the models folder alongside animefull-final-pruned<ul>
+<li>you can skip moving files around and just do the next step, but make sure you use the absolute path to the model's directory</li>
+</ul>
+</li>
+<li>Edit run.bat or run.sh and change MODEL_PATH to point to the directory that contains the model you want</li>
+<li>Restart NAIFU to load the new model</li>
+</ol>
+<p>You can also run non-NovelAI models as long as you edit the run script and point to a directory that contains a model named "model.ckpt", and a "config.yaml" file. I don't know what changes you might need in the yaml file but just copying one from the other NovelAI models seemed to work fine.</p>
+<h4 id="xformers-increase-your-its-more-cards-supported">xformers (increase your it/s) (MORE CARDS SUPPORTED)<a class="headerlink" href="#xformers-increase-your-its-more-cards-supported" title="Permanent link"> </a></h4>
+<div class="admonition warning">
+<p>Make sure you <code>git pull</code> to the latest webui version first</p>
+</div>
+<div class="admonition note">
+<p>Pascal, Turing and Ampere are now supported automatically just by using --xformers as of Oct 10th. </p>
+</div>
+<p>Using xformers will affect your generated images somewhat.</p>
+<p>If you are running an Pascal, Turing and Ampere (1000, 2000, 3000 series) card<br>
+Add <code>--xformers</code> to COMMANDLINE_ARGS in webui-user.bat and that's all you have to do.</p>
+<p>If you are running an older card you need to build xformers yourself and force the webui to accept it.</p>
+<div class="admonition danger">
+<p>Some anons have reported significantly worse performance with xformers on 700 and 900 series cards, consider this before you proceed</p>
+</div>
+<p>Add <code>--force-enable-xformers</code> to COMMANDLINE_ARGS in webui-user.bat, then either use a prebuilt xformers or build it yourself</p>
+<h6 id="prebuilt-xformers">Prebuilt xformers<a class="headerlink" href="#prebuilt-xformers" title="Permanent link"> </a></h6>
+<ol>
+<li>Download the .whl for your GPU from <a href="https://mega.nz/folder/f1UAyaLL#50Sq07s18kC3Tn095LZ8zQ" rel="nofollow noopener">https://mega.nz/folder/f1UAyaLL#50Sq07s18kC3Tn095LZ8zQ</a><ul>
+<li>GTX 900 series = 5.2</li>
+<li>You can double check with <a href="https://developer.nvidia.com/cuda-gpus" rel="nofollow noopener">https://developer.nvidia.com/cuda-gpus</a> under CUDA-Enabled GeForce and TITAN Products</li>
+</ul>
+</li>
+<li>Place it in the webui folder</li>
+<li>Open up cmd prompt or bash in that folder</li>
+<li><code>venv\Scripts\activate.bat</code> or <code>source ./venv/bin/activate</code></li>
+<li><code>pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl</code></li>
+</ol>
+<p>If the .whl isn't available for your GPU architecture you will need to build it yourself, or obtain the .whl from someone else who has built it for your architecture.</p>
+<h6 id="building-xformers">Building xformers<a class="headerlink" href="#building-xformers" title="Permanent link"> </a></h6>
+<div class="admonition danger">
+<p>If the path to your webui folder at all long (like 40-50 characters idk exact number), you will run into major problems. See the <strong>Common problems</strong> section below</p>
+</div>
+<p>Make sure your <strong>Python version is 3.10 or later</strong><br>
+<code>python --version</code><br>
+Install <strong>CUDA Toolkit 11.3</strong> <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive" rel="nofollow noopener">https://developer.nvidia.com/cuda-11.3.0-download-archive</a><br>
+Install <strong>Build Tools for Visual Studio 2022</strong> <a href="https://visualstudio.microsoft.com/downloads/?q=build+tools#build-tools-for-visual-studio-2022" rel="nofollow noopener">https://visualstudio.microsoft.com/downloads/?q=build+tools#build-tools-for-visual-studio-2022</a> (You only need Desktop development with C++)</p>
+<p>Open up cmd prompt/bash</p>
+<p>Confirm nvcc is available<br>
+<code>nvcc --version</code></p>
+<p>Go to the webui directory<br>
+<code>cd C:\path\to\SD\stable-diffusion-webui</code></p>
+<p>Download xformers repo<br>
+<code>cd repositories</code><br>
+<code>git clone https://github.com/facebookresearch/xformers.git</code><br>
+<code>cd xformers</code><br>
+<code>git submodule update --init --recursive</code></p>
+<p>Create venv and activate<br>
+<code>python -m venv venv</code><br>
+Depending on where you're running from (cmd prompt, powershell, bash), run either<br>
+<code>venv\Scripts\activate.bat</code> or <code>source ./venv/bin/activate</code></p>
+<p>To avoid issues with getting the CPU version, install pyTorch seperately<br>
+<code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113</code></p>
+<p>Install the rest of the dependencies<br>
+<code>pip install -r requirements.txt</code><br>
+<code>pip install wheel</code><br>
+<code>pip install ninja</code></p>
+<p>Force enable CUDA to be built with MS Build Tools 2022<br>
+cmd prompt: <code>set NVCC_FLAGS=-allow-unsupported-compiler</code><br>
+bash: <code>export NVCC_FLAGS=-allow-unsupported-compiler</code><br>
+For the next part you need to set TORCH_CUDA_ARCH_LIST so it uses your architecture. Grab your GPU arch from these lists: <a href="https://developer.nvidia.com/cuda-gpus" rel="nofollow noopener">https://developer.nvidia.com/cuda-gpus</a> (consumer GPUs will be under CUDA-Enabled GeForce and TITAN Products)<br>
+For example, if your GPU is a GTX 1070, based on that list the architecture is 6.1 and the command would be:<br>
+<code>set TORCH_CUDA_ARCH_LIST=6.1</code></p>
+<p>Set it for your architecture:<br>
+cmd prompt: <code>set TORCH_CUDA_ARCH_LIST=&lt;YOUR ARCH&gt;</code><br>
+bash: <code>export TORCH_CUDA_ARCH_LIST=&lt;YOUR ARCH&gt;</code></p>
+<p>Build xformers<br>
+<code>python setup.py build</code><br>
+This may take a long time.</p>
+<p>Build the .whl<br>
+<code>python setup.py bdist_wheel</code></p>
+<p>Copy the resulting .whl file to the webui folder<br>
+<code>copy dist\xformers*.whl ..\..\</code></p>
+<p>Activate the webui venv<br>
+<code>cd ..\..</code><br>
+<code>venv\Scripts\activate.bat</code> or <code>source ./venv/bin/activate</code></p>
+<p><code>dir xformers*</code> or <code>ls xformers*</code><br>
+Copy the full name of the .whl<br>
+And install it<br>
+<code>pip install &lt;FULL .whl FILENAME&gt;</code></p>
+<p>Then you should be good to go.</p>
+<h6 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link"> </a></h6>
+<blockquote>
+<p>Filename too long<br>
+or<br>
+fatal error C1083: Cannot open compiler generated file: '': Invalid argument<br>
+    error: command 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\bin\nvcc.exe' failed with exit code 4294967295</p>
+</blockquote>
+<p>Windows problem with path lengths.</p>
+<p>Move your stable-diffusion-webui folder higher up and/or shorten its name.<br>
+For example, either of these should be fine unless you have a really long username:<br>
+C:\stable-diffusion-webui\<br>
+C:\Users\&lt;name&gt;\sd-webui\</p>
+<blockquote>
+<p>RuntimeError: CUDA error: no kernel image is available for execution on the device</p>
+</blockquote>
+<p>More GPU architectures are now automatically supported, try running a clean install and just use the flag --xformers</p>
+<p><strong>If you move this then you will have to delete the venv directory inside</strong> (run webui-user.bat again to recreate it), or deal with moving it <a href="https://stackoverflow.com/questions/32407365/can-i-move-a-virtualenv" rel="nofollow noopener">manually</a></p>
+<blockquote>
+<p>./venv/bin/activate: No such file or directory</p>
+</blockquote>
+<p>If you are using bash on Windows, source from Scripts.<br>
+<code>source ./venv/Scripts/activate</code></p>
+<blockquote>
+<p>If you encounter some error about torch not being built with your cuda version blah blah, then try:</p>
+</blockquote>
+<p><code>pip install setuptools==49.6.0</code></p>
+<h4 id="what-does-or-wordnumber-mean">What does ()/[]/{} or (word:number) mean?<a class="headerlink" href="#what-does-or-wordnumber-mean" title="Permanent link"> </a></h4>
+<p>() adds emphasis to a term, [] decreases emphasis, both by a factor of 1.1. You can either stack ()/[] for increasing/decreasing emphasis or use the new syntax which takes a number directly - it looks like this:<br>
+(word:1.1)  == (word)<br>
+(word:1.21) == ((word))<br>
+(word:0.91) == [word]<br>
+To use literal ()/[] in your prompt, escape them with \<br>
+See <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features" rel="nofollow noopener">https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features</a> for full details and additional features.</p>
+<p>{word} is for NovelAI's official service only. It is similar to (word) but the emphasis is only increased by a factor of 1.05. If you are using the leaked models in the webui you shouldn't be using this syntax.</p>
+<h4 id="float16-vs-float32">float16 vs. float32?<a class="headerlink" href="#float16-vs-float32" title="Permanent link"> </a></h4>
+<p>float32 for older gpus or if you want 100% precision. The outputs of both should be nearly identical, the main difference is size and the gpus that support it.</p>
+<h4 id="what-does-model1model2-wdyiffy50-sd-50-wd-mean">What does model1+model2 (WD+yiffy/50% SD + 50% WD) mean?<a class="headerlink" href="#what-does-model1model2-wdyiffy50-sd-50-wd-mean" title="Permanent link"> </a></h4>
+<p>Refers to merged models, see the "Checkpoint Merger" tab in the webui.</p>
+<h4 id="what-is-the-best-model">What is the best model?<a class="headerlink" href="#what-is-the-best-model" title="Permanent link"> </a></h4>
+<p>It depends the type of stuff you want to generate. Generally just grab the latest model/highest epoch of the type you want in <a href="https://rentry.org/sdmodels">https://rentry.org/sdmodels</a></p>
+<h4 id="and-syntax">AND syntax<a class="headerlink" href="#and-syntax" title="Permanent link"> </a></h4>
+<p>For now, see <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/" rel="nofollow noopener">https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/</a></p></div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-12 px-0">
+            <div class="text-muted">
+                <div class="float-left text-left">
+                    <a role="button" class="btn btn-light float-left squared mr-2" href="/sdg_FAQ/edit">Edit</a>
+                    <div class="dropdown d-inline-block position-relative">
+                        <button id="dropdownButton" class="btn btn-light squared mr-2 dropdown-toggle" type="button">Export</button>
+                        <div class="dropdown-content">
+                            <a role="button" class="btn btn-light squared" href="/sdg_FAQ/raw">Raw</a>
+                            <a role="button" class="btn btn-light squared" href="/sdg_FAQ/pdf">PDF</a>
+                            <a role="button" class="btn btn-light squared" href="/sdg_FAQ/png">PNG</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right text-right pr-2 pr-sm-0">
+                    Pub: 06 Oct 2022 19:03 <span class="d-none d-sm-inline">UTC</span><br>
+                    
+                    Edit: 12 Oct 2022 04:47 <span class="d-none d-sm-inline">UTC</span><br>
+                    
+                    Views: 177613<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <div class="text-center w-100 mb-3">
+                <hr class="my-2 basement-hr">
+                <a class="mr-1" href="/">new</a>&middot;<a class="mx-1" href="/what">what</a>&middot;<a class="mx-1" href="/how">how</a>&middot;<a class="ml-1" href="/langs">langs</a>
+<div class="position-relative"><span style="right: 0; bottom: -9px; background:transparent!important" class="position-absolute btn squared mr-2 mr-sm-0" id="darkModeBtn" title="Dark/light mode"></span></div>
+
+            </div>
+            
+            
+
+
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js?v=20"></script>
+    <script src="/static/js/bootstrap.min.js?v=20"></script>
+    
+</body>
+
+</html>
