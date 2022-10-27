@@ -33,7 +33,7 @@ jobs:
         repository:     ${{ github.repository }}
 
     - name:             Generate Models Webpage
-      run:              apt update && bash ${{ github.workspace }}/install.sh && bash ${{ github.workspace }}/update-sdmodels.sh
+      run:              sudo apt update && bash ${{ github.workspace }}/install.sh && bash ${{ github.workspace }}/update-sdmodels.sh
       shell:            sh
 
     - name:             Commit Changes
