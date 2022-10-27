@@ -48,7 +48,7 @@ jobs:
     - name: Push Changes
       run: |
         # Stage the file, commit and push
-        git add time.txt
+        git add --all
         git commit -m "new date commit"
         git push origin master
 
