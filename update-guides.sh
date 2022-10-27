@@ -27,5 +27,5 @@ download "https://rentry.org/male-to-anime-girl/pdf" "archives/How to Turn Yours
 download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf"
 download "https://rentry.org/sdg_FAQ" "archives/sdg FAQ.pdf"
 
-wkhtmltopdf "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
+wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 # wkhtmltopdf "https://proximacentaurib.notion.site/A-guide-to-getting-started-with-the-paperspace-port-of-AUTOMATIC1111-s-web-UI-for-ppl-who-get-nervou-b83c2213f17e452e8b0e37ba64fe9758" "Getting started with the paperspace port of AUTOMATIC1111s web UI for ppl who get nervous.pdf"
