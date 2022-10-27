@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name:                   Pull Guides
+name:                   Update Guides
 
 # Controls when the workflow will run
 on:
@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress:   true
 
 jobs:
-  generate:
+  update-guides:
     runs-on:            ubuntu-latest
     steps:
     - name:             Checkout
@@ -32,8 +32,8 @@ jobs:
       with:
         repository:     ${{ github.repository }}
 
-    - name:             Generate Models Webpage
-      run:              sudo apt update && bash ${{ github.workspace }}/install.sh && bash ${{ github.workspace }}/update-sdmodels.sh
+    - name:             Update Guides
+      run:              sudo apt update && bash ${{ github.workspace }}/install.sh && bash ${{ github.workspace }}/update-guides.sh
       shell:            sh
 
     - name:             Commit Changes
