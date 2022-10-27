@@ -1,52 +1,55 @@
 # This is a basic workflow to help you get started with Actions
 
-name:                   Update Guides
+name:                 Update Guides
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches:           [ "main" ]
+    branches:         [ "main" ]
   pull_request:
-    branches:           [ "main" ]
+    branches:         [ "main" ]
   schedule:
-    - cron:             '0 12 * * *'
+    - cron:           '0 12 * * *'
   workflow_dispatch:
 
 permissions:
-  contents:             write
-  pages:                write
-  id-token:             write
+  contents:           write
+  pages:              write
+  id-token:           write
 
 # Allow one concurrent deployment
 concurrency:
-  group:                "pages"
-  cancel-in-progress:   true
+  group:              "pages"
+  cancel-in-progress: true
 
 jobs:
   update-guides:
-    runs-on:            ubuntu-latest
+    runs-on:          ubuntu-latest
     steps:
-    - name:             Checkout
-      uses:             actions/checkout@v3
+    - name:           Checkout
+      uses:           actions/checkout@v3
       with:
-        repository:     ${{ github.repository }}
+        repository:   ${{ github.repository }}
 
-    - name:             Install Packages
-      run:              sudo apt update && bash ${{ github.workspace }}/install.sh
-      shell:            sh
-    - name:             Update Guides
-      run:              bash ${{ github.workspace }}/update-guides.sh
-      shell:            sh
+    - name:           Install Packages
+      run:            sudo apt update && bash ${{ github.workspace }}/install.sh
+      shell:          sh
+    - name:           Update Guides
+      run:            bash ${{ github.workspace }}/update-guides.sh
+      shell:          sh
+    
+    - name:           Set up git
+      run:            git config user.name "GitHub Actions Bot" && git config user.email "<>"
 
-    - name: Commit Changes
-      run:              bash ${{ github.workspace }}/push.sh
+    - name:           Commit Changes
+      run:            bash ${{ github.workspace }}/push.sh
       
-#       uses:             devops-infra/action-commit-push@master
+#       uses:         devops-infra/action-commit-push@master
 #       with:
-#         github_token:   "${{ secrets.GITHUB_TOKEN }}"
-#         add_timestamp:  false
-#         commit_prefix:  "[AUTO] "
+#         github_token: "${{ secrets.GITHUB_TOKEN }}"
+#         add_timestamp: false
+#         commit_prefix: "[AUTO] "
 #         commit_message: "Update guides"
-#         force:          false
+#         force:      false
 #         target_branch: "main"
