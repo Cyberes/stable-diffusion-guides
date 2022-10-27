@@ -37,6 +37,7 @@ jobs:
       shell:            sh
 
   update-guides:
+    needs:              install
     runs-on:            ubuntu-latest
     steps:
     - name:             Update Guides
