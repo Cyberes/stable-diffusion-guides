@@ -28,4 +28,43 @@ download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
-wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
+#wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
+
+download () {
+	wget -r -H -l 1 "https://stablediffusion.cdcruz.com/$1" --convert-links --page-requisites -D stablediffusion.cdcruz.com --reject ckpt,exe -np -e robots=off -U "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Mobile/15E148 Safari/604.1"
+}
+
+#mkdir -p stablediffusion.cdcruz.com
+#cd stablediffusion.cdcruz.com
+
+#rm -rf tmp
+#mkdir -p tmp
+#cd tmp
+
+rm -rf stablediffusion.cdcruz.com
+
+download index.html
+download embeddings.html
+download models.html
+download automatic1111.html
+download embeddings_training.html
+download install.html
+download methods.html
+download prompts_list.html
+
+#mv stablediffusion.cdcruz.com/* ../..
+#cd ../..
+#rm -rf tmp
+
+#for file in *.html; do
+#	perl -pi -e 's/"\.\.\//"/g' "$file"
+#	perl -pi -e 's/href="\//href="/g' "$file"
+#	perl -pi -e 's/src="\//href="/g' "$file"
+#done
+
+#perl -pi -e "s/url\('\//url\('/g" "assets/css/stable_diffusion.css"
+
+cd stablediffusion.cdcruz.com
+
+perl -pi -e 's/<list1><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list1>/<list1><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list1>/g' index.html
+perl -pi -e 's/<list2><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list2>/<list2><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list2>/g' index.html
