@@ -27,7 +27,7 @@ download "https://rentry.org/male-to-anime-girl/pdf" "archives/How to Turn Yours
 download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf"
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
 
-wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
+wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
 download () {
