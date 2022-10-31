@@ -1,0 +1,123 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Install</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+		<script src="assets/js/copy.js"></script>
+		<script src="assets/js/hsection.js"></script>
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>AUTOMATIC1111's WebGUI</h1>
+  <h2>Installation Guide</h2>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>This is an installation guide for how to install the AUTOMATIC1111 WebGUI (mainly as a reminder for my future self). I have tested installing on Windows 10 & 11 and I plan to try to install on my Macbook as well to provide a guide on that. Most of this information has been taken from Rentry.org but I have added information or clarity were I feel appropriate.</p>
+		
+		<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Windows Installation <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
+		<hsection>
+		<h4>Step 1: Install Git</h4>
+		<p>Choose one of the standalone installers from the <a href="https://git-scm.com/download/win" target="_blank" rel="noreferrer">Git download page</a>.</p>
+		<p>When installing, make sure to check the box for 'Windows Explorer integration -> Git Bash'</p>
+		<center><img loading="lazy" src="assets/images/installation/install_git.webp" alt="Git download page" style="max-width: 600px; width: 100%;"/></center>
+
+		<h4>Step 1.5: Install Visual Studio and VS Build Tools (optional)</h4>
+		<p>This step is optional and I have only stated it here because I ran into errors trying to run the WebGUI without including this step, however you should be able to install the WebGUI without this step. Only do this if you have problems with installing & running the WebGUI.</p>
+		<p>Go to the <a href="https://my.visualstudio.com/Downloads?q=Visual%20Studio%202022" target="_blank" rel="noreferrer">Visual Studio download page</a> (Microsoft login required) and choose the appropriate Visual Studio for your PC. For example, on my Windows 11 PC, I chose 'Visual Studio Community 2022' x64 exe version. Also download the 'Build Tools for Visual Studio 2022' from the same page.</p>
+		<p>Once both are downloaded, install the Visual Studio Community 2022 (or your version) first and make sure to follow the prompts and add any python libraries and components. There are a lot of options to choose from and I am not sure which exact ones are needed so choose as much as you can related to python but you download size should not be bigger than a gigabyte.</p>
+		<p>Next install the Build Tools which should be an easier process. Once those two installs are done, continue onto the next step.</p>
+		<center><img loading="lazy" src="assets/images/installation/install_vs.webp" alt="Visual Studio download page" style="max-width: 600px; width: 100%;"/></center>
+
+		<h4>Step 2: Install Python 3.10</h4>
+		<p>You must install Python version 3.10 as other Python versions are not guaranteed to work. <a href="https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe" target="_blank" rel="noreferrer">Click here to download version 3.10.6</a>. For Windows 7 users you will need to download <a href="https://github.com/adang1345/PythonWin7/raw/master/3.10.6/python-3.10.6-amd64-full.exe" target="_blank" rel="noreferrer">this version</a>. For the latest Python version and all previous versions, you can find them on the <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noreferrer">Python website</a>.</p>
+		<p>Run the Python installer and make sure <strong>"add to PATH"</strong> has been ticked on the first screen of the installer & tick 'install launcher for all users'. The rest of the installation process should be simple.</p>
+		<center><img loading="lazy" src="assets/images/installation/install_python.webp" alt="Python install window" style="max-width: 600px; width: 100%;"/></center>
+
+		<h4>Step 3: Clone the WebGUI repo to your desired location</h4>
+		<p>With Git & Python installed, you can open your windows explorer and create a new folder anywhere you like (don't use spaces in the name). Then open up that folder, right-click and choose the option 'Git Bash here' or similar. On Windows 11 this option might be hidden under the 'show more options' button.</p>
+		<p>This should open up a terminal window. In the screenshot below I am using the default terminal that comes with your Git installation.</p>
+		<center><img loading="lazy" src="assets/images/installation/install_webgui.webp" alt="Terminal window with git clone command" style="max-width: 600px; width: 100%;"/></center>
+		<p>Once the terminal is open, copy this text (Click to copy) <tag onclick="copy_text(this);" style="cursor: pointer;">git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui</tag> and paste it into the console as shown above, I recommend right-click and selecting paste instead of using Ctl+V.</p>
+		<p>Installing the repo should be completed in a short amount of time <1min. Once complete, you can close the terminal.</p>
+
+		<h4>Step 4: Download a .ckpt model</h4>
+		<p>Once you have cloned the WebGUI, you'll notice a few folders in the webGUI folder. One will be named 'models' & then a folder within called 'Stable-diffusion' and as the name suggests, this is where you will keep all .ckpt files like Stable Diffusion and Waifu Diffusion.</p>
+		<p>You can add any model files to this folder, but for the installation to work, you must rename 1 of the model files to 'model.ckpt' as that is the default model the WebGUI will attempt to load.</p>
+		<p>Links to the most popular models can be found on my <a href="models.html">models page</a>.</p>
+		<center><img loading="lazy" src="assets/images/installation/models_folder.webp" alt="Directory to place models into" style="max-width: 600px; width: 100%;"/></center>
+
+		<h4>Step 5: Launch the webui-user.bat</h4>
+		<p>Once you've completed the previous steps, you're almost done. Simply find the <tag>webui-user.bat</tag> file in the WebGUI folder and run it. Do not run as administrator.</p>
+		<p>The first time you run the .bat file it will take several minutes to download and install the required packages for the WebGUI to run. The terminal may not provide a lot of information on the download status, but be patient and wait until all installations are complete. The final line should say something like:</p>
+		<p><tag>Running on local URL:  http://127.0.0.1:7860</tag></p>
+		<p>Once you see that line, you know the WebGUI has installed correctly and is currently running. After that you can open up any internet browser and go to the IP stated in the terminal which in this example is <tag>127.0.0.1:7860</tag>. The WebGUI should launch and you're good to go!</p>
+		<p>Be aware that some features will download dynamically as you want to use them, like the face restoration & upscaling models. These will need to download the models on the first time you use them as they are not installed in the initial launch of the webGUI.</p>
+		<p>When you're done using the WebGUI, be sure to close the Terminal program as closing the web browser does not stop the program running in the background.</p>
+		<center><img loading="lazy" src="assets/images/installation/launch_ui.webp" alt="AUTOMATIC1111's WebGUI" style="max-width: 600px; width: 100%;"/></center>
+		</hsection>
+
+		<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">MacOS M1/M2 Installation <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
+		<hsection>
+		<p>Installing on M1/M2 Mac products is possible and relativly easy but it isn't as easy as installing an app normally on Apple products. It is also notable that Stable Diffusion is not optimised to work on Apple hardware, so while it will work, the processing speed & RAM usage can be much worse than on Windows even though M1 is a fast system with highspeed RAM and CPU. I believe this is due to processing taking place on the CPU instead of the GPU on Macs since current Stable Diffusion requires Nvidia Cuda cores to use GPU processing.</p>
+		<p>Originally, only Euler and DPM2 worked on macOS, but at the time of writing all sampling methods work correctly except for DPM fast (Only generates random noise), DDIM & PLMS (they both fail immediately).</p>
+		<p>For the most up to date information on macOS compadibility/ installation, you can visit this <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon" target="_blank" rel="noreferrer">Github Page</a>.</p>
+
+		<h4>Step 1: Install Homebrew</h4>
+		<p><a href="https://brew.sh/" target="_blank" rel="noreferrer">Homebrew</a> is a package manager for macOS & Linux that is required for the WebGUI to work on Macs.</p>
+		<p>To install Homebrew, simply copy <tag onclick="copy_text(this);" style="cursor: pointer;">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</tag> and run this command in your macOS Terminal.</p>
+		<center><img loading="lazy" src="assets/images/installation/install_homebrew.webp" alt="Installing Homebrew" style="max-width: 600px; width: 100%;"/></center>
+
+		<h4>Step 2: Install the WebGUI from Github</h4>
+		<p>Once Homebrew is installed, all you need to do is run a few commands to install the WebGUI. You should be able to install it anywhere on your PC, but for this example we will install it within the Documents folder of the Mac.</p>
+		<p><tag>cd ~/Documents/</tag> This will move the terminal to run commands in the selected directory, in this case "Documents".</p>
+		<p><tag>curl https://raw.githubusercontent.com/dylancl/stable-diffusion-webui-mps/master/setup_mac.sh -o setup_mac.sh</tag> Nothing will appear to happen, but you need to run this.</p>
+		<p><tag>chmod +x setup_mac.sh</tag> Nothing appears to happen but you must run this next.</p>
+		<p><tag>./setup_mac.sh</tag> This is the main command that will start the installation process. You'll see a lot of text scrolls and progress bars, depending on your internet connection it should take between 5-15 minutes to install so be patient.</p>
+		<p>There are a few prompts that will also appear, mainly the terminal will ask you if you want to download the Stable Diffusion model as a part of the process or you can skip downloading if you would like to add your own model after the WebGUI has installed.</p>
+		<h4>Step 3: Launching the WebGUI</h4>
+		<p><tag>Good to go!</tag> Once all the above steps are complete, the WebGUI should be ready to use, simply go to the IP <tag>127.0.0.1:7860</tag> in any internet browser. To close the program you need to close the Terminal. If you need to relaunch the WebGUI, you need to load up the Terminal, use the command <tag>cd ~/Documents/stable-diffusion-webui/</tag> (or your install location) and then run <tag>./run_webui_mac.sh</tag> in the terminal and it'll load up again.</p>
+		<br>
+		<p>If you're lazy like me and don't want to manually open the Terminal everytime you open the webGUI. I have figured out how to make the <tag>run_webui_mac.sh</tag> file to be double-clickable and launch the Terminal/ WebGUI automatically.</p>
+		<p>It's very easy to do. Firstly, change the extension for the <tag>run_webui_mac.sh</tag> to <tag>run_webui_mac.command</tag>. Next, you'll need to edit the file and add a line at the top of the file before any other code. Simply add the cd command that you would have used if you were running the terminal manually. In my example it would be <tag>cd ~/Documents/stable-diffusion-webui/</tag>. This command just moves the terminal so it will run all subsequent commands in the chosen directly. After adding that line, save the file and close it. Double-click the file and it should run the Terminal automatically!</p>
+		<p>If it is not working, you may be to manually open up the Terminal <tag>cd</tag> to your directory and run the command <tag>chmod +x run_webui_mac.command</tag>. This will ensure the Mac will treat the file as an executable.</p>
+		</hsection>
+  </article>
+	</body>
+</html>

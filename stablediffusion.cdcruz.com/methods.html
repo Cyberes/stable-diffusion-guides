@@ -1,0 +1,173 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Methods</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+		<script src="assets/js/load_gallery.js"></script>
+
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>Sampling Methods List</h1>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>On this page you will find information on all sampling methods available in the webGUI. Please note that the differences stated are very minor and all sampling methods can produce good results, there is no drop in quality between methods but they do generate slight variations on an image even when using the same seed. The art on this page has been cherrypicked to show the best images from each method.</p>
+		<p>More research is needed into sampling methods. As it has been explained to me, there is no visual difference between methods and differences will only be based on how the internal calculations are made for rending images. The descriptions below should be taken with a grain of salt as they are simply my observational opinions on a small dataset.</p>
+		<p>If you're into reading a more technical write up about sampling methods, the Reddit user u/Remove_Ayys has been working on some detailed investigations into sampling methods. <a href="https://github.com/JohannesGaessler/stable-diffusion-insights" target="_blank" rel="noreferrer">Read more here</a>.</p>
+
+			<h3>Euler</h3>
+			<textblock>
+			<p>Euler is one of the better models for creating detailed and well-formed imagery. It has a soft look to its images and works best in the 30-200 steps range. higher step counts can produce higher detail, but it is diminishing returns. An image at 500 steps looks almost identical to one at 5000 steps.</p>
+			<p>One positive of Euler, compared to its ‘A’ counterpart, is that the image will stay consistent no matter how many steps you use. Euler A, on the other hand, will change drastically in what it outputs depending on the number of steps, even if you use the same seed & prompts.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'euler_demo')"/>
+			</imagerow>
+
+			<h3>Euler A</h3>
+			<textblock>
+			<p>Euler A is very similar to Euler in the style and detail of images that it can produce. However, in my opinion, it does produce better looking images compared to  Euler, and can do it in less steps.</p>
+			<p>The one downside to Euler A is that it is not consistent and changing steps will change an image drastically even with 20 step changes. An extremely high step count may make images that look worse than something of a lower step count. This is very counterintuitive, but Euler A takes much more experimenting to find what works, and you have to find the “sweet spot” for every new type of image you try to create. Overall, though, it can produce high-quality art.</p>
+			<p>Below are cherry picked examples to show off the best images Euler A can produce.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'euler_a_demo')"/>
+			</imagerow>
+
+			<h3>LMS</h3>
+			<textblock>
+			<p>The LMS method is quite different to Euler and seems to do poorly with trying to generate people and animals. It will create a simple/ less detailed image for characters. It can create great scenery and landscape images, however. I would still prefer using Euler for most images, but LMS can be used for quick and detailed landscapes if you’re having trouble getting a good landscape in other models. This model has a much more artistic/ stylized look to it that looks more like a painting or visual novel background.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'lms_demo')"/>
+			</imagerow>
+
+			<h3>LMS Karras</h3>
+			<textblock>
+			<p>LMS Karras method shares a lot of similarities with the LMS method as do most methods of similar name. It suffers the same weaknesses when it comes to characters, however, it is still possible to create good characters, it will just take more time and fiddling to get the right prompts.</p>
+			<p>Without much direction, this method can create even more paintery looking images and really rough art, which may be a style you're looking for.</p>
+			<p>I’m unsure if this is a bug with the LMS Karras method or if it works as expected, but if you try to generate an image with steps above around 50, you will get terrible artifacting and general visual noise that seems completely useless. I believe this is a bug as the image generates properly until the last step, so I hope this can be fixed.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'lms_karras_demo')"/>
+			</imagerow>
+
+			<h3>PLMS</h3>
+			<textblock>
+			<p>PLMS works well even at small step counts and still creates a decent amount of detail. It may be a good option if your computer doesn't have the highest specs. It also creates good characters more consistantly compared to the other LMS models and has a cleaner, sharper look to its anime style.</p>
+			<p>You can really set this method to only using 20 steps and you will get great images. Anymore than 20 steps and you're simply wasting processing power as there is not a great deal of difference between 20 steps and 150 steps. Of course do your own research and play around to see what you like, this is just a guide to help you get quick results.</p>
+			<p>PLMS seems more unpredictable in what it will generate, but that also means it produces more variety and styles. Unlike LMS, it seems to do a better job at characters while backgrounds and scenery can be lacking at times especially with a character in the foreground.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'plms_demo')"/>
+			</imagerow>
+
+			<h3>Heun</h3>
+			<textblock>
+				<p>Heun is similar to the LMS models but seems to be able to create more intricate images. It does however take a longer time to render compared to most other models. It does a decent job of both characters and scenery so it may be a good overall choice, but with the slow render time I would go with the trusted Euler/Euler A as the improvements are minimal.</p>
+				<p>Unlike some models, it does seem to do well at high step counts with detail actually getting better overall and clearer. Although it is still very usable at lower step counts as well.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'heun_demo')"/>
+			</imagerow>
+
+			<h3>DDIM</h3>
+			<textblock>
+				<p>DDIM is another method that benefits from longer step counts and can create detailed images with the right prompts. There isn't that much more to add about this model as it is practically the same as the other non-A models.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'ddim_demo')"/>
+			</imagerow>
+
+			<h3>DPM2</h3>
+			<textblock>
+				<p>DPM2 is a method that is similar to Euler/Euler A and generates some of the better quality images out of all the methods. A subtle difference between Euler and DPM2 is that DPM2 tends to create sharper and cleaner images, compared to Eule which will create softer artistic lines and images. This is another model that can benefit from a longer step count, but it can also produce quality images at lower steps and as stated throughout this guide, there is a diminishing returns on extremely high step counts. I would recommend using steps between 20-300 for most generations.</p>
+				<p>The sharpness of DPM2 can be a negative depending on the style of image you're trying to create. There are times were the method will over-sharpen or add noisy details which just add random junk to your image. This is why I generally prefer the Euler methods as they have a softer image and due to that don't suffer from sharpness artifacts as often.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm2_demo')"/>
+			</imagerow>
+
+			<h3>DPM2 A</h3>
+			<textblock>
+				<p>As with Euler A, DPM2 A changes a lot depending on the sampling step count. It also seems to add some noise on lower step counts and is generally not as clean as its DPM2 counterpart. For these reasons, I would mostly avoid this model or play around and see if you can create better results. The varying image on sampling steps is interesting and lets you create a lot of images even based off of one seed.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm2_a_demo')"/>
+			</imagerow>
+
+			<h3>DPM Fast</h3>
+			<textblock>
+				<p>DPM Fast is suppose to be a faster renderer than the other methods. However in testing the speed increase is minimal. One possible positive of using DPM Fast is that it will generate a wider variety of styles and characters for the same prompt as long as your prompts are not too specific. DPM Fast works best with larger step counts however like Euler A/ DPM2 A, DPM Fast does change depending on the step count you set.</p>
+				<p>I'm unsure if it is just from my testing, but it also seems that DPM Fast performs badly when it comes to eyes, even if you specify eyes with good prompts.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm_fast_demo')"/>
+			</imagerow>
+			<h3>DPM Adaptive</h3>
+			<textblock>
+				<p>DPM Adaptive is able to produce some good images and seems to be a mix between DPM and DPM Fast. It is good at creating characters but has difficulty with scenery & landscapes. As with DPM Fast, DPM Adaptive doesn't draw eyes as well as Euler A models but they are much better than DPM Fast.</p>
+				<p>One feature of DPM Adaptive is that it will render finish your render early if it thinks it cannot add anymore detail. I am unsure if this is a bug or a feature, but in my testing, I have tried step counts of 20 up to 300 and they all take roughly the same amount of time, which does not seem logical. So my assumption is that the model stops after it thinks it has rendered enough. This could be useful for some use cases and allows you to set an extremely high step count and let the AI choose how far it will actually go.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm_adaptive_demo')"/>
+			</imagerow>
+
+			<h3>DPM2 Karras</h3>
+			<textblock>
+				<p>I'm unsure what Karras means, but DPM2 Karras works similarly to DPM2 however, I think it may produce slighly higher quality images. Like other non-A methods, it stays consistent no matter the step count and can produce decent quality images with steps as low as 20.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm2_karras_demo')"/>
+			</imagerow>
+			<h3>DPM2 A Karras</h3>
+			<textblock>
+				<p>DPM2 A Karras seems to be one of the better DPM methods and does a much better job at eyes compared to its other methods. It can produce images similar to Euler but with sharper lines and more contrast which may be prefered depending on the style you are going for. Unlike the DPM2 method, the DPM2 A Karras method has a much nicer sharpening of the image, and enhances the art a lot better than DPM2.</p>
+				<p>This method also seems to work a lot better at having a well drawn character and a interesting background at the same time. This is usually quite difficult and the model will either create amazing scenery or an amazing character, with the other one lacking the same detail. DPM2 A Karras does not seem to have this limitation and creates good backgrounds even without specifying any specific location.</p>
+				<p>As explained previously, since this is an "A" type method, changing the step count on the same seed will result in a different image, so be aware that you won't get the same image if you're trying to create more detail on a seed. The quality of images does improve greatly the more steps you use for generating images, but again, there is a diminishing return after a certain amount of steps.</p>
+			</textblock>
+			<imagerow>
+				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'dpm2_a_karras_demo')"/>
+			</imagerow>
+
+			</article>
+         </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Embeddings Training</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>Textual Inversion</h1>
+	<h2>Embedding Training</h2>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>This page will explain in detail how to do your own textural inversion training to create your own embeddings and use them in your own image generation. Most of this guide is based of the Youtube video <a href="https://www.youtube.com/watch?v=7Lxdk89W2K0" target="_blank" rel="noreferrer">Textual Inversion - Make Anything In Stable Diffusion!</a> so please have a look at that for a easy to view guide. But, this page will also include any findings that I come across as I learn more about textual inversion while using it.</p>
+		<h3>Requirements</h3>
+		<p><tag>VRAM - 8GB minimum</tag></p>
+		<p><tag>System RAM - 16GB minimum</tag></p>
+		<p><tag>Dataset - 5 images minimum</tag></p>
+		<p>If you have a very high end graphics card with a lot of VRAM you can try the following, although my Nvidia RTX 3080 card with 10GBs of VRAM could not run embedding training with these options on, if you're unsure, keep these settings off. on the <tag>webui-user.bat</tag> file, set the <tag>set COMMANDLINE_ARGS=</tag> to include <tag>--no-half</tag> (prevents the AI model from using 16-bit floats) and <tag>--precision full</tag> (makes sure the AI is using the most accurate calculations).</p>
+		<p>For a baseline of performance, my PC has a RTX 3080 with 10GBs VRAM and 16GBs system RAM. 1000 steps of training takes roughly 45mins of training. So if you have lower specs than me, you can expect an hour or longer for the same amount of steps, and if you're a luckly person with a graphics card better than mine, then you'll see even better performance.</p>
+
+		<h3>Preparing Data</h3>
+		<p>Preparing your data for training is the hardest part about training any model. Luckily, for textual inversion you do not need a large amount of images to get some results. When collecting images, make sure that they are all a square aspect ratio, good quality images with little-to-no compression/ aliasing artifacts and in either jpg or png formats.</p>
+		<p>Of course the more variety you have in your dataset, the better your embedding will perform with the model. Try to include different lighting, angles, composition, expressions, etc.</p>
+
+		<h3>Create the embedding file</h3>
+		<p>Your first step to actually training your embedding is to create the placeholder location for all the training data and the prompt that will be associated with your embedding. To do this, go to the "train" tab of the webGUI and with the "create embedding" tab selected fill in the fields.</p>
+		<p><tag>Name</tag> This is where you write the prompt for your embedding, it will also be the filename of your embedding.</p>
+		<p><tag>Initialization text</tag> This field is for you to input a list of prompts to help the AI know what to associate your training data with. There isn't a lot of information on this yet and I am unsure how effective this is. If you're unsure what to put as prompts, a good quickstart is to use the Interrogator from img2img and then copy the prompts it creates for one of the images from your dataset.</p>
+		<p><tag>Number of vectors per token</tag> I do not know enough about vectors so this is a direct quote from AUTOMATIC111's github. "the size of embedding. The larger this value, the more information about subject you can fit into the embedding, but also the more words it will take away from your prompt allowance. With stable diffusion, you have a limit of 75 tokens in the prompt. If you use an embedding with 16 vectors in a prompt, that will leave you with space for 75 - 16 = 59. Also from my experience, the larger the number of vectors, the more pictures you need to obtain good results."</p>
+		<p>Once you have finished all of that, simply click the "Creat embedding" button. This will add the needed directories & files for your embedding.</p>
+
+		<h3>Preprocessing</h3>
+		<p>Before you can start training, your dataset must be preprocessed to make sure the AI can understand your images and make sure they are all the correct dimensions.</p>
+		<p>On the webGUI in the Train tab you can move over to the "Preprocess images" tab. From there you will fill out the fields as follows.</p>
+		<p><tag>Source Directory</tag> You must copy the directory path to the folder where your training images are located. If you're unsure how to do this, a simple google search should tell you, it is very straight forward.</p>
+		<p><tag>Destination Directory</tag> You must provide a different path to a new folder the AI can copy the processed images into.</p>
+		<p><tag>Width & Height</tag> This is where you set the dimensions for all of your images to be resized to if they aren't already at the set dimensions. Unless you know what you're doing, I would keep this setting at 512x512px.</p>
+		<p><tag>Create flipped copies</tag> Check this tickbox because it will increase your dataset size by mirroring all of your original images, giving your dataset 2 times as many images to work with. This will also improve the training as to the mind of the AI, it is a completely different image.</p>
+		<p><tag>Split oversized images into two</tag> Uncheck this tickbox. It is to be used with images that are of a different aspect ratio to what you set as the width/height, but as stated at the beginning, you should keep all your data at a square aspect ratio anyway.</p>
+		<p><tag>Use BLIP for caption or Deepdanbooru</tag> Check this tickbox. This will add the Interrogator to the preprocessing and include prompts associated with each image in your dataset. This will be useful in helping the AI know what its working with while training. Use the BLIP interrogator to generate normal sentence prompts and use Deepdanbooru to generate tag-like prompts. I would recommend BLIP for Stable Diffusion training and Deepdanbooru for Waifu Diffusion training.</p>
+		<p>Once that is all set, you can click the "Preprocess" button and wait for your images to be preprocessed. This should be a quick process, but obviously is dependant on how many images you have in your dataset.</p>
+
+		<h3>Training Your Embedding</h3>
+		<p>Now all that's left to do is to train your model. A good thing to note about training embeddings is that it is very flexible, meaning you could set the end goal at 100,000 steps, but you can stop at anytime and continue training later without losing progress. This is especially useful if you don't have a powerful PC or don't want your graphics card to be running at 100% for hours on end.</p>
+		<p>Now on the train tab, fill out the fields as follows.</p>
+		<p><tag>Embedding</tag> This field provides a drop-down list of embeddings in the embeddings folder, since we created your placeholder embedding in the previous steps, it should appear in this list, if not, try reloading the webGUI.</p>
+		<p><tag>Learning rate</tag> This is one of the more important fields and lets you choose how intensly the AI will attempt to change the embeddings data. Embeddings (and all neural network models) are very sensitive to changing the data (weights and biases in technical terms), so you should keep the learning rate as low as possible. You should defineitly stay below 0.1 and keep it at the default 0.005 if you aren't sure. But also be aware that a super small learning rate will mean the embedding data will change slower, meaning it would take more steps to achieve the results you want. Generally the lower the learning rate, the more accurate the final results will be, but you will need to train for longer to achieve those accurate results.</p>
+		<p>You can also specify multiple learning rates to change through your training process. Simply write use the format <tag>[learning rate]:[step count to train for]</tag> and seperate values by commas. For example <tag>0.005:500, 0.001:1000, 0.004</tag> will train at a learning rate of 0.005 for 500 steps, then 0.001 for another 1000 steps and finally 0.004 for any remaining steps until your training has completed. This could be very useful for finetuning your training and making the most out of your training time.</p>
+		<p>If you see <tag>Loss: nan</tag> in the console while training, your learning rate was too high and your embedding is virtually dead and you will need to start over.</p>
+		<p><tag>Dataset directory</tag> As the name implies, this is where you enter the directory path to where your dataset is located. This should be the same path as the <tag>Destination directory</tag> you set in preprocessing.</p>
+		<p><tag>Log directory</tag> This is where the program will save test images to. Leaving it at the default is best, and you can find these images by going to the <tag>textual_inversion</tag> folder of the webGUI directory.</p>
+		<p><tag>Prompt template file</tag> This is a path to a file that contains prompts for the AI to train on. It's best to keep this as the default if you don't know what you're doing. By default it will be set to <tag>[webGUI directory]\style_filewords.txt</tag>. You can leave it as that if you're training a style, but if you're training a character, it is better to use <tag>subject_filewords.txt</tag> instead, which should already be a file at the same path location.</p>
+		<p>If you want to get techincal, you can add your own prompt filewords file or edit the existing ones, but it's better to leave it alone for your first time training</p>
+		<p><tag>Width & Height</tag> This should be the same as the width & height you set at preprocessing. It should be kept at 512x512px.</p>
+		<p><tag>Max steps</tag> Max steps is another important field as it specifies how long the AI will train for. Be aware that training will take hours even on high end systems. I have not been able to do thorough testing of this due to the time investment, but I have tried to train a model for 20,000 steps with poor results, so 100,000 may be needed for an accurate embedding.</p>
+		<p><tag>Save an image to log directory every N steps, 0 to disable</tag> I feel this is self-explaintory, but this field will save an image at every number of steps you set here, it is useful for seeing the progress of the training.</p>
+		<p><tag>Save a copy of embedding to log directory every N steps, 0 to disable</tag> Same as the previous field, except it saves embeddings at each set steps. This can be useful if you have done a lot of training, but feel like your end results were bad, you can backtrack to an older version of the embedding at a lower step count.</p>
+		<p><tag>Save images with embedding in PNG chunks</tag> This is a very new feature, and as explain on the main page, will create an image that can also be used as an embedding for your model.</p>
+		<p><tag>Read parameters from txt2img tab when making previews</tag> This will only affect how the preview images look and allows you to specify the prompt the model will use when displaying the preview image with your embedding.</p>
+		<p>From there all you have to do is click "Train embedding" and wait hours for it to process. Have fun and enjoy your new space heater.</p>
+		<br>
+		<p>I am still learning a lot when it comes to Textual Inversion, but one thing to pay attention to is the Loss value that is displayed in the output box underneath the images. The goal of the AI is to try and make the Loss value as close to 0 as possible. 0 means the model would theoretically be able to generate all images in the dataset 100% accurate. This however is impossible in the real world and is not an outcome you would want anyway. But it is important to know about the Loss value and understand it is a good estimate of how well your model is training.</p>
+  </article>
+         </div>
+  </body>
+</html>

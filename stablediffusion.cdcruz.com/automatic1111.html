@@ -1,0 +1,127 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Methods</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+		<script src="assets/js/load_gallery.js"></script>
+
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>AUTOMATIC1111's WebGUI</h1>
+  <h2>Feature List</h2>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>As the AUTOMATIC1111 webGUI seems to be ever expanding with new features, I've decided to give it its own page to properly explain the most prominent features and a few hidden/ lesser known tools available in the GUI.</p>
+
+    <section>
+
+    <h3>Xformer rendering optomization</h3>
+    <textblock>
+  	<p>I have not explored the details of this feature too much. But Xformer is supposed to improve performance when rendering images.  When using the AUTOMATIC111 webGUI & will mostly be effective on a Nvidia 30XX series graphics card, you can simply edit the <tag>webui-user.bat</tag> file by adding <tag>--xformers</tag> to the end of the <tag>set COMMANDLINE_ARGS=</tag> line.</p>
+  	<p>There has been a minor update to the webGUI that now supports Nvidia cards 1000 & 2000 series cards as well.</p>
+  	<p>In my testing using an RTX 3080 graphics card, I do see a noticable improvement but only a slight improvement of 1 or 2 iterations per second.</p>
+  	<p>There is a way for older graphics cards to run Xformer, but there are a few more steps involved.</p>
+    </textblock>
+  	<br>
+  	<h3>Auto update the webGUI</h3>
+    <textblock>
+  	<p>If you have installed the webGUI using the primary method provided in Rentry’s guide, you can add edit the <tag>webui-user.bat</tag> file to auto-update and download the latest changes. To do this, simply add <tag>git pull</tag> 1 line above <tag>call webui.bat</tag></p>
+  	<p>I have come across a bug with updating where after updating the webGUI will not work. To solve this, all you need to do is remove the <tag>git pull</tag> line from the file and save the file before running it again. This means it won’t auto-update, so you need to re-add that line every time you want to update. Hopefully, you don’t come across this bug so you can simply leave the <tag>git pull</tag> line in there indefinetly.</p>
+  	<p>For more information on specific features of the webGUI, visit <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features" target="_blank" rel="noreferrer">AUTOMATIC1111 webGUI Features</a> page.</p>
+    </textblock>
+  	<br>
+  	<h3>Other Custom Parameters</h3>
+    <textblock>
+  	<p>There a list of settings you can set by adding phrases to the <tag>set COMMANDLINE_ARGS=</tag> line of the <tag>webui-user.bat</tag> file. You can find the full list of parameters on <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings" target="_blank" rel="noreferrer">AUTOMATIC1111 github page</a>.</p>
+  	<p>The most important options are <tag>--medvram</tag> and <tag>--lowvram</tag> which will reduce the amount of VRAM used by the model but also increase the processing time for generating images. You should only need to use these options if your graphics card does not have a lot of VRAM.</p>
+  	<p><strong>At the current time, it is recommended to not use the parameter <tag>--share</tag> as that opens your computer to public access meaning others could access your computer, or at the very least your webGUI.</strong></p>
+  	<br>
+    </textblock>
+	<h3>Model Switching</h3>
+    <textblock>
+  	<p>The WebGUI allows you to switch between different .ckpt models very easily with the drop-down menu in the top right-hand corner. One lesser known tip about the model switching feature is that you can add subfolders to the models directory and they will show up correctly in the model switcher. This is very useful if you've got multiple versions of the same model or simply want to categorise the models you have.</p>
+    </textblock>
+  	<br>
+  	<h3>Generate Forever</h3>
+    <textblock>
+  	<p>A semi-hidden feature of the txt2img tab is the ability to make the program generate images indefinetly. All you need to do is right-click the generate button and choose "generate forever" and away it goes. To stop, simply right-click the button again and select "cancel generate forever". This is very useful if you're looking to generate a heap of images without actively being at your computer or while you work on something else.</p>
+    </textblock>
+  	<br>
+  	<h3>webGUI settings</h3>
+    <textblock>
+  	<p>On the webGUI there are many settings you can set to change how the model works, where files are saved and a few other little things. They are mostly self explainatory, but the most useful setting to turn on is the "show progressbar" and "show image creation progress every N sampling steps", the latter lets you preview what the model is generating as it is being generated; although it does not work for all sampling methods.</p>
+    </textblock>
+  	<br>
+  	<h3>Localization</h3>
+    <textblock>
+  	<p>Localization is a feature added on 18/10/22 and allows people to create translations for the UI interface. This is a great user-friendliness improvement that will make Stable Diffusion even more accessible to people. All you need to do is add a specially formatted .json file to the "localization" folder of the webGUI, like you would with a model or embedding. It does however require you to restart the program before the localization file will activate. You must also go to the webGUI settings tab and select the localization file in the setting of the same name.</p>
+  	<p>You can use this to rename all of the text on the GUI to anything you like, so it's not just limited to other languages, you could simply rename buttons to words that make more sense to you.</p>
+    <p>You can download the <a href="assets/downloads/localization.json" download><button class="download">localization template</button></a> here. (self hosted download)</p>
+    </textblock>
+  	<br>
+  	<h3>Custom Scripts</h3>
+
+    <textblock>
+  	<p>The webGUI allows to some extentability in the form of custom scripts. These are python files that add some minor feature to the program to help make prompts, generate images in a certain way, or add more complex features like video generation. The webGUI Github page has a good list of useful scripts, <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts" target="_blank" rel="noreferrer">custom scripts list</a>.</p>
+  	<p>It isn't confirmed, but I have heard proposals for the webGUI to become more modular and expandable to allow more features and flexibility with the GUI. There is no word on if AUTOMATIC1111 will implement this, but it would be a great feature to grow community support around this GUI.</p>
+  	</textblock>
+
+	<h4>Extensions</h4>
+	<textblock>
+		<p>Extensions are a more steamlined and powerful version of custom scripts that was introduced on 22/10/22. They allow for more modularity and community driven features to extend the AUTOMATIC1111 webGUI. there is also a new API to be used with the webGUI, however I am not techincal enough to give more information on that or if it is even related to extensions. As far as I know, exensions are suppose to surpass custom scripts as the new standard for extending the GUI.</p>
+		<p>For a list of official extensions, visit the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions" target="_blank" rel="noreferrer">Github wiki page</a></p>
+		
+	</textblock>
+	<p><strong>For a list of notable scripts and extensions I have found you can visit the <a href="auto_extensions.html">extensions page</a>.</strong></p>
+
+    <h3>Color Sketch</h3>
+    <textblock>
+  	<p>Color Sketch is an optional feature that must be activated in the <tag>set COMMANDLINE_ARGS=</tag> of the <tag>webui-user.bat</tag> file. To activate it, add the phrase <tag>--gradio-img2img-tool color-sketch</tag> to the commandline_args.</p>
+    <p>I have not tested this feature a lot, but I believe it allows you to draw images within the webGUI itself and use those images in the img2img section to generate art. It is a good feature to steamline the process and allow you to experiment with drawing and generating a lot quicker. If you use the webGUI in a Chromium-based brower, you can also use the colorpicker tool native to those browsers to easily choose colors to use.</p>
+    <p>To use this feature you do need to still add an image to draw on. If you want a blank 512x512 image to use, you can download a <a href="assets/downloads/img2img_blank_canvas.png" download><button class="download">blank image</button></a> here. (self hosted download)</p>
+  	</textblock>
+
+    </section>
+
+</article>
+         </div>
+  </body>
+</html>

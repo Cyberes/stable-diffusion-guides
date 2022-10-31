@@ -1,0 +1,71 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Methods</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+		<script src="assets/js/load_gallery.js"></script>
+
+	 </head>
+
+
+<body>
+  <div class='wrapper'>
+
+	<h1>Embeddings List</h1>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>This page features embeddings that I have either created myself or found online and believe they and well created. All embeddings available here are in the image format version so you can simply right-click and save the image to download any embedding.</p>
+
+    <h3>Embeddings by CDcruz</h3>
+	<h4>Anime Plus V2 - WIP</h4>
+    <center><img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/embeddings/cd-anime-plus-11500.png" alt="cd-anime-plus embedding" style="max-width: 261px; width: 100%;"/></center>
+    <p>This embedding was trained by myself with roughly 5.5k images (11.8k including flipped images) of anime women characters taken from Pintrest. The current embedding was trained for 11.5k steps (1 Epoch) with the Waifu Diffusion 1.3 model as a base.</p>
+    <p>I have hand-picked all of these images from Pintrest and used a smart-cropping software to generally include the characters face. I have tried to collect a large variety of images with different poses, angles, clothing and backgrounds. As they are all hand-picked images, they are also of higher quality and do not include unwanted images like loli or similar characters. As Pintrest filters out NSFW images, I was not able to train on any NSFW images, which does mean this embedding will not improve those images greatly.</p>
+    <p>This embedding will work best with Waifu Diffusion, but it can also influence Stable Diffusion images a decent amount, although results are obviously weaker.</p>
+    <p>I plan on improve this embedding more with a larger dataset in the future or even create my own model depending on how things go. I do prefer creating embeddings/ hypernetworks due to the flexibility you can have with extending any other model.</p>
+    <h3>Anime Plus V1</h3>
+    <center><img loading="lazy" src="assets/embeddings/cd-anime-plus-10000.png" alt="cd-anime-plus embedding" style="max-width: 261px; width: 100%;"/></center>
+    <p>Version 1 was trained by myself with roughly 1.5k images of anime women characters taken from Pintrest. It was trained for 10,000 steps with the Waifu Diffusion 1.3 model as a base.</p>
+    <img loading="lazy" src="assets/images/examples/cd-anime-plus_example.webp" alt="cd-anime-plus embedding comparison" style="max-width: 1200px; width: 100%;"/>
+
+		<h4>E-Girls - WIP</h4>
+    <center><img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/embeddings/cd-egirl-10000.png" alt="cd-egirl embedding" style="max-width: 261px; width: 100%;"/></center>
+    <p>This embedding was trained by myself with roughly 700 images of women with an E-girl aesthetic taken from Pintrest. As "E-girl" style could vary depending on indiviual opinion, this may not be exactly what you have in mind. It isn't exactly my perfect E-girl style either, but finding good quality images for this has been more difficult through Pintrest. I may need to find a better repository for this training. The current embedding was trained for 20,000 steps with the Stable Diffusion 1.4 model as a base.</p>
+    <p>Even though this embedding was trained on Stable Diffusion, from my testing it actually creates great images with Waifu Diffusion.</p>
+    <p>I plan on improve this embedding more with a larger dataset in the future or even create my own model depending on how things go. I do prefer creating embeddings/ hypernetworks due to the flexibility you can have with extending any other model.</p>
+    <img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/images/examples/cd-egirl_example.webp" alt="cd-egirl embedding comparison" style="max-width: 1200px; width: 100%;"/>
+
+	</article>
+    </div>
+  </body>
+</html>
