@@ -28,4 +28,4 @@ download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
-# wkhtmltopdf "https://proximacentaurib.notion.site/A-guide-to-getting-started-with-the-paperspace-port-of-AUTOMATIC1111-s-web-UI-for-ppl-who-get-nervou-b83c2213f17e452e8b0e37ba64fe9758" "Getting started with the paperspace port of AUTOMATIC1111s web UI for ppl who get nervous.pdf"
+wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
