@@ -1,0 +1,69 @@
+:root {
+  --strong: forestgreen;
+  --weak: red;
+  --mild: darkorange;
+  --untested: steelblue;
+  --info-border: 2px solid seashell;
+}
+
+promptblock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+prompt {
+  padding: 7px;
+  border-radius: 1em;
+  background-color: var(--untested);
+  color: white;
+  font-weight: bold;
+  margin: 5px;
+  min-width: 40px;
+  text-align: center;
+  transition: height 350ms ease;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+article:has(prompt:hover) prompt:not(:hover) {
+  opacity: 0.8;
+  transition: opacity 350ms ease;
+}
+
+/*prompt:hover::after {
+  display: block;
+  position: relative;
+  top: 0px;
+  content: var(--info);
+  padding: 0px;
+  background: rgba(0,0,0,0);
+  white-space: break-spaces;
+  word-break: break-word;
+  font-weight: normal;
+}*/
+
+#info_modal {
+  display: flex;
+  flex-wrap: nowrap;
+  position: sticky;
+  bottom: 30px;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.9);
+  margin: 5px auto;
+  border-radius: 20px;
+  text-align: left;
+  align-items: center;
+}
+
+#info_modal > p {
+  width: 100%;
+  padding: 0px 10px;
+}
+
+#info_modal > button {
+  border: none;
+  background: none;
+  width: 50px;
+  height: 50px;
+}

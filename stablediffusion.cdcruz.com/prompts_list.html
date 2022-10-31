@@ -1,0 +1,393 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Prompts List</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+		<link href="assets/css/prompts_list.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>Prompts List</h1>
+  <h2>By CDcruz</h2>
+  <hr>
+	<a href="index.html">Back to the main page</a>
+	<p>A list of prompts curated by myself. The strength/influence of a prompt has been tested with multiple renders and usually a female character using sampling method Euler A.</p>
+	<p>The strength of these prompts will also work as negative prompts, so if you want to exclude something, use the stronger prompts for greater affect</p>
+	<p>I am working on adding images to correspond with each prompt. Images are cherrypicked to show the best example of each prompt. All images were created with the following settings:</p>
+	<p><tag>Model: Waifu Diffusion 1.3 | Prompts: woman, {prompt} | Negative Prompts: {My default list} | Sampling Method: Euler | Sampling Steps: 50</p>
+	<p>Your results will vary a lot from what I'm able to generate, and some prompts will influence an image differently depending on what other prompts you use.</tag></p>
+	<p id="prompt_count"></p>
+	<promptblock>
+		Guide: <prompt>Untested</prompt><prompt style="background-color: var(--strong);">Strong Influence</prompt><prompt style="background-color: var(--mild);">Mild Influence</prompt><prompt style="background-color: var(--weak);">Weak Influence</prompt><prompt style="border: var(--info-border);" onclick="prompt_info('Click me', 'Click on prompts with a border to see more information about it. Some prompts may even have an example image show up.');">Click me!</prompt>
+	</promptblock>
+  <article id="contents">
+		<h3>Adjectives/ Embellishments</h4>
+		<promptblock id="embellishments"></promptblock>
+
+		<h3>Head Characteristics</h4>
+			<h4>Ears</h4>
+			<promptblock id="head-ears"></promptblock>
+			<h4>Eyes</h4>
+			<promptblock id="head-eyes"></promptblock>
+			<h4>Nose</h4>
+			<promptblock id="head-nose"></promptblock>
+			<h4>Mouth</h4>
+			<promptblock id="head-mouth"></promptblock>
+			<h4>Facial Features</h4>
+			<promptblock id="head-features"></promptblock>
+
+		<h3>Facial Expressions/ Emotions</h3>
+		<h4>Happy</h4>
+		<promptblock id="expression-happy"></promptblock>
+		<h4>Angry</h4>
+		<promptblock id="expression-angry"></promptblock>
+		<h4>Sad</h4>
+		<promptblock id="expression-sad"></promptblock>
+		<h4>Disgusted</h4>
+		<promptblock id="expression-disgusted"></promptblock>
+		<h4>Fearful</h4>
+		<promptblock id="expression-fearful"></promptblock>
+		<h4>Indifferent</h4>
+		<promptblock id="expression-indifferent"></promptblock>
+		<h4>Lewd</h4>
+		<promptblock id="expression-lewd"></promptblock>
+
+		<h3>Body Type</h3>
+		<promptblock id="body-type"></promptblock>
+		<h4>Male Specific</h4>
+		<promptblock id="body-type-male"></promptblock>
+		<h4>Female Specific</h4>
+		<promptblock id="body-type-female"></promptblock>
+
+		<h3>Hairstyles</h3>
+		<promptblock id="hairstyles"></promptblock>
+		<h4>Male Specific</h4>
+		<promptblock id="hairstyles-male"></promptblock>
+		<h4>Female Specific</h4>
+		<promptblock id="hairstyles-female"></promptblock>
+
+		<h3>Clothing</h3>
+		<h4>Headwear</h4>
+		<promptblock id="clothing-headwear"></promptblock>
+		<h4>Accessories</h4>
+		<promptblock id="clothing-accessories"></promptblock>
+		<h4>Tops</h4>
+		<promptblock id="clothing-tops"></promptblock>
+		<h4>Bottoms</h4>
+		<promptblock id="clothing-bottoms"></promptblock>
+		<h4>footwear</h4>
+		<promptblock id="clothing-footwear"></promptblock>
+		<h4>Costumes/ Styles</h4>
+		<promptblock id="clothing-costumes"></promptblock>
+
+		<h3>Poses & Actions</h3>
+		<promptblock id="poses"></promptblock>
+
+		<h3>Inanimate Objects</h3>
+		<promptblock id="objects"></promptblock>
+
+
+
+		<h3>Locations</h3>
+		<promptblock id="locations"></promptblock>
+		<h4>Indoors</h4>
+		<promptblock id="locations-indoors"></promptblock>
+		<h4>Outdoors</h4>
+		<promptblock id="locations-outdoors"></promptblock>
+
+		<h3>Nature</h3>
+		<promptblock id="nature"></promptblock>
+
+		<h3>Weather</h3>
+		<promptblock id="weather"></promptblock>
+
+		<h3>Animals</h3>
+		<promptblock id="animals"></promptblock>
+
+		<h3>Lighting</h4>
+		<promptblock id="lighting"></promptblock>
+
+
+
+		<h3>Art Styles</h3>
+		<h4>Genres</h4>
+		<promptblock id="art-styles-genres"></promptblock>
+		<h4>Realistic</h4>
+		<promptblock id="art-styles-realistic"></promptblock>
+		<h4>Artistic</h4>
+		<promptblock id="art-styles-artistic"></promptblock>
+		<h4>Camera Angles</h4>
+		<promptblock id="art-styles-angles"></promptblock>
+		<h4>Filters</h4>
+		<promptblock id="art-styles-filters"></promptblock>
+
+		<h3>Creators/ Media</h3>
+		<p>Use <tag>by</tag> or <tag>In the style of</tag> with any of the prompts below.</p>
+		<h4>Artists</h4>
+		<promptblock id="creators-artists"></promptblock>
+		<h4>Art Studios</h4>
+		<promptblock id="creators-studios"></promptblock>
+		<h4>Media</h4>
+		<promptblock id="creators-media"></promptblock>
+
+		<h3>Fantasy Characters</h3>
+		<promptblock id="fantasy-characters"></promptblock>
+
+		<h3>Occupations</h3>
+		<promptblock id="occupations"></promptblock>
+
+		<h3>Lewd Tags</h3>
+		<promptblock id="lewd"></promptblock>
+
+
+		<section id="info_modal" style="display: none;">
+			<button onclick="close_prompt();"><img loading="lazy" src="assets/images/icons/close.svg" alt="close button"/></button><p id="modal_text"></p>
+		</section>
+  </article>
+
+
+<script>
+const downloadCsv = async () => {
+	//Taken from https://stackoverflow.com/questions/64982528/is-is-possible-to-read-a-csv-file-with-javascript-fetch-api
+    try {
+        const target = `/assets/csv/Stable Diffusion Prompts List - prompts.csv`; //file
+        //const target = `https://SOME_DOMAIN.com/api/data/log_csv?$"queryString"`; //target can also be api with req.query
+
+        const res = await fetch(target, {
+            method: 'get',
+            headers: {
+                'content-type': 'text/csv;charset=UTF-8',
+                //'Authorization': //in case you need authorisation
+            }
+        });
+
+        if (res.status === 200) {
+
+            const data = await res.text();
+            return data;
+
+        } else {
+            console.log(`Error code ${res.status}`);
+        }
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
+let modal = document.querySelector("#info_modal");
+let modal_text = document.querySelector("#modal_text");
+function prompt_info(prompt, text) {
+	if(text == "" || text == undefined) {
+		return;
+	}
+
+	modal.style.display = "flex";
+	modal_text.innerHTML = `<strong>${prompt}: </strong>${text.charAt(0).toUpperCase() + text.slice(1)}`;
+}
+
+function close_prompt() {
+	modal.style.display = "none";
+}
+
+async function load_prompts() {
+	let data = await downloadCsv();
+	data = data.toLowerCase().replace(/\r/g, '').split("\n").map(function(row){return row.split(",");}); //Converts CSV string into a 2D array, removes \r character as well.
+
+	document.querySelector("#prompt_count").innerHTML = `${data.length} prompts added.`;
+	data.forEach((row, i) => {
+		let info = (row[3] == undefined)? "": row[3];
+		let border = (row[3] != "")? "border: var(--info-border);" : "";
+		let elm = `<prompt style="background-color: var(--${row[2]}); ${border}" onclick="prompt_info('${row[1]}','${row[3]}');">${row[1]}</prompts>`;
+		//console.log(row);
+		switch (row[0]) {
+			case "body-type":
+				document.querySelector("#body-type").innerHTML += elm;
+				break;
+			case "body-type-female":
+				document.querySelector("#body-type-female").innerHTML += elm;
+				break;
+			case "body-type-male":
+				document.querySelector("#body-type-male").innerHTML += elm;
+				break;
+			case "lighting":
+				document.querySelector("#lighting").innerHTML += elm;
+				break;
+			case "locations":
+				document.querySelector("#locations").innerHTML += elm;
+				break;
+			case "locations-indoors":
+				document.querySelector("#locations-indoors").innerHTML += elm;
+				break;
+			case "locations-outdoors":
+				document.querySelector("#locations-outdoors").innerHTML += elm;
+				break;
+			case "fantasy-characters":
+				document.querySelector("#fantasy-characters").innerHTML += elm;
+				break;
+			case "occupations":
+				document.querySelector("#occupations").innerHTML += elm;
+				break;
+			case "head-ears":
+				document.querySelector("#head-ears").innerHTML += elm;
+				break;
+			case "head-mouth":
+				document.querySelector("#head-mouth").innerHTML += elm;
+				break;
+			case "head-eyes":
+				document.querySelector("#head-eyes").innerHTML += elm;
+				break;
+			case "head-nose":
+				document.querySelector("#head-nose").innerHTML += elm;
+				break;
+			case "head-features":
+				document.querySelector("#head-features").innerHTML += elm;
+				break;
+			case "art-styles-artistic":
+				document.querySelector("#art-styles-artistic").innerHTML += elm;
+				break;
+			case "art-styles-realistic":
+				document.querySelector("#art-styles-realistic").innerHTML += elm;
+				break;
+			case "clothing-costumes":
+				document.querySelector("#clothing-costumes").innerHTML += elm;
+				break;
+			case "clothing-tops":
+				document.querySelector("#clothing-tops").innerHTML += elm;
+				break;
+			case "clothing-bottoms":
+				document.querySelector("#clothing-bottoms").innerHTML += elm;
+				break;
+			case "clothing-footwear":
+				document.querySelector("#clothing-footwear").innerHTML += elm;
+				break;
+			case "clothing-headwear":
+				document.querySelector("#clothing-headwear").innerHTML += elm;
+				break;
+			case "clothing-accessories":
+				document.querySelector("#clothing-accessories").innerHTML += elm;
+				break;
+			case "art-styles-filters":
+				document.querySelector("#art-styles-filters").innerHTML += elm;
+				break;
+			case "art-styles-angles":
+				document.querySelector("#art-styles-angles").innerHTML += elm;
+				break;
+			case "art-styles-genre":
+				document.querySelector("#art-styles-genres").innerHTML += elm;
+				break;
+			case "expression-happy":
+				document.querySelector("#expression-happy").innerHTML += elm;
+				break;
+			case "expression-sad":
+				document.querySelector("#expression-sad").innerHTML += elm;
+				break;
+			case "expression-lewd":
+				document.querySelector("#expression-lewd").innerHTML += elm;
+				break;
+			case "expression-angry":
+				document.querySelector("#expression-angry").innerHTML += elm;
+				break;
+			case "expression-disgusted":
+				document.querySelector("#expression-disgusted").innerHTML += elm;
+				break;
+			case "expression-fearful":
+				document.querySelector("#expression-fearful").innerHTML += elm;
+				break;
+			case "expression-indifferent":
+				document.querySelector("#expression-indifferent").innerHTML += elm;
+				break;
+			case "embellishments":
+				document.querySelector("#embellishments").innerHTML += elm;
+				break;
+			case "poses":
+				document.querySelector("#poses").innerHTML += elm;
+				break;
+			case "weather":
+				document.querySelector("#weather").innerHTML += elm;
+				break;
+			case "hairstyles":
+				document.querySelector("#hairstyles").innerHTML += elm;
+				break;
+			case "hairstyles-female":
+				document.querySelector("#hairstyles-female").innerHTML += elm;
+				break;
+			case "hairstyles-male":
+				document.querySelector("#hairstyles-male").innerHTML += elm;
+				break;
+			case "creators-artists":
+				document.querySelector("#creators-artists").innerHTML += elm;
+				break;
+			case "creators-studios":
+				document.querySelector("#creators-studios").innerHTML += elm;
+				break;
+			case "creators-media":
+				document.querySelector("#creators-media").innerHTML += elm;
+				break;
+			case "lewd":
+				document.querySelector("#lewd").innerHTML += elm;
+				break;
+			case "animals":
+				document.querySelector("#animals").innerHTML += elm;
+				break;
+			case "nature":
+				document.querySelector("#nature").innerHTML += elm;
+				break;
+			case "objects":
+				document.querySelector("#objects").innerHTML += elm;
+				break;
+
+
+			default:
+				console.warn(`[Load Prompts] row ${i} - category ${row[0]} - failed to load`);
+				break;
+		}
+	});
+
+
+}
+
+load_prompts();
+</script>
+
+         </div>
+
+
+  </body>
+</html>

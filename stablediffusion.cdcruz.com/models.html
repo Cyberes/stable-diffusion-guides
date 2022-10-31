@@ -1,0 +1,162 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Models</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+	<h1>Models List</h1>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+			<p>On this page you'll find all the most common models to use with the webGUI along with some rarer models made by the community. Download links are provided for all models.</p>
+
+			<section>
+			<h3>Stable Diffusion</h3>
+		  <textblock>
+		  <p>Stable Diffusion is the primary model that has they trained on a large variety of objects, places, things, art styles, etc. It is the best multi-purpose model.</p>
+			<p>The latest version of the Stable Diffusion model will be through the StabilityAI website, as it is a paid platform that helps support the continual progress of the model. You can try out the <a href="https://stabilityai.us.auth0.com/" target="_blank" rel="noreferrer">Stablitiy AI's website</a> here.</p>
+			<h4>Version 1.5 - Inpainting</h4>
+			<p>This model is basically a fork (a branching version) of the Stable Diffusion model that is based of version 1.5 of SD. It has been trained for 440k more steps than the original 1.5 to specialise in inpainting and improving the ability to remove, add and replace objects in a scene. The current version is 1.5 but it should not be confused with the original Stable Diffusion 1.5.</p>
+		  <p>You can download the latest <a href="https://huggingface.co/runwayml/stable-diffusion-inpainting" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+			<h4>Version 1.5</h4>
+			<p>Stable Diffusion 1.5 has been released on 21/10/22. This version has been considered a minor improvement on the previous version with some better txt2img generation.</p>
+			<p>If you're only looking to generate images, make sure to down load the <tag>v1-5-pruned-emaonly.ckpt</tag> as it is a smaller file meaning it will use less VRAM. If you plan on training or fine-tuning the model, then you'll need the full <tag>v1-5-pruned.ckpt</tag> file.</p>
+		  <p>You can download the latest <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+
+			<h4>Version 1.4</h4>
+			<p>Version 1.4 is the model I began my AI journey with so I cannot speak on previous iterations.</p>
+			<p>You can download the 1.4 <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+		  <!--<p>Below is an archive of models hosted on this website for preservation. They may be useful to use to recreate old seeds or simply see how older versions of the model worked.</p>-->
+		  </textblock>
+
+		  <h3>Waifu Diffusion</h3>
+		  <textblock>
+		  <p>Waifu Diffusion is a model trained on over 50 thousand anime related images and is continually being trained with improvements released regularly. It is currently the best model for creating anime characters, but is much weaker at realistic imagery and landscapes.</p>
+			<h5>1.4 Version Beta</h5>
+			<p>Waifu Diffusion 1.4 is still in very early stages, but they repo is already created so if you want to keep up to date on the latest WD version, you can check this repo and download the beta models as they become available.</p>
+			<p>You can download the latest <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-4" target="_blank" rel="noreferrer">Beta model here</a> (requires free account).</p>
+			<h4>Version 1.3</h4>
+			<p>Version 1.3 model has greatly improved the consistency and variety of images the Waifu Diffusion can produce. However, older prompts will obviously create different images even if you use the same seed, prompts, etc. Because of this, it will take some time to figure out what new prompt lists you need to create your specific styles. I’d recommend doing a lot of testing yourself with different prompts, prompt order and other parameters to find what works with the new model. Another change to version 1.3 is that it relies on ‘comma separated tags’ more so than previous iterations. So, in the example <tag>a girl wearing a hoodie in the rain</tag> would will be easier for the AI to understand as <tag>original, 1girl, solo, portrait, hoodie, wearing hoodie</tag>. <a href="https://gist.github.com/harubaru/f727cedacae336d1f7877c4bbe2196e1" target="_blank" rel="noreferrer">Release notes for 1.3</a>.</p>
+		  <p>You can download the 1.3 <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3" target="_blank" rel="noreferrer">Waifu Diffusion model here</a> (requires free account).</p>
+
+		  </textblock>
+
+		  <h3>Trinart</h3>
+		  <textblock>
+		  <p>Trinart Stable Diffusion is another anime-based model. Its results are currently less cohesive compared to Waifu Diffusion, but it can still generate excellent results. It could also give you a unique art style compared to Waifu Diffusion because they trained it on a different dataset.</p>
+		  <p>You can download the latest <a href="https://huggingface.co/naclbit/trinart_stable_diffusion_v2" target="_blank" rel="noreferrer">Trinart model here</a> (requires free account).</p>
+		  </textblock>
+
+			<h3>Hentai Diffusion</h3>
+			<textblock>
+		  <p>A model based on Waifu Diffusion 1.2 and trained on 150k images from R34 and gelbooru. As the name suggests, their focus is on hentai related images and improving hands, obscure poses and general consistency of the model.</p>
+			<p>Adding the prompt <tag>1girl</tag> to the start of your prompt list is recommended by rentry.org. You should also use tags from the sites they trained it on</p>
+			<h4>Update - 12/10/22</h4>
+			<p>The newest update to Hentai Diffusion has improved coherency of image sequences for better animation, more variety in obscure camera angles and better photo to anime conversion. I am yet to test this new model, but If it is anything like the jump Waifu Diffusion made between v1.2 and v1.3, it should be substantial.</p>
+
+		  <p>You can download the latest <a href="https://huggingface.co/Deltaadams/Hentai-Diffusion/tree/main" target="_blank" rel="noreferrer">Hentai Diffusion model here</a> (requires free account).</p>
+		  </textblock>
+
+			<h3>Lewd Diffusion</h3>
+			<textblock>
+		  <p>A model based on Waifu Diffusion 1.2 and trained on 70k explicit images from Danbooru. They have trained the current version for 2 epochs. As the only link to this model is via a torrent, I have self hosted the file. This means it may not always be the most up-to-date model. If you would like to download via torrent, the URL is:</p>
+			<tag>magnet:?xt=urn:btih:U5RICVYDEJL6LIJJWFKQOIVO5GMGCJNW&dn=last-pruned.ckpt&xl=3852165809&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce</tag>
+			<p>Self hosted file coming soon</p>
+		  <!--<p>You can download the latest <a href="/assets/models/lewd-diffusion-70k-2e.ckpt" download><button class="download">Lewd Diffusion model</button></a> (self hosted download).</p>-->
+		  </textblock>
+
+			<h3>R34 Diffusion</h3>
+			<textblock>
+		  <p>A model trained on images from the site rule34.xxx with the latest model being trained with 150k images for 5 epoch. It has a lot of variety in its lewd images and, without specifying a style, will create more realistic/ 3D model looking characters. If you’re trying to get a specific artist’s style, be sure to prefix it with  <tag>by</tag> for artists and use underscores for multi-word tags as would be used on rule34.xxx. While it does do a better job at creating explicit images, it lacks a lot of consistensy and creates deformed bodies more often than </p>
+		  <p>You can download the latest <a href="https://mega.nz/file/yJgDUCzA#zOD2yeE6QLBqPEjEpIi2b4FWOlb64yVUveOd_eW6teI" target="_blank" rel="noreferrer">R34 Diffusion model here</a>.</p>
+		  </textblock>
+
+			<h3>Zack3D Kinky Diffusion</h3>
+			<textblock>
+		  <p>A model based on Stable Diffusion that specializes in furry art and also more kinky art. But it will use a furry character as the subject. E621 tags are used with underscores for multi-word tags.</p>
+		  <p>You can download the latest <a href="https://pixeldrain.com/u/DEocAHsx" target="_blank" rel="noreferrer">Zach3D Kinky Diffusion model here</a>.</p>
+		  </textblock>
+
+			<h3>Furry Diffusion</h3>
+			<textblock>
+		  <p>A model trained on 300k images from e621. As the name suggests, this will only create furry art, so if you're looking for that, you've come to the right model.</p>
+		  <p>You can download the latest <a href="https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch3.ckpt" target="_blank" rel="noreferrer">Furry Diffusion model here</a>.</p>
+		  </textblock>
+
+			<h3>Yiffy Diffusion</h3>
+			<textblock>
+		  <p>Yiffy is yet another furry model. They have trained the most current model on 210k images from e621 for over 6 epochs (I’m unable to get a definitive number). One important note when using this model is that if you want to use the prompt <tag>explicit</tag> you will actually need to use the misspelling <tag>explict</tag> due to a mistake that occurred when the model was trained.</p>
+		  <p>You can download the latest <a href="https://sexy.canine.wf/file/yiffy-ckpt/yiffy-e18.ckpt" target="_blank" rel="noreferrer">Yiffy Diffusion model here</a>.</p>
+		  </textblock>
+
+			<h3>Studio Ghibli Diffusion</h3>
+			<textblock>
+		  <p>A model posted on Reddit that was trained by u/IShallRisEAgain that has been trained on roughly 20k images using the Studio Ghibli style. The model is based on Waifu Diffusion 1.3. <a href="https://www.reddit.com/r/sdforall/comments/y196fy/ive_further_refined_my_studio_ghilbi_model/" target="_blank" rel="noreferrer">Click here for the original Reddit post</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+			<p>You can download the latest <a href="https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main" target="_blank" rel="noreferrer">Studio Ghibli Diffusion model here</a> (requires free account.)</p>
+		  </textblock>
+
+			<h3>Archer Diffusion</h3>
+			<textblock>
+		  <p>A model posted on Reddit that was trained by u/Nitrosocke that has been trained to create images in the style of the animated TV show "Archer". This model has been trained using Dreambooth and fine-tuned based on the Stable Diffusion model (I assume v1.4). <a href="https://huggingface.co/nitrosocke/archer-diffusion" target="_blank" rel="noreferrer">Click here for the download link.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+		  </textblock>
+
+			<h3>Pixel Art Diffusion</h3>
+			<textblock>
+		  <p>A model posted on Reddit that was trained by u/Why_Soooo_Serious that has been trained to create pixel art style images. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y54isd/couldnt_generate_pixel_art_with_sd_so_i_trained_a/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+		  </textblock>
+
+			<h3>App Icons Diffusion</h3>
+			<textblock>
+		  <p>Another model posted on Reddit that was trained by u/Why_Soooo_Serious that has been trained to create simplistic app icon style images. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y5rfff/app_icon_generator_v1_people_liked_the_pixel_art/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+		  </textblock>
+
+			<br>
+			<h3>Character Specific Models</h3>
+			<h3>Jinx from League of Legends - Model by Reddit user u/jinofcool</h3>
+			<textblock>
+		  <p>Another model posted on Reddit that was trained by u/jinofcool that has been trained to create simplistic app icon style images. It was trained using Dreambooth. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y2avjq/my_jinx_form_arcane_dream_booth_model_download/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+		  </textblock>
+
+		</section>
+		</article>
+         </div>
+  </body>
+</html>
