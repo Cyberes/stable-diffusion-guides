@@ -68,6 +68,13 @@
   	<p>For more information on specific features of the webGUI, visit <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features" target="_blank" rel="noreferrer">AUTOMATIC1111 webGUI Features</a> page.</p>
     </textblock>
   	<br>
+	<h3>Changing GPU</h3>
+	<textblock>
+		<p>If you're a lucky person with 2 or more GPU's on your system and you'd like to change which one the WebGUI uses, you can edit the <tag>webui-user.bat</tag> to do so. All you need to do is add the line <tag>set CUDA_VISIBLE_DEVICES=1</tag> somewhere above the <tag>call webui.bat</tag> line in the file. The number <tag>1</tag> corresponds to a GPU (the secondary GPU in this example). Setting this value to 0 will use your primary GPU which should be the default even without adding this line.</p>
+		<p>As the line states CUDA, I assume this will only work with Nvidia cards with CUDA capabilities.</p>
+		<p>It's also worth noting that at the current time you can only use 1 GPU per instance of the WebGUI. This does mean however, that you could run 2 (or more) instances of the WebGUI each running on a seperate GPU cards.</p>
+		<p>Credit to Reddit user <a href="https://www.reddit.com/r/sdforall/comments/yiqul2/comment/iukcc0s/?utm_source=share&utm_medium=web2x&context=3" target="_blank" rel="noreferrer">r/iambaney</a> for posting this information in a comment.</p>
+	</textblock>
   	<h3>Other Custom Parameters</h3>
     <textblock>
   	<p>There a list of settings you can set by adding phrases to the <tag>set COMMANDLINE_ARGS=</tag> line of the <tag>webui-user.bat</tag> file. You can find the full list of parameters on <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings" target="_blank" rel="noreferrer">AUTOMATIC1111 github page</a>.</p>
@@ -108,7 +115,7 @@
 	<textblock>
 		<p>Extensions are a more steamlined and powerful version of custom scripts that was introduced on 22/10/22. They allow for more modularity and community driven features to extend the AUTOMATIC1111 webGUI. there is also a new API to be used with the webGUI, however I am not techincal enough to give more information on that or if it is even related to extensions. As far as I know, exensions are suppose to surpass custom scripts as the new standard for extending the GUI.</p>
 		<p>For a list of official extensions, visit the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions" target="_blank" rel="noreferrer">Github wiki page</a></p>
-		
+		<p>As of 01/11/2022 the WebGUI has an in-built way to easily install and update extensions. There is a new "Extensions" tab on the UI that lets you view all your installed extensions, turn them on or off & install new extensions. To install extensions simply go to the "install from URL" tab in the "Extensions" main tab and past a Github repository link like <tag>https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards</tag> and the WebGUI will take care of installing it correctly. If you still need to manually install an extension, that should still work correctly by installing the extension in the extensions folder.</tag></p>
 	</textblock>
 	<p><strong>For a list of notable scripts and extensions I have found you can visit the <a href="auto_extensions.html">extensions page</a>.</strong></p>
 
