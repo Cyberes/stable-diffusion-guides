@@ -26,11 +26,13 @@ download "https://rentry.org/sdupscale/pdf" "archives/Larger resolutions with St
 download "https://rentry.org/male-to-anime-girl/pdf" "archives/How to Turn Yourself Into a Cute Anime Girl.pdf"
 download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf"
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
+download "https://rentry.org/sdupdates/pdf" "archives/sdupdates.pdf"
+download "https://rentry.org/sdupdates2/pdf" "archives/sdupdates2.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
-download () {
+download_cdcruz () {
 	wget -r -H -l 1 "https://stablediffusion.cdcruz.com/$1" --convert-links --page-requisites -D stablediffusion.cdcruz.com --reject ckpt,exe -np -e robots=off -U "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Mobile/15E148 Safari/604.1"
 }
 
@@ -43,14 +45,14 @@ download () {
 
 rm -rf stablediffusion.cdcruz.com
 
-download index.html
-download embeddings.html
-download models.html
-download automatic1111.html
-download embeddings_training.html
-download install.html
-download methods.html
-download prompts_list.html
+download_cdcruz index.html
+download_cdcruz embeddings.html
+download_cdcruz models.html
+download_cdcruz automatic1111.html
+download_cdcruz embeddings_training.html
+download_cdcruz install.html
+download_cdcruz methods.html
+download_cdcruz prompts_list.html
 
 #mv stablediffusion.cdcruz.com/* ../..
 #cd ../..
