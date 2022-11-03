@@ -62,12 +62,6 @@
     <img loading="lazy" src="assets/images/examples/cd-anime-plus_example.webp" alt="cd-anime-plus embedding comparison" style="max-width: 1200px; width: 100%;"/>
 	</hsection>
 
-	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">CDcruz - Manga Style - WIP <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h4>
-	<hsection>
-		<p>This embedding was trained on roughly one thousand manga style images taken from Pintrest. A decent amount of the training data was cleaned up to remove text bubbles or other text from the images to improve training results. There are no hentai images included in the data set yet, but I would like to include more hentai related imagery once I find a good resource for downloading quality images.</p>
-		<p>For best results make sure to include <tag>Monochrome</tag> in your tags as the embedding itself is not powerful enough to force generation to be monochrome on its own.</p>
-	</hsection>
-
 	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">CDcruz - E-Girls - WIP <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h4>
 	<hsection>
     <center><img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/embeddings/cd-egirl-10000.png" alt="cd-egirl embedding" style="max-width: 261px; width: 100%;"/></center>
@@ -75,6 +69,14 @@
     <p>Even though this embedding was trained on Stable Diffusion, from my testing it actually creates great images with Waifu Diffusion.</p>
     <p>I plan on improve this embedding more with a larger dataset in the future or even create my own model depending on how things go. I do prefer creating embeddings/ hypernetworks due to the flexibility you can have with extending any other model.</p>
     <img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/images/examples/cd-egirl_example.webp" alt="cd-egirl embedding comparison" style="max-width: 1200px; width: 100%;"/>
+	</hsection>
+
+	<h3>Hypernetworks</h3>
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">CDcruz - Manga Style - WIP <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h4>
+	<hsection>
+		<p>This hypernetwork was trained on roughly one thousand manga style images taken from Pintrest. A decent amount of the training data was cleaned up to remove text bubbles or other text from the images to improve training results. There are no hentai images included in the data set yet, but I would like to include more hentai related imagery once I find a good resource for downloading quality images.</p>
+		<p>This hypernetwork does a good job at improving shading and line strokes to fit the style of manga more. </p>
+		<p>For best results make sure to include <tag>Monochrome</tag> in your tags as the hypernetwork itself is not powerful enough to force generation to be monochrome on its own.You could also use negative prompts like <tag>color, colorful</tag> to the same effect.</p>
 	</hsection>
 
 	</article>
