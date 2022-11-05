@@ -32,6 +32,14 @@ html {
 	font-display: swap;
 }
 
+@font-face {
+  font-family: 'open-sans';
+  src: url('https://stablediffusion.cdcruz.com/assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+	font-display: swap;
+}
+
 body{
   font-family: 'montserrat';
   color: var(--font-colour);
@@ -198,7 +206,7 @@ hsection {
 }
 
 caution {
-  font-weight: bold;
+  font-family: 'open-sans';
   color:#fffbb7;
   display: flex;
   justify-content: center;
@@ -217,7 +225,7 @@ caution > p::before {
 }
 
 caution a {
-  color: rgb(76, 101, 184)
+  color: rgb(86 122 237);
 }
 
 

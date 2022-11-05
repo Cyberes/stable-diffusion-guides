@@ -1,0 +1,137 @@
+<!doctype html>
+	 <html lang="en">
+	 	<head>
+
+
+	 	<title>CDcruz| Install</title>
+	 	<meta charset="UTF-8" />
+	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	 	<meta name="author" content="Craig D'Cruz">
+	 	<meta name="viewport" content="width=device-width, minimal-ui">
+	 	<link rel='manifest' href='manifest.json'>
+
+	 	<meta name="theme-color" content="#18BDCB"/>
+
+		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#18BDCB">
+		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+
+		<script src="assets/js/copy.js"></script>
+		<script src="assets/js/hsection.js"></script>
+	 </head>
+
+
+  <body>
+
+
+
+
+<div class='wrapper'>
+
+    <h1>Prompts Information</h1>
+  <hr>
+  <article>
+		<a href="index.html">Back to the main page</a>
+		<p>This page covers everything to do with prompts, prompt structure and best practices for you to craft your best prompts for amazing images. Everything is super new and changing all the time so be sure to experiment and discover cool tricks for yourself.</p>
+
+        <h3>Prompt Formatting</h3>
+        <section>
+            <h4>Basic Formatting</h4>
+            <textblock>
+            <p>Prompts can be practically anything you'd like them to be and can work with a simple sentence like <tag>Woman standing in a field of flowers</tag>, however that is a very simplistic way to use prompts and is not the most ideal way. It is better to use comma seperated descriptive words to describe the image you want to create. Waifu Diffusion as of  version 1.3 has been focused on parsing Booru Tags instead of plain english sentences. So for our previous example, it would be better to word it like <tag>woman, standing, flowers, field</tag> so the AI only has the important words to generate the image instead of useless words (to a computer) like "a", "of", etc.</p>
+            <p>I have not been able to test this properly yet, but the use of underscores or hypens should work well and be read as expected. Although you can simply use a space between words like normal.</p>
+            </textblock>
+            <h4>Prompt Order</h4>
+            <textblock>
+            <p>Prompt order is the easiest way to change the image in subtle ways without having to add more prompts or add negative prompts. Essentially, whatever prompt is at the front of your list, will influence the model more than prompts further down the list. So, if you have a prompt like <tag>car, blue, metallic, night, city</tag>. The model will prioitize the car image and the city aspect will be less influential.</p>
+            </textblock>
+            <h4>Parenthesis</h4>
+            <textblock>
+            Parenthesis/ brackets are very useful for making the model focus on specific prompts. This can be used to override the prompt order and allows you to personally choose how powerful a prompt is in a much more controlled manner. For example, <tag>hands, body, face, (eyes), woman</tag> will be more likely to generate images of eyes and improve eye quality while <tag>hands, ((body)), face, eyes, (woman)</tag> will be much more likely to generate images of a womens body and could even crop out the face since it isn't as important in this prompt list.</p>
+            <p>The more parenthesis you add, the stronger the influence, however, I have not tested what are the maximum amount of parenthesis that will actually affect the model. I would currently recommend using a maximum of 3 or 4 parenthesis as it doesn't make much sense to add more than that. Each parenthesis increases the influence of the prompt by roughly 10% (but not exactly 10%).</p>
+            <p>If you're wanting to reduce the influence of a prompt, but you still want it to be in your prompt list, you can use square brackets in the exact same way as parenthesis but to reduce a prompts influence instead of increasing it.</p>
+            <p>If you need to use the literal parenthesis/bracket characters in your prompts, you must prefix them with a backslash. For example, <tag>\(jumping\)</tag></p>
+        
+            </textblock>
+            <h4>Number Multiplier</h4>
+            <textblock>
+            <p>Similar to using parenthesis, you can use a format like <tag>(old:0.2), (evil:0.9), (sword:0.5), (skeleton:1.4)</tag> and the AI will prioitize prompts by the number you have stated for each prompt. You do not need to give every prompt a number, similar to how you don't need to give every prompt parenthesis. I personally have not done enough testing with this method to provide any further information but it is worth noting as it could be useful for your own use cases.</p>
+            <p>A <tag>1</tag> would equal normal influence while a <tag>2</tag> equals double the influence. You can use any decimal number from 0 and above. I have not tested negative numbers, but it doesn't make much sense to use them anyway, you should just use a negative prompt instead.</p>
+            <p>A quick way to change prompt weighting is to select the prompt you want to change and click <tag>CTRL + Arrow Up</tag> or <tag>CTRL + Arrow Down</tag> to automatically increase and decrease weights. It isn't anything fancy, but a nice QOL improvement.</p>
+            <p>You can use multipliers within multipliers and the values will be multiplied instead of added together. For example, <tag>((a dog:1.5) with a bone:1.5)1.5)</tag> is the same as writing <tag>(a dog:3.375) (with a bone:2.25)</tag>.</p>
+            </textblock>
+            <h4>AND Operator</h4>
+            <textblock>
+            <p>According to u/StoryStoryDie the AND operator is not actually a feature of the WebGUI, but I have kept this here for reference. I personally feel AND does influence generation, but that's simply my own opinion.</p>
+            <p>The AND operator is available through the WebGUI. It signals the AI to try to combine the two prompts togther. The AND operator can work well when you're trying to add an object to a character, for example, if you want a character to wear glasses, using <tag>woman AND glasses</tag> may produce better results than having them as seperate prompts.</p>
+            </textblock>
+            <h4>Alternate Prompts</h4>
+            <textblock>
+            <p>Alternative prompts are similar to the AND operator however instead of simply adding two prompts together, these prompts will be switch with each other every sampling step. The syntax to use alternating prompts is <tag>[prompt1|prompt2]</tag> and you can even add more than 2 prompts to cycle through by simply seperating them with the <tag>|</tag> pipe character. This alternating will create a different output compared to using the AND operator or using transitional prompts. It is simply another tool in the toolkit to create varied images. The first prompt will be a stronger influence than the second prompt so if the prompt was <tag>[cat|dog]</tag> the resulting image would look more like a cat but have dog features, while if it was the opposite way, it would look like a dog with some cat features.</p>
+            <p>You can use alternating prompts within alternating prompts, however logically it will not affect much if you were to create something like <tag>[[dog|cat]|[cat|dog]]</tag> because everything is switching at the same time, some values (in this instance "cat") would not even appear as a prompt while alternating.</p>
+            <p>In the linked <a href="https://www.reddit.com/r/StableDiffusion/comments/xywtm5/new_feature_in_auto1111_alternating_prompts/" target="_blank" rel="noreferrer">Reddit post</a>, they have combined long prompts together instead of just 2 words which could be an interesting this to experiment with.</p>
+            </textblock>
+        
+            <h4>Transitional Prompts</h4>
+            <textblock>
+            <p>Transitional Prompts also known as Prompt Editing, is when you can swap out one of your prompts mid-rendering with a different prompt to achieve an effect where the image looks like a mix of those two prompts in a different way compared to simply listing both prompts seperately.</p>
+            <p>The syntax is <tag>[From:To:When]</tag> where <tag>From</tag> is your starting prompt, <tag>To</tag> is your ending prompt, and <tag>When</tag> is at what step count the prompts will be swapped out.</p>
+            <p>The <tag>When</tag> part can either be an integer step count number between 0 and the max step count, or you can use a decimal number between 0 and 1 to specify at what percent of processing the prompts should be swapped.</p>
+            <p>You can have multiple transitional prompts in your prompts list and they can all have different <tag>When</tag> parameters specified, allowing you to create a much more unpredictable and varied image. Logically, the later in the rendering process the prompts are swapped, the less influence the <tag>To</tag> prompt will be on the final image and vice versa.</p>
+            <br>
+            <p>In my limited testing, I haven't been able to get this method to work that well, but further testing is needed</p>
+            <br/>
+            <p><a href="https://www.reddit.com/r/StableDiffusion/comments/xywtm5/new_feature_in_auto1111_alternating_prompts/" target="_blank" rel="noreferrer">A Reddit post with a useful tip that involves prompt edit.</a></p>
+            </textblock>
+        
+            <h4>Scheduled Prompts</h4>
+            <textblock>
+            <p>This has been taken from u/StoryStoryDie. Scheduled prompts are a way to insert or remove a prompt from the generation at a specific sampling step. The format is <tag>[prompt:sampling step]</tag> for example, <tag>[balloon:20]</tag> this prompt would not use the prompt until the generation reaches step 20. Alternatively, you can use <tag>[prompt::sampling step]</tag> that will use the prompt initially but ignore it after the set sampling step. I'm unsure of the usefulness of this prompt tool and haven't tested it myself but it is always good to have more ways to modify your generation.</p>
+            <p>You could be mistaken for thinking that this format is for de-emphasising a prompt and you're not completely wrong, it simply de-emphasises in a different way by completely removing the prompt from the list at a certain point in the generation.</p>
+            </textblock>
+        
+            <h4>Japanese Prompts</h4>
+            <textblock>
+            <p>If you are going for anime style artwork, it may be useful to use actual Japanese characters as prompts as that will prompt the AI to use images in its database that have been uploaded by Japanese artists or posted to Japanese sites which will have a much larger pool of anime related imagery to draw from. Unfortunately, I do not speak/ write Japanese, so I am unable to assist with what Japanese phrases to use, but a good starting point may be to use Google Translate, or try visiting Japanese websites, especially manga related ones that have stories and images listed by tags.</p>
+            <p>Romanji (the English spelling of Japanese words) does work in a lot of cases, so feel free to expriment with that. Words like Kawaii, gyaru and neko work to some effect.</p>
+            </textblock>
+            </section>
+        
+            <h3>Negative Prompts</h3>
+            <p>Negative Prompts are just as important as normal prompts and as the name suggests, anything in your negative prompts lists will be objects/ characteristics that the AI will try to avoid or reduce its influence on the image generation. This is extremely useful to remove disfigured body parts or unwanted characteristics of a person.</p>
+            <p>Negative prompts give you just as much flexibility in prompt order as normal prompts, which means you can use parenthesis, brackets, numbering and ording to choose how negatively these prompts will affect your image.</p>
+            <br>
+            <p>My current general use  negative prompts list is as follows, click the text below to copy it.</p>
+            <tag onclick="copy_text(this);" style="cursor: pointer;">deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra_limb, ugly, poorly drawn hands, two heads,child, children, kid, gross, mutilated, disgusting, horrible, scary, evil, old, conjoined, morphed, text, error, glitch, lowres, extra digits, watermark, signature, jpeg artifacts, low quality, unfinished, cropped, siamese twins, robot eyes</tag>
+        
+          <h3>Prompt research</h3>
+            <section>
+            <p>I've put some time into trying to find out what prompts work, what don't, and what can produce interesting results. There are some prompts that will completely change an image, and others that will barely change anything. It takes a lot of trail and error to find out what works, and it all depends on what you're trying to create.</p>
+            <p>If you want to see my extensive list of prompts that I've tested, you can see my <a href="https://stablediffusion.cdcruz.com/prompts_list.html">Prompt List Page</a> that includes descriptions of how each prompt can change an image. I mostly use Waifu Diffusion and Euler/Euler A for generating images, so prompts may affect your image differently depending on your specific settings, but since the amount of variables are practically limitless, my testing should be a good starting point to help you get what you're looking for.</p>
+            <h4>Interrogator</h4>
+            <textblock>
+                <p>The interrogator is a feature of the webGUI that allows you to give it any image and it will try to figure out what promtps best describe the image. It won't always work perfectly, but it can be a good starting point if you're unsure of how to describe an image or can be useful in learning new prompts and what prompts match an image.</p>
+                <p>The interrogate option is under the img2img tab of the webGUI as a button under the "Generate" button. All you need to do is drag an image onto the image drop area with the img2img tab selected, and then click the interrogate button.</p>
+                <p>If you are using the webGUI, you can add the COMMANDLINE_ARGS <tag>--deepdanbooru</tag> to allow the interrogator to use danbooru tags as its prompts instead of the normal sentence structure that it uses. This will be most useful for Waifu Diffusion and other models based on Waifu Diffusion or danbooru tags.</p>
+            </texblock>
+            </section>
+
+  </article>
+	</body>
+</html>

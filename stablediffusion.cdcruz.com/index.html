@@ -47,6 +47,7 @@
 
 	<script src="assets/js/copy.js"></script>
 	<script src="assets/js/load_gallery.js"></script>
+	<script src="assets/js/hsection.js"></script>
 
 
   <body>
@@ -64,9 +65,9 @@
 		</div>
 	</div>
   <hr>
-  <h3>Contents</h3>
-  <div id="toc"></div>
-  <hr>
+  <h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Contents <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
+  <hsection id="toc"></hsection>
+
   <article id="contents">
   <h3 id="intro">Introduction</h3>
   <p>This page is dedicated to storing all the tips, tricks and information that I learn about Stable Diffusion and Waifu Diffusion. I copied some parts from other authors and I will credit them where applicable/possible.</p>
@@ -79,13 +80,15 @@
 
 	<h4>AUTOMATIC111 WebGUI</h4>
 	<textblock>
+		<caution><p>Please be aware that at the time of writing the AUTOMATIC111 Github repository does not contain a license of any kind. This legally means by default all of the code in the repository is owned by the individual people who have contributed code. This means that any contributer could take down the repo with a DMCA request as their intellectual property is being used. It is an unlikely event, but a possible one & without Github's terms of service, it would not even be legal to use the WebGUI. (It may technically not be legal right now, I'm not sure, I'm not a lawyer). For more information on this, visit <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222" target="_blank" rel="noreferrer">Pull Request 4222</a>, <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059" target="_blank" rel="noreferrer">Issue 2059</a>, & <a href="https://choosealicense.com/no-permission/" target="_blank" rel="noreferrer">Information on no license</a>. Use at your own risk.</p></caution>
+
 	<p>AUTOMATIC111's webGUI is the most popular locally run UI for stable diffusion, mostly due to the ease of installation and how quickly it is updated with new features. Following Voldy's Guide you should be able to install it without much issues.</p>
 	<p>Rentry has made an excellent guide on how to get the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noreferrer">AUTOMATIC1111 webGUI</a> to work locally on your computer. <a href="https://rentry.org/voldy" target="_blank" rel="noreferrer">Voldy's Guide</a> has a lot of good information on getting started with Stable Diffusion and Waifu Diffusion.</p>
 	<p>I have created my <a href="https://stablediffusion.cdcruz.com/install.html">own guide</a> based on Voldy's that hopefully provides more information and a guide on how to install on macOS M1/M2 Macs.</p>
 	<p>There are so many features available in this webGUI that i've created a seperate page to properly display features related to this GUI. <a href="https://stablediffusion.cdcruz.com/automatic1111.html">AUTOMATIC1111 WebGUI page</a>.</p>
 	</textblock>
 	<br>
-
+	
 
 	<h4>NMKD GUI - One Click Installer</h4>
 	<textblock>
@@ -97,8 +100,9 @@
 
 	<h4>DiffusionBee - SD for M1/M2 Macs</h4>
 	<textblock>
-	<p>While not as feature rich as Windows or Linux programs for Stable Diffusion, DiffusionBee brings local generation to your Mac products. It is the only MacOS program that I have currently found that installs as easy as any other app on your Mac. Simply download, open & drag to your application folder. This is by far the best installation flow of any Stable Diffusion program on any platform, it will even automatically download the Stable Diffusion model to get you started. The only downside is that is it incredibly bare bones in functionality at the current time. I am also unsure how many features are planned for this program as there is not a lot of information available on their website.</p>
+	<p>While not as feature rich as Windows or Linux programs for Stable Diffusion, DiffusionBee is a free and open source app that brings local generation to your Mac products. It is the only MacOS program that I have currently found that installs as easy as any other app on your Mac. Simply download, open & drag to your application folder. This is by far the best installation flow of any Stable Diffusion program on any platform, it will even automatically download the Stable Diffusion model to get you started. The only downside is that is it incredibly bare bones in functionality at the current time. I am also unsure how many features are planned for this program as there is not a lot of information available on their website.</p>
 	<p>Current features include, Text to Image, Image to Image and Outpainting. Those should be enough for anyone who is wanting to dabble in image generation and its ease-of-use makes up for its current lack of features.</p>
+	<p>On 04/11/22 Diffusion be was updated with more features including inpainting, upscaling and improvements to all other features.</p>
 	<p>Performance feels a lot slower than anticipated as well considering I am testing on an M1 Macbook Pro with 32GB RAM, it takes a considerable amount of time to render 1 image compared to my Windows PC with a Nvidia RTX 3080 with 10GB VRAM.</p>
 	<h5>Requirements</h5>
 	<p><tag>M1 or M2 Mac</tag></p>
@@ -157,78 +161,10 @@
   <h3>Prompts Overview</h3>
 	<p>Prompts are how you tell the AI what to generate. You don't need to add many prompts to generate a good image, and sometimes adding too many prompts will usually mean the AI will ignore some of them. You should try to give the AI prompts that best describe your image in the least amount of words that have the strongest affect on the model. Figuring out these strong but short prompts is the challenge of image generation and will take lots of trial and error.</p>
 	<p>There are also a few helpful and important tips to know to assist in getting the image you're looking for like prompt order, parenthesis, combo words, and more that will be explained in more detail below. You can mix and match all of these tips to help refine your image as much as possible.</p>
+	<p>More detailed information about prompts can be found on the <a href="https://stablediffusion.cdcruz.com/prompts.html">Prompts page</a>.</p>
 	<p>A good Reddit post about prompts I've found <a href="https://www.reddit.com/r/StableDiffusion/comments/ybqn2t/prompting_what_you_need_to_know_part_1/" target="_blank" rel="noreferrer">Prompting: What you need to know (Part 1)</a>.</p>
-	<section>
-	<h4>Formatting</h4>
-	<textblock>
-	<p>Prompts can be practically anything you'd like them to be and can work with a simple sentence like <tag>Woman standing in a field of flowers</tag>, however that is a very simplistic way to use prompts and is not the most ideal way. It is better to use comma seperated descriptive words to describe the image you want to create. Waifu Diffusion as of  version 1.3 has been focused on parsing Booru Tags instead of plain english sentences. So for our previous example, it would be better to word it like <tag>woman, standing, flowers, field</tag> so the AI only has the important words to generate the image instead of useless words (to a computer) like "a", "of", etc.</p>
-	<p>I have not been able to test this properly yet, but the use of underscores or hypens should work well and be read as expected. Although you can simply use a space between words like normal.</p>
-	</textblock>
-	<h4>Prompt Order</h4>
-	<textblock>
-	<p>Prompt order is the easiest way to change the image in subtle ways without having to add more prompts or add negative prompts. Essentially, whatever prompt is at the front of your list, will influence the model more than prompts further down the list. So, if you have a prompt like <tag>car, blue, metallic, night, city</tag>. The model will prioitize the car image and the city aspect will be less influential.</p>
-	</textblock>
-	<h4>Parenthesis</h4>
-	<textblock>
-	Parenthesis/ brackets are very useful for making the model focus on specific prompts. This can be used to override the prompt order and allows you to personally choose how powerful a prompt is in a much more controlled manner. For example, <tag>hands, body, face, (eyes), woman</tag> will be more likely to generate images of eyes and improve eye quality while <tag>hands, ((body)), face, eyes, (woman)</tag> will be much more likely to generate images of a womens body and could even crop out the face since it isn't as important in this prompt list.</p>
-	<p>The more parenthesis you add, the stronger the influence, however, I have not tested what are the maximum amount of parenthesis that will actually affect the model. I would currently recommend using a maximum of 3 or 4 parenthesis as it doesn't make much sense to add more than that. Each parenthesis increases the influence of the prompt by roughly 10%.</p>
-	<p>If you're wanting to reduce the influence of a prompt, but you still want it to be in your prompt list, you can use square brackets in the exact same way as parenthesis but to reduce a prompts influence instead of increasing it.</p>
-	<p>If you need to use the literal parenthesis/bracket characters in your prompts, you must prefix them with a backslash. For example, <tag>\(jumping\)</tag></p>
-
-	</textblock>
-	<h4>Number Multiplier</h4>
-	<textblock>
-	<p>Similar to using parenthesis, you can use a format like <tag>(old:0.2), (evil:0.9), (sword:0.5), (skeleton:1.4)</tag> and the AI will prioitize prompts by the number you have stated for each prompt. You do not need to give every prompt a number, similar to how you don't need to give every prompt parenthesis. I personally have not done enough testing with this method to provide any further information but it is worth noting as it could be useful for your own use cases.</p>
-	<p>A <tag>1</tag> would equal normal influence while a <tag>2</tag> equals double the influence. You can use any decimal number from 0 and above. I have not tested negative numbers, but it doesn't make much sense to use them anyway, you should just use a negative prompt instead.</p>
-	<p>A quick way to change prompt weighting is to select the prompt you want to change and click <tag>CTRL + Arrow Up</tag> or <tag>CTRL + Arrow Down</tag> to automatically increase and decrease weights. It isn't anything fancy, but a nice QOL improvement.</p>
-	</textblock>
-	<h4>AND Operator</h4>
-	<textblock>
-	<p>The AND operator is available through the WebGUI. It signals the AI to try to combine the two prompts togther. The AND operator can work well when you're trying to add an object to a character, for example, if you want a character to wear glasses, using <tag>woman AND glasses</tag> may produce better results than having them as seperate prompts.</p>
-	</textblock>
-	<h4>Alternate Prompts</h4>
-	<textblock>
-	<p>Alternative prompts are similar to the AND operator however instead of simply adding two prompts together, these prompts will be switch with each other every sampling step. The syntax to use alternating prompts is <tag>[prompt1|prompt2]</tag>. This alternating will create a different output compared to using the AND operator or using transitional prompts. It is simply another tool in the toolkit to create varied images. The first prompt will be a stronger influence than the second prompt so if the prompt was <tag>[cat|dog]</tag> the resulting image would look more like a cat but have dog features, while if it was the opposite way, it would look like a dog with some cat features.</p>
-	<p>In the linked <a href="https://www.reddit.com/r/StableDiffusion/comments/xywtm5/new_feature_in_auto1111_alternating_prompts/" target="_blank" rel="noreferrer">Reddit post</a>, they have combined long prompts together instead of just 2 words which could be an interesting this to experiment with.</p>
-	</textblock>
-
-	<h4>Transitional Prompts</h4>
-	<textblock>
-	<p>Transitional Prompts also known as Prompt Editing, is when you can swap out one of your prompts mid-rendering with a different prompt to achieve an effect where the image looks like a mix of those two prompts in a different way compared to simply listing both prompts seperately.</p>
-	<p>The syntax is <tag>[From:To:When]</tag> where <tag>From</tag> is your starting prompt, <tag>To</tag> is your ending prompt, and <tag>When</tag> is at what step count the prompts will be swapped out.</p>
-	<p>The <tag>When</tag> part can either be an integer step count number between 0 and the max step count, or you can use a decimal number between 0 and 1 to specify at what percent of processing the prompts should be swapped.</p>
-	<p>You can have multiple transitional prompts in your prompts list and they can all have different <tag>When</tag> parameters specified, allowing you to create a much more unpredictable and varied image. Logically, the later in the rendering process the prompts are swapped, the less influence the <tag>To</tag> prompt will be on the final image and vice versa.</p>
-	<br>
-	<p>In my limited testing, I haven't been able to get this method to work that well, but further testing is needed</p>
-	<br/>
-	<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xywtm5/new_feature_in_auto1111_alternating_prompts/" target="_blank" rel="noreferrer">A Reddit post with a useful tip that involves prompt edit.</a></p>
-	</textblock>
-
-	<h4>Japanese Prompts</h4>
-	<textblock>
-	<p>If you are going for anime style artwork, it may be useful to use actual Japanese characters as prompts as that will prompt the AI to use images in its database that have been uploaded by Japanese artists or posted to Japanese sites which will have a much larger pool of anime related imagery to draw from. Unfortunately, I do not speak/ write Japanese, so I am unable to assist with what Japanese phrases to use, but a good starting point may be to use Google Translate, or try visiting Japanese websites, especially manga related ones that have stories and images listed by tags.</p>
-	<p>Romanji (the English spelling of Japanese words) does work in a lot of cases, so feel free to expriment with that. Words like Kawaii, gyaru and neko work to some effect.</p>
-	</textblock>
-	</section>
-
-	<h3>Negative Prompts</h3>
-	<p>Negative Prompts are just as important as normal prompts and as the name suggests, anything in your negative prompts lists will be objects/ characteristics that the AI will try to avoid or reduce its influence on the image generation. This is extremely useful to remove disfigured body parts or unwanted characteristics of a person.</p>
-	<p>Negative prompts give you just as much flexibility in prompt order as normal prompts, which means you can use parenthesis, brackets, numbering and ording to choose how negatively these prompts will affect your image.</p>
-	<br>
-	<p>My current general use  negative prompts list is as follows, click the text below to copy it.</p>
-	<tag onclick="copy_text(this);" style="cursor: pointer;">deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra_limb, ugly, poorly drawn hands, two heads,child, children, kid, gross, mutilated, disgusting, horrible, scary, evil, old, conjoined, morphed, text, error, glitch, lowres, extra digits, watermark, signature, jpeg artifacts, low quality, unfinished, cropped, siamese twins</tag>
-
-  <h3>Prompt research</h3>
-	<section>
-	<p>I've put some time into trying to find out what prompts work, what don't, and what can produce interesting results. There are some prompts that will completely change an image, and others that will barely change anything. It takes a lot of trail and error to find out what works, and it all depends on what you're trying to create.</p>
-	<p>If you want to see my extensive list of prompts that I've tested, you can see my <a href="prompts_list.html">Prompt List Page</a> that includes descriptions of how each prompt can change an image. I mostly use Waifu Diffusion and Euler/Euler A for generating images, so prompts may affect your image differently depending on your specific settings, but since the amount of variables are practically limitless, my testing should be a good starting point to help you get what you're looking for.</p>
-	<h4>Interrogator</h4>
-	<textblock>
-		<p>The interrogator is a feature of the webGUI that allows you to give it any image and it will try to figure out what promtps best describe the image. It won't always work perfectly, but it can be a good starting point if you're unsure of how to describe an image or can be useful in learning new prompts and what prompts match an image.</p>
-		<p>The interrogate option is under the img2img tab of the webGUI as a button under the "Generate" button. All you need to do is drag an image onto the image drop area with the img2img tab selected, and then click the interrogate button.</p>
-		<p>If you are using the webGUI, you can add the COMMANDLINE_ARGS <tag>--deepdanbooru</tag> to allow the interrogator to use danbooru tags as its prompts instead of the normal sentence structure that it uses. This will be most useful for Waifu Diffusion and other models based on Waifu Diffusion or danbooru tags.</p>
-	</texblock>
-	</section>
+	<p><a href="https://www.reddit.com/r/StableDiffusionInfo/comments/ylp6ep/some_detailed_notes_on_automatic1111_prompts_as/" target="_blank" rel="noreferrer">Another good post by u/StoryStoryDie</a></p>
+	
 
 	<h3>CFG Scale</h3>
 	<section>
@@ -346,6 +282,7 @@
 	<p>You can also choose to preview what the AI has chosen to crop and move the crop box to your liking on every individual image which is great to make sure every shot is perfectly cropped without having to manually crop every single image.</p>
 	<p>It can take quite some time to crop images if you have a large amount, and if you accidentally include an invalid file type in your batch, it will cause an error and you will need to restart the cropping process. I would stick to using PNG and JPEG/JPG images to be on the safe side.</p>
 	<p>Once it finishes processing, a zip folder is downloaded so you have all of your images in one place ready to be trained on! When you extract the zip file, be sure to extract it in an empty folder as the zip file does not have all the images within its own folder. The results can vary, but it generally does a good job of cropping to keep the face of a character in frame. The results aren't perfect, but it is far less time consuming than manually cropping hundreds of differently sized images.</p>
+	<p><tag>Bulk Resize</tag> (You may skip this step as the WebGUI does this natively) If you'd like to resize your images to 512x512 using a program other than the in-built resizer of the WebGUI, I recommend <a href="https://bulkresizephotos.com" target="_blank" rel="noreferrer">https://bulkresizephotos.com</a> that works similarly to BulkImageCrop but is not created by the same person. It's a good way to resize images quickly and have them downloaded as one big zip folder.</p>
 	<p><tag>Start training</tag> Once you've got all your images in the correct dimensions, you can continue onto training using any of the methods below.</p>
 	</textblock>
 
@@ -456,6 +393,7 @@
 		<li><a href="https://gigazine.net/gsc_news/en/20221012-automatic1111-stable-diffusion-webui-deep-danbooru" target="_blank" rel="noreferrer">https://gigazine.net/gsc_news/en/20221012-automatic1111-stable-diffusion-webui-deep-danbooru</a></li>
 		<li><a href="https://www.youtube.com/watch?v=-JtBUoPcjeM" target="_blank" rel="noreferrer">Youtuber: MattVidPro AI Video: Easy Dreambooth AI Tutorial</a></li>
 		<li><a href="https://www.youtube.com/watch?v=1_dViOW3Vy4" target="_blank" rel="noreferrer">Youtuber: ChamferZone AI Video: Stable Diffusion - Master AI Art</a></li>
+		<li><a href="https://www.youtube.com/watch?v=8NDz0YmSGVU" target="_blank" rel="noreferrer">Youtuber: bycloud Video: AI Generated Art Is Getting Out of Hand</a></li>
 		</ul>
   </creditblock>
 

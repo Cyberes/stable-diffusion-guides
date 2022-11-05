@@ -70,9 +70,10 @@
 		  <h3>Waifu Diffusion</h3>
 		  <textblock>
 		  <p>Waifu Diffusion is a model trained on over 50 thousand anime related images and is continually being trained with improvements released regularly. It is currently the best model for creating anime characters, but is much weaker at realistic imagery and landscapes.</p>
-			<h5>1.4 Version Beta</h5>
+			<h4>1.4 Version Beta</h4>
 			<p>Waifu Diffusion 1.4 is still in very early stages, but they repo is already created so if you want to keep up to date on the latest WD version, you can check this repo and download the beta models as they become available.</p>
-			<p>As of 03/11/22 there is a ckpt model available on this repository named <tag>wd-1-3-penultimate-ucg-cont.ckpt</tag>. I have not tested it yet, but I believe it is an extension on the 1.3 model.</p>
+			<p>As of 03/11/22 there is a ckpt model available on this repository named <tag>wd-1-3-penultimate-ucg-cont.ckpt</tag>. I have not tested it yet, but I believe it is an extension on the 1.3 model. From my limited testing and thanks to a comment by u/Ok-Power1447, I have tested using CLIP Skip with this model and my piliminary results do show that using CLIP Skip set to 2 does improve hands on characters.</p>
+			<center><img loading="lazy" src="https://stablediffusion.cdcruz.com/assets/images/model_examples/wd_1_3_penulimate/clip_skip.webp" alt="Penultimate version clip skip" style="max-width: 1200px; width: 100%;"/></center>
 			<p>You can download the latest <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-4" target="_blank" rel="noreferrer">Beta model here</a> (requires free account).</p>
 			<h4>Version 1.3</h4>
 			<p>Version 1.3 model has greatly improved the consistency and variety of images the Waifu Diffusion can produce. However, older prompts will obviously create different images even if you use the same seed, prompts, etc. Because of this, it will take some time to figure out what new prompt lists you need to create your specific styles. I’d recommend doing a lot of testing yourself with different prompts, prompt order and other parameters to find what works with the new model. Another change to version 1.3 is that it relies on ‘comma separated tags’ more so than previous iterations. So, in the example <tag>a girl wearing a hoodie in the rain</tag> would will be easier for the AI to understand as <tag>original, 1girl, solo, portrait, hoodie, wearing hoodie</tag>. <a href="https://gist.github.com/harubaru/f727cedacae336d1f7877c4bbe2196e1" target="_blank" rel="noreferrer">Release notes for 1.3</a>.</p>
