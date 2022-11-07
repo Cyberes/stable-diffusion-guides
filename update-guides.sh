@@ -28,6 +28,8 @@ download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
 download "https://rentry.org/sdupdates/pdf" "archives/sdupdates.pdf"
 download "https://rentry.org/sdupdates2/pdf" "archives/sdupdates2.pdf"
+download "https://rentry.org/artists_sd-v1-4/pdf" "archives/list of artists for SD v1.4.pdf"
+download "https://rentry.org/hypernetwork4dumdums/pdf" "archives/hypernetwork4dumdums.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
@@ -70,3 +72,6 @@ cd stablediffusion.cdcruz.com
 
 perl -pi -e 's/<list1><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list1>/<list1><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list1>/g' index.html
 perl -pi -e 's/<list2><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list2>/<list2><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list2>/g' index.html
+
+git clone https://github.com/Maks-s/sd-akashic.git
+find sd-akashic -name .git* -exec rm -rfv "{}" +;
