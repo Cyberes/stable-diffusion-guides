@@ -34,6 +34,9 @@ download "https://rentry.org/hypernetwork4dumdums/pdf" "archives/hypernetwork4du
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
+git clone https://github.com/Maks-s/sd-akashic.git
+find sd-akashic -name .git* -exec rm -rfv "{}" +;
+
 download_cdcruz () {
 	wget -r -H -l 1 "https://stablediffusion.cdcruz.com/$1" --convert-links --page-requisites -D stablediffusion.cdcruz.com --reject ckpt,exe -np -e robots=off -U "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Mobile/15E148 Safari/604.1"
 }
@@ -72,6 +75,3 @@ cd stablediffusion.cdcruz.com
 
 perl -pi -e 's/<list1><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list1>/<list1><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list1>/g' index.html
 perl -pi -e 's/<list2><a href="https:\/\/stablediffusion\.cdcruz\.com\/\${id}">\${item\.innerHTML}<\/a><\/list2>/<list2><a href="\${window\.location\.href}\/\${id}">\${item\.innerHTML}<\/a><\/list2>/g' index.html
-
-git clone https://github.com/Maks-s/sd-akashic.git
-find sd-akashic -name .git* -exec rm -rfv "{}" +;
