@@ -30,14 +30,15 @@ download "https://rentry.org/sdupdates/pdf" "archives/sdupdates.pdf"
 download "https://rentry.org/sdupdates2/pdf" "archives/sdupdates2.pdf"
 download "https://rentry.org/artists_sd-v1-4/pdf" "archives/list of artists for SD v1.4.pdf"
 download "https://rentry.org/hypernetwork4dumdums/pdf" "archives/hypernetwork4dumdums.pdf"
+download "https://rentry.org/LFTBL/pdf" "archives/Model Mixes.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
 rm -rf sd-akashic
 git clone https://github.com/Maks-s/sd-akashic.git /tmp/sd-akashic
+find /tmp/sd-akashic -name ".git*" -exec rm -rfv "{}" +;
 mv /tmp/sd-akashic .
-find sd-akashic -name ".git*" -exec rm -rfv "{}" +;
 
 download_cdcruz () {
 	wget -r -H -l 1 "https://stablediffusion.cdcruz.com/$1" --convert-links --page-requisites -D stablediffusion.cdcruz.com --reject ckpt,exe -np -e robots=off -U "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Mobile/15E148 Safari/604.1"
