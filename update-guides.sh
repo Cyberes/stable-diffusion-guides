@@ -1,5 +1,11 @@
 #!/bin/bash
 
+git submodule deinit .
+git submodule | cut -c43- | while read -r line; do (git rm "$line"); done
+git config --local -l | grep submodule | sed -e 's/^\(submodule\.[^.]*\)\(.*\)/\1/g' | while read -r line; do (git config --local --remove-section "$line"); done
+rm .gitmodules
+rm -rf .git/modules
+
 # Don't install with apt. It segfaults
 # wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
 # sudo apt install xfonts-75dpi
