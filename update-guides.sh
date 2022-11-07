@@ -35,7 +35,7 @@ wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=S
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
 git clone https://github.com/Maks-s/sd-akashic.git
-find sd-akashic -name .git* -exec rm -rfv "{}" +;
+find sd-akashic -name ".git*" -exec rm -rfv "{}" +;
 
 download_cdcruz () {
 	wget -r -H -l 1 "https://stablediffusion.cdcruz.com/$1" --convert-links --page-requisites -D stablediffusion.cdcruz.com --reject ckpt,exe -np -e robots=off -U "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Mobile/15E148 Safari/604.1"
