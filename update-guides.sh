@@ -34,6 +34,7 @@ download "https://rentry.org/hypernetwork4dumdums/pdf" "archives/hypernetwork4du
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
+rm -rf sd-akashic
 git clone https://github.com/Maks-s/sd-akashic.git
 find sd-akashic -name ".git*" -exec rm -rfv "{}" +;
 
