@@ -35,7 +35,8 @@ wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=S
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
 
 rm -rf sd-akashic
-git clone https://github.com/Maks-s/sd-akashic.git
+git clone https://github.com/Maks-s/sd-akashic.git /tmp/sd-akashic
+mv /tmp/sd-akashic .
 find sd-akashic -name ".git*" -exec rm -rfv "{}" +;
 
 download_cdcruz () {
