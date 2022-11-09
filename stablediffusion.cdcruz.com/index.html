@@ -266,71 +266,9 @@
 	<h3>Training A Model</h3>
 	<p>There are several ways to currently train your own model or extend the use of a pre-existing model. Each fill affect your renders in different ways and be more effective for certain tasks you're trying to achieve. Of course if you are trying to generate images for something very niche, training a model from scratch would be your best method, however that requires a large amount of data, processing power and time so the average person would not be able to do that reasonably. Thankfully, there are smaller ways to influence the AI models without redoing everything, below are a few methods.</p>
 	<p>I have not dived deep into training models due to the data and processing requirements, so my current knowledge is only from what I have learnt from other sources. Due to this, please do your own research as mine may be inaccurate and is just to give you a basic idea of the concepts.</p>
-	<section>
-	<h4>Preparing Data</h4>
-	<textblock>
-	<p>No matter how you're training the model, there is one thing you must have; data, more specifically, images to train on. Collecting these images can be time consuming, but the more images you can give the model to train on, the better your results will be. When training any model, you must make sure all of your images are 512x512px in size as that is the image size the architecture was created on. You must also be sure to have a good variety of images with different lighting, poses, expressions, etc. The more variety you give your model, the better it will perform in a wider range of situations.</p>
-	<p>For best results, make sure there is no text in images, they are at least 512x512 in size with no compression artifacts or blurriness & usually only have 1 subject/ character in the image.</p>
-	<h5>My data collecting process</h5>
-	<p>Obviously you can collect data however you like, but  this is my current method that is a really fast way to get a lot of high quality images and prepare them to be processed by the training AI.</p>
-	<p><tag>Find images on Pintrest</tag> Pintrest is a free to use site that allows you to create "boards" where you can save images to. As you save/ like more images, Pintrest will start to learn what you like and you can also search by similar images to find more images in the style you're looking for. I would recommend using the Pintrest app for adding images to your board as it is just more intuitive and quicker.</p>
-	<p>Please note that Pintrest does flag accounts as spamming if you pin/like too many images at once. I have not found a reliable way around this but a spam block will usually last less than 24 hours.</p>
-	<p><tag>Download images from Pintrest</tag> Natively, Pintrest does not give you an easy way to download a mass amount of images. But I have found a Google Chrome extension called "PinDown" that does exactly that in an easy-to-use way. <a href="https://chrome.google.com/webstore/detail/pindown/flieckppkcgagklbnnhnkkeladdghogp/related" target="_blank" rel="noreferrer">PinDown web store page</a>. It's free to use.</p>
-	<p>I have encounted issues using PinDown where it will not download images at all. I believe it could be related to spam blocking that Pintrest has in place. To circumvent this, allow the PinDown extension to be available in incognito tabs and open a new incognito tab. Log into Pintrest and go to your board. PinDown should work properly now. You will know if PinDown is working because some images from your board will display in the PinDown banner.</p>
-	<p>If you are still having problems, try uninstalling and reinstalling Pindown and that seems to also fix the problem.</p>
-	<p><tag>Bulk smart crop images</tag> (You may skip this step now as the WebGUI supports auto cropping natively, however it is still a good program to use) This method may not work for everyones purposes, but if you just need to get crop images to a 1:1 aspect ratio quickly with a focus on a face, <a href="https://bulkimagecrop.com/" target="_blank" rel="noreferrer">https://bulkimagecrop.com/</a> is all you need. It is free to use once and then you must pay a $10 perpetual license, which I feel is fair for how well this website works. The site runs locally on your computer so your images don't need to be uploaded and processed on some cloud service. Choose the "Target Aspect Ratio" option and set the ratio to 1:1 then simply click "Auto Crop".</p>
-	<p>You can also choose to preview what the AI has chosen to crop and move the crop box to your liking on every individual image which is great to make sure every shot is perfectly cropped without having to manually crop every single image.</p>
-	<p>It can take quite some time to crop images if you have a large amount, and if you accidentally include an invalid file type in your batch, it will cause an error and you will need to restart the cropping process. I would stick to using PNG and JPEG/JPG images to be on the safe side.</p>
-	<p>Once it finishes processing, a zip folder is downloaded so you have all of your images in one place ready to be trained on! When you extract the zip file, be sure to extract it in an empty folder as the zip file does not have all the images within its own folder. The results can vary, but it generally does a good job of cropping to keep the face of a character in frame. The results aren't perfect, but it is far less time consuming than manually cropping hundreds of differently sized images.</p>
-	<p><tag>Bulk Resize</tag> (You may skip this step as the WebGUI does this natively) If you'd like to resize your images to 512x512 using a program other than the in-built resizer of the WebGUI, I recommend <a href="https://bulkresizephotos.com" target="_blank" rel="noreferrer">https://bulkresizephotos.com</a> that works similarly to BulkImageCrop but is not created by the same person. It's a good way to resize images quickly and have them downloaded as one big zip folder.</p>
-	<p><tag>Start training</tag> Once you've got all your images in the correct dimensions, you can continue onto training using any of the methods below.</p>
-	</textblock>
-
-	<h4>Aesthetic Embeddings</h4>
-	<textblock>
-	<p>Aesthetics are a new feature added to the webGUI on 22/10/22. There is not a lot of information on how they influence a model, but from what I have learnt, they are a new way to add a style to a model that doesn't need to modify the model directly and provides more control over the output image. If you're using the webGUI, you need to add the Aesthetic Embedding seperately as it is considered an "extension" which is a recent (24/10/22) addition to the webGUI that allows for expanding the GUI in a more modular way.</p>
-	<p>Aesthetic Embeddings are like an image prompt for the AI instead of a traditional text prompt. The AI will use the image prompt as a basis for the image, and as it is an image, the AI has a much better idea of what you are wanting the generated image to look like compared to just explaining your image through text.</p>
-	<p>Aesthetic Embeddings are not the same as Textual Inversion ones, so you need to create a seperate Aesthetic Embedding in the training tab of the webGUI. You can also only use one aesthetic embedding at a time compared to textual inversion embeddings where you can use multiple prompts at once. On the plus side, aesthetic embeddings only require a few images to train on for them to influence the AI a lot.</p>
-	<p>This <a href="https://www.youtube.com/watch?v=9zYzuKaYfJw" target="_blank" rel="noreferrer">Youtube video</a> by koiboi does a great job of explaining Aesthetic Embeddings and other basics of Stable Diffusion in a thorough, information way.</p>
-	</textblock>
-
-  <h4>Textual Inversion</h4>
-	<textblock>
-	<p>Textual Inversion is a way to add new individual words/ phrases to any model, you can then associate that word with a collection of images. It is better to train a word that the model would already have some familiarity with. For example, training the model to learn a new anime character would work really well since the model already knows how to draw people, you are simply adding a new specfic person to the dataset. Textual Inversion works best to expand upon what the model already does and adds new objects or characters to your model.</p>
-	<p>Textual Inversion files are called Embeddings, the file extension is <tag>.pt</tag> or <tag>.bin</tag> and when using the webGUI you simply place the .pt files into the embeddings folder, reload the webGUI and you're good to go! Simply use the custom prompt in your prompts list.</p>
-	<p>A new update on (16/10/22) by AUTOMATIC111 has added the ability to use special images as embeddings themselves which is a really neat feature. These images can be in a few different formats like .png & .webp and display the result of the embedding as the image along with the prompt to use & all the data required for the embedding to work. All you need to do is place the image in the embeddings folder as you would with any other embedding.</p>
-	<p>Embeddings can be very influential on your image output, so it may be good to reduce its influence with square brackets or some other method. You can also use embeddings as negative prompts which I don't think many people have explored yet, but could be extremely useful to prevent certain glitches from happening.</p>
-	<p>One advantage to Textual Inversion compared to other training methods is that it requires the lowest amount of VRAM (8GB minimum) and will also produce the smallest file size (2-30kb). However, it is also the worse performing training method but results can still be useable and produce good results.</p>
-	<p>Be aware that embeddings work best with the model that it was trained with, so if you change models and try to use your embedding, results may not be as cohesive.</p>
-	<p>I have not attempted to train any embeddings myself, but from what I have seen online, it can be an easy process and create good results even with less than 20 images to train on.</p>
-	<p>There is a more detailed explaination on how Texture Inversion works within AUTOMATIC111 webGUI at the link <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion" target="_blank" rel="noreferrer">AUTOMATIC111 Textual Inversion</a></p>
-	<p>If you have created your own embeddings, please feel free to share it with me so I can add a link/ download on this site for others to use.</p>
-	<p>For my guide on how to use Textual Inversion go to my <a href="https://stablediffusion.cdcruz.com/embeddings_training.html">Embeddings Training page</a>.</p>
-	<h5>List of embeddings</h5>
-	<p>I am working on creating my own embeddings and sharing good quality ones that others have created. Go to <a href="https://stablediffusion.cdcruz.com/embeddings.html">Embeddings page</a> for more information.</p>
-	</textblock>
-	<h4>Hypernetworks</h4>
-	<textblock>
-	<p>Hypernetworks are a very new concept and has even less documentation available on them at the current time. From what I know, Hypernets actually inject the chosen prompt into the last stages of the models processing flow. In vague terms, this means that in the final "steps" of rending the image, the Hypernet prompt is added and influences the resulting output more than if it were to be used right at the start with all the other prompts like how Textual Inversion works (As far as I know).</p>
-	<p>To train a Hypernet, you do require at least 8GB of VRAM on your graphics card.</p>
-	<p>Credit goes to Reddit user u/vic8760 as I've paraphrased some comments he made on this subject.</p>
-	<br>
-	<p>I have played around with Hypernetworks and Textual Inversion a bit now, and from my preliminary testing, I believe hypernetworks are much better at refining pre-existing models to create better looking art, textual inversion seems to be better for inserting unique objects/ characters/ concepts into the model due to its modularity, however I have not been able to train a good embedding yet.</p>
-	<p>Hypernetworks on the otherhand train much faster than embeddings and improve your model greatly if you have a good dataset to train on. Ultimately all training methods rely on the quality and quantity of your data. The one drawback to hypernetworks is that you can only have one hypernet applied to your rendering at one time which is much more limiting compared to embeddings. This is why I suggest hypernets should be for stylistic and refinement reasons while embeddings should be used for specific things you want the model to generate. I have not had the chance to play with Dreambooth yet, but I would assume it is the best of both worlds considering it can create full standalone models.</p>
-	<p>Below is a test of a small anime hypernetwork I trained with roughly 1.5k unique images and the strength of the hypernetwork on the X axis. The effect of the hypernetwork is sometimes subtle and sometimes strong. Further testing and training is needed before I can give conclusive thoughts on how well hypernets work.</p>
-	<img loading="lazy" src="assets/images/examples/hypernetwork_strength_test.webp" alt="An example of hypernetworks with changing strength level." style="max-width: 1200px; width: 100%;"/>
-	<br>
-	<p>As always renty.org has a great <a href="https://rentry.org/hypernetwork4dumdums" target="_blank" rel="noreferrer">guide on hypernetworks</a>.</p>
-	<p>I have found a good Youtube video detailing some of the process for working on Hypernets, although they do not use the AUTOMATIC111 webGUI. <a href="https://www.youtube.com/watch?app=desktop&v=1mEggRgRgfg&feature=share" target="_blank" rel="noreferrer">HYPERNETWORK: Train Stable Diffusion With Your Own Images For FREE!</a></p>
-	</textblock>
-	<h4>Dreambooth</h4>
-	<textblock>
-	<p>As of 08/11/22 there has been a <a href="https://github.com/d8ahazard/sd_dreambooth_extension" target="_blank" rel="noreferrer"></a>WebGUI extension</p> released that allows you to run low-VRAM/ CPU processing Dreambooth within the WebGUI. This is a huge feature that opens up custom model creation to practically anyone. One caveat is that it does take considerably longer to train the model if you're on lower end systems. A basic overview of how to train a model is on the GitHub page. I will add my own information here once I am able to dive into Dreambooth more.</p>
-	<p>With Dreambooth you can practically create your own image model in a much faster time (less than an hour) with much higher quality compared to using something like Textual Inversion. As Dreambooth does create its own models, they are .ckpt files which could be a bit cumbersome if you want to have lots of little variations, along with this the file sizes of Dreambooth models are much larger as they are considered full models. this is where the modularity of Embeddings shines and is much more user friendly to train and generate with.</p>
-	<p>There is a Dreambooth GUI by Reddit user u/wuduzodemu that provides an easy install and training interface. I am yet to test it myself, but it looks promising and can also run on 10GB VRAM compared to the usual 24GBs required to train Dreambooth locally. This is a huge improvement and hopefully things like this keep getting more accessible for everyone. To download the Dreambooth GUI visit this <a href="https://github.com/smy20011/dreambooth-gui" target="_blank" rel="noreferrer">Github page</a>.</p>
-	</textblock>
-
-	</section>
+	<p>For more information visit the <a href="https://stablediffusion.cdcruz.com/model_training.html">Model Training page</a>.</p>
+	<p>For a list of custom embeddings, models, hypernetworks and aesthetic gradients go to the <a href="https://stablediffusion.cdcruz.com/embeddings.html">Embeddings page</a> for more information.</p>
+	
 
 	<h3>Upscalers</h3>
 	<section>
@@ -340,7 +278,24 @@
 	<textblock>
 	<p>There are many different types of upscalers to choose from within the WebGUI. I do not know a lot about the technical details of each upscaling model but all of them produce good results. The first time you use an upscaler model it will be downloaded automatically.</p>
 	<p>I have personally had trouble downloading the LSDR upscaler with an error that says <tag>[SSL: CERTIFICATE_VERIFY_FAILED]</tag>. To get around this, you can download the upscaler model manually at the link provided in the terminal which is <tag><a href="https://aaronfeng.itch.io/waifu2x-extension-gui" target="_blank" rel="noreferrer">https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1</a></tag>. Once the model is downloaded, place it in the directory <tag>/models/LDSR</tag> within your webGUI directory and rename the file to <tag>model.ckpt</tag>. The model should now work correctly.</p>
+	<!--<h5>ESRGAN 4x</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-ESRGAN_4x.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>Lanczos</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-lanczos.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>LDSR</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-LDSR.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>Nearest</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-nearest.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>R-ESRGAN-General 4x3V</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-R-ESRGAN-General_4xV3.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>ScuNET</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-ScuNET.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>ScuNET PSNR</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-ScuNET_PSNR.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>
+	<h5>SwinlR 4x</h5>
+	<img loading="lazy" src="assets/images/examples/upscaler-LDSR.webp" alt="ESRGAN 4x Upscaler" style="max-width: 1200px; width: 100%;"/>-->
 	</textblock>
+
 	<h4>Waifu2x Extension GUI</h4>
 	<textblock>
 	<p>Another simple GUI software that specialises in upscaling of anime imagery, although it can work with any images. Compared to AUTOMATIC1111's webGUI, Waifu2x has a lot more features to fine tune your upscaling with different models, parameters and more technical settings. Another advantage to using Waifu2x is that it can upscale videos with the same precision as images which is a feature that I don't believe AUTOMATIC1111's webGUI has implemented yet (although knowing his pace of adding features its bound to happen eventually).</p>
