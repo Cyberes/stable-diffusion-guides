@@ -53,6 +53,16 @@
 		  <textblock>
 		  <p>Stable Diffusion is the primary model that has they trained on a large variety of objects, places, things, art styles, etc. It is the best multi-purpose model.</p>
 			<p>The latest version of the Stable Diffusion model will be through the StabilityAI website, as it is a paid platform that helps support the continual progress of the model. You can try out the <a href="https://stabilityai.us.auth0.com/" target="_blank" rel="noreferrer">Stablitiy AI's website</a> here.</p>
+
+			<h4>Version 2.0 - TXT2IMG - DEPTH2IMG - Inpainting - Upscaling models</h4>
+			<p>On 24/11/22 Stable Diffusion version 2.0 was released, you can see the Reddit <a href="https://www.reddit.com/r/StableDiffusion/comments/z36mm2/stable_diffusion_20_announcement/" target="_blank" rel="noreferrer">announcement post</a> here for a brief overview.</p>
+			<p>2.0 has been trained from scratch meaning it has no relation to previous Stable Diffusion models and incorporates new technology the OpenCLIP text encoder & the <a href="https://laion.ai/blog/laion-5b/" target="_blank" rel="noreferrer">LAION-5B dataset</a> with NSFW images filtered out. As you would expect it is a large step forward in image generation with more coherency and higher quality images as expected from a newly trained model however there are some significant improvements and additions to this version.</p>
+			<p>There are multiple models available with 2.0 each with a different purpose. The most interesting new model is the depth model which is to be used with IMG2IMG and can actually detect depth information within and image and manipulate the image while retaining that depth information. It can be incredibly useful to edit your image without changing or adding/removing elements that aren't consistent with the original image.</p>
+			<p>Another big improvement is the ability to generate images at 512x512 & 768x768. This means you can generate higher quality images natively with Stable Diffusion without the need of upscaling or using something like the "high-res fix" on the AUTOMATIC1111 WebGUI.</p>
+			<p>At the time of writing, these new models are not compatible with most UI programs as the core mechanics of the model have changed compared to previous models. But it should only be a matter of time before UI's are updated to support this model.</p>
+			<p>One drawback of this new model is that it will not work as well with NSFW images as Stablility AI have purposefully tried to filter out NSFW imagery. This shouldn't be a horrible thing for most people and for those that do want NSFW images, it will simply require others to train the model on those images for it to improve at them.</p>
+			<p>You can download the latest <a href="https://huggingface.co/stabilityai/stable-diffusion-2" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+
 			<h4>Version 1.5 - Inpainting</h4>
 			<p>This model is basically a fork (a branching version) of the Stable Diffusion model that is based of version 1.5 of SD. It has been trained for 440k more steps than the original 1.5 to specialise in inpainting and improving the ability to remove, add and replace objects in a scene. The current version is 1.5 but it should not be confused with the original Stable Diffusion 1.5.</p>
 		  <p>You can download the latest <a href="https://huggingface.co/runwayml/stable-diffusion-inpainting" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
@@ -85,6 +95,12 @@
 		  <textblock>
 		  <p>Trinart Stable Diffusion is another anime-based model. Its results are currently less cohesive compared to Waifu Diffusion, but it can still generate excellent results. It could also give you a unique art style compared to Waifu Diffusion because they trained it on a different dataset.</p>
 		  <p>You can download the latest <a href="https://huggingface.co/naclbit/trinart_stable_diffusion_v2" target="_blank" rel="noreferrer">Trinart model here</a> (requires free account).</p>
+		  </textblock>
+
+		  <h3>Eimis Anime Diffusion</h3>
+		  <textblock>
+		  <p>Eimis's Anime model is based on highly detailed anime images and produces images at the same quality as models like Novel AI's or Anything v3. It's a different style to those models and one I personally prefer. If you're going for the classic anime look, this may not be for you, but if you're wanting detailed Artstation-like anime, this is perfect.</p>
+		  <p>You can download the latest <a href="https://huggingface.co/eimiss/EimisAnimeDiffusion_1.0v" target="_blank" rel="noreferrer">Eimis Anime model here</a> (requires free account).</p>
 		  </textblock>
 
 			<h3>Hentai Diffusion</h3>
@@ -133,6 +149,25 @@
 			<textblock>
 		  <p>A model posted on Reddit that was trained by u/IShallRisEAgain that has been trained on roughly 20k images using the Studio Ghibli style. The model is based on Waifu Diffusion 1.3. <a href="https://www.reddit.com/r/sdforall/comments/y196fy/ive_further_refined_my_studio_ghilbi_model/" target="_blank" rel="noreferrer">Click here for the original Reddit post</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
 			<p>You can download the latest <a href="https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main" target="_blank" rel="noreferrer">Studio Ghibli Diffusion model here</a> (requires free account.)</p>
+		  </textblock>
+
+
+		  <h3>Dreambooth Models</h3>
+		  <h3>IMG2ASSET - VRoid Clothing Generator</h3>
+		  <textblock>
+		  <p>This model is unique in it has a specific purpose and has a very practical use. IMG2ASS (asset) is used to create clothing patterns to be used with VRoid software to quickly create clothing designs that fit the specific VRoid format. There are a few steps to using this model as it isn't the same as other general use models.</p>
+		  <p>The steps are as followed as provided by u/Ne_Nel</p>
+		  <ul>
+			<li>Export the png of the VRoid asset (or use whatever you want)</li>
+			<li>Place it in img2img. Use the "vrass" token and the style of clothing you want.</li>
+			<li>Experiment!</li>
+			<li>Upscale 4x (Recommended)</li>
+			<li>Import back into VRoid and enjoy!</li>
+		  </ul>
+		  <p>As Stable Diffusion doesn't currently handle transparency, you will need to edit out parts that should be transparent or any other details you would like to add using image editing software.</p>
+		  <p>Overall, this model is a great idea and it would be interesting to see the concept of creating specific asset creators gather steam and see more models like this popping up.</p>
+		  <p><a href="https://www.reddit.com/user/Ne_Nel/submitted/" target="_blank" rel="noreferrer">u/Ne_Nei</a> has been very informative about this model and you can check out more comments he has left on his posts detailing what works best to create good clothing.</p>
+		  <a href="https://huggingface.co/Abysz/VRass1.2_Img2ass" target="_blank" rel="noreferrer">Click here for the download link.</a>
 		  </textblock>
 
 			<h3>Archer Diffusion</h3>

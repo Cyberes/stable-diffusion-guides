@@ -95,7 +95,37 @@
 	<p>If following the guide above for AUTOMATIC111's webGUI is too difficult or if you're just looking to try a different GUI, a person by the name of N00MKRAD on itch.io is currently developing a standalone program to run stable diffusion that includes the core features you would want and includes dreambooth training for 24GB Nvidia GPUs as of 17/10/22, they say they are trying to reduce the VRAM requirement as well. While this tool is provided free of charge, I recommend donating to support the development of this neat program.</p>
 	<p>Once you download the program, all you need to do is unzip the file on your computer and run the <tag>StableDiffusionGui.exe</tag> file. That's it!</p>
 	<p>My guide will still focus more on the AUTOMATIC111 webGUI as it is usually the quickest to implement new features and has the most features to begin with, but the information should directly apply to other GUI's as they are all based on Stable Diffusion.</p>
+	<h5>Minimum Requirements</h5>
+		<p><tag>Windows OS</tag></p>
+		<p><tag>Nvidia GPU with minimum 4GB VRAM</tag></p>
+		<p><tag>8GB RAM minimum</tag></p>
+	<h5>Recommended Requirements</h5>
+		<p><tag>Windows OS</tag></p>
+		<p><tag>Nvidia GPU with minimum 8GB VRAM</tag></p>
+		<p><tag>12GB RAM minimum</tag></p>
+		<p><tag>14GB free space on an SSD</tag></p>
+	<h5>Dreambooth Training Requirements</h5>
+		<p><tag>Windows OS</tag></p>
+		<p><tag>Nvidia GPU with minimum 24GB VRAM</tag></p>
+		<p><tag>32GB RAM minimum</tag></p>
+		<p><tag>12GB - 37GB free space on an NVME SSD</tag></p>
 	<p>You can download the NMKD GUI at its <a href="https://nmkd.itch.io/t2i-gui" target="_blank" rel="noreferrer">itch.io page</a>.</p>
+	</textblock>
+
+	<h4>Artroom.ai - One Click Installer </h4>
+	<textblock>
+		<p>Another easy to use local way to run Stable Diffusion released on 17/11/22 and features a simple/ sleek interface while still providing great control over model parameters.</p>
+		<p>It's an easy setup process that can take upwards of 10 minutes to install everything and then you're good to go. As with most UI's it is not as feature rich as AUTOMATIC1111's Web GUI, but it is more stable and a much better user experience with a introduction tutorial included when you first launch the program. The creator of this software has stated they will keep the Artroom software free forever and only monitize through other means. So you will be able to create new art as long as you want completely for free and without the headaches of working with the extremely experimental and fast moving AUTOMATIC1111 Web GUI.</p>
+		<center><img loading="lazy" src="assets/images/examples/artroom_free_screenshot.webp" alt="u/arturmame stating Artroom will stay free." style="max-width: 600px; width: 100%;"/></center>
+		<p><i>A screenshot from Reddit from a creator of Artroom stating the program will remain free.</i></p>
+		<p>You can also use your own models with this program by going to the settings panel and setting the models weights folder to where you store all of your models or by placing your models into the default location.</p>
+		<p>You can stay up to date with the softwares progress by following the <a href="https://trello.com/b/S9hoQBFK/artroom-roadmap" target="_blank" rel="noreferrer">Trello Artroom Roadmap</a></p>
+		<h5>Requirements</h5>
+		<p><tag>Windows OS</tag></p>
+		<p><tag>Nvidia GPU with minimum 4GB VRAM</tag></p>
+		<p><tag>Can also run on CPU but is much slower</tag></p>
+		<p><tag>16GB RAM minimum</tag></p>
+		<p>You can download Artroom.ai at its <a href="https://artroom.ai/download-app" target="_blank" rel="noreferrer">official website</a>.</p>
 	</textblock>
 
 	<h4>DiffusionBee - SD for M1/M2 Macs</h4>
@@ -141,6 +171,16 @@
 	<h5>More VAE's</h5>
 	<p>Waifu Diffusion has a work in progress VAE available in the <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-4/tree/main/vae" target="_blank" rel="noreferrer">1.4 Huggingface repository</a>. As 1.4 is no where near completion, I believe this VAE is experimental but does improve anime results.</p>
 	</textblock>
+
+	<h4>Security Risks</h4>
+	<textblock>
+	<p>It's important to note that models can contain malicious code/ viruses within them if a nefarious person wanted to do that. These people could create a very inticing looking model, but hide a virus in it that could corrupt your PC in the worst case scenario. This is why you may see your anti-virus software flag a model you download as "malware", however it doesn't always mean the model is bad as anti-virus software are not 100% accurate. It's recommended to stick with trusted and widely used models like Stable Diffusion and Waifu Diffusion. </p>
+	<p>It's not all doom and gloom though. Many models are completely safe to use and the AUTOMATIC1111 has some in-built features as a safeguard against dangerous models.</p>
+	<p>A Reddit user u/diStyR has also created a simple <a href="https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI" target="_blank" rel="noreferrer">model scanner</a> to allow you to scan model files to make sure they do not contain malware. This software only works on Windows at the time of writing. A advantage to using this software is that you can enter URL links to a model and the software can check those models without you needing to download it yourself (and risk downloading a malicious file). As with other anti-virus software is not 100% accurate and this program can flag safe models as dangerous or vice versa, use at your own discretion. To run, find the <tag>GUI.exe</tag> file within the zipped folder.</p>
+	<p>Reddit user <a href="https://www.reddit.com/r/StableDiffusion/comments/z2zu2x/comment/ixj8mid/?utm_source=share&utm_medium=web2x&context=3" target="_blank" rel="noreferrer">u/LogicallyDepressed</a> has checked scanning software itself and claims is safe to use after examining its source code.</p>
+
+	<p>If you'd like a more detailed and technical explanation of how models can be dangerous, you can visit the <a href="https://huggingface.co/docs/hub/security-pickle" target="_blank" rel="noreferrer">HuggingFace link</a> that explains "Pickles" and how they are unsafe but also necessary for AI models.</p>
+	</textblock>
   </section>
 
 
@@ -162,8 +202,7 @@
 	<p>Prompts are how you tell the AI what to generate. You don't need to add many prompts to generate a good image, and sometimes adding too many prompts will usually mean the AI will ignore some of them. You should try to give the AI prompts that best describe your image in the least amount of words that have the strongest affect on the model. Figuring out these strong but short prompts is the challenge of image generation and will take lots of trial and error.</p>
 	<p>There are also a few helpful and important tips to know to assist in getting the image you're looking for like prompt order, parenthesis, combo words, and more that will be explained in more detail below. You can mix and match all of these tips to help refine your image as much as possible.</p>
 	<p>More detailed information about prompts can be found on the <a href="https://stablediffusion.cdcruz.com/prompts.html">Prompts page</a>.</p>
-	<p>A good Reddit post about prompts I've found <a href="https://www.reddit.com/r/StableDiffusion/comments/ybqn2t/prompting_what_you_need_to_know_part_1/" target="_blank" rel="noreferrer">Prompting: What you need to know (Part 1)</a>.</p>
-	<p><a href="https://www.reddit.com/r/StableDiffusionInfo/comments/ylp6ep/some_detailed_notes_on_automatic1111_prompts_as/" target="_blank" rel="noreferrer">Another good post by u/StoryStoryDie</a></p>
+	<p>A good Reddit post about prompts I've found <a href="index.html" target="_blank" rel="noreferrer">Prompting: What you need to know (Part 1)</a>.</p>
 	
 
 	<h3>CFG Scale</h3>
@@ -350,6 +389,7 @@
 		<li><a href="https://www.youtube.com/watch?v=-JtBUoPcjeM" target="_blank" rel="noreferrer">Youtuber: MattVidPro AI Video: Easy Dreambooth AI Tutorial</a></li>
 		<li><a href="https://www.youtube.com/watch?v=1_dViOW3Vy4" target="_blank" rel="noreferrer">Youtuber: ChamferZone AI Video: Stable Diffusion - Master AI Art</a></li>
 		<li><a href="https://www.youtube.com/watch?v=8NDz0YmSGVU" target="_blank" rel="noreferrer">Youtuber: bycloud Video: AI Generated Art Is Getting Out of Hand</a></li>
+		<li><a href="https://www.reddit.com/r/sdforall/comments/yu43oj/textual_inversion_vs_dreambooth/" target="_blank" rel="noreferrer">Redditer: u/ai-design-firm Post: Textual Inversion vs Dreambooth</a></li>
 		</ul>
   </creditblock>
 
