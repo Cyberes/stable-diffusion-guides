@@ -1,165 +1,506 @@
 <!doctype html>
-	 <html lang="en">
-	 	<head>
+<html lang="en">
+
+<head>
 
 
-	 	<title>CDcruz| Models</title>
-	 	<meta charset="UTF-8" />
-	 	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
-	 	<meta name="author" content="Craig D'Cruz">
-	 	<meta name="viewport" content="width=device-width, minimal-ui">
-	 	<link rel='manifest' href='manifest.json'>
+	<title>CDcruz| Models</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="A thorough and informative guide to Stable Diffusion and Waifu Diffusion.">
+	<meta name="author" content="Craig D'Cruz">
+	<meta name="viewport" content="width=device-width, minimal-ui">
+	<link rel='manifest' href='manifest.json'>
 
-	 	<meta name="theme-color" content="#18BDCB"/>
+	<meta name="theme-color" content="#18BDCB" />
 
-		<link href="assets/css/stable_diffusion.css" rel="stylesheet">
+	<link href="assets/css/stable_diffusion.css" rel="stylesheet">
 
-		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-		<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-		<meta name="msapplication-TileColor" content="#18BDCB">
-		<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
-
-	 </head>
+	<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+	<link rel="shortcut icon" type="image/png" href="assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#18BDCB">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
 
 
-  <body>
+	<script src="assets/js/hsection.js"></script>
+	<script src="assets/js/load_gallery.js"></script>
+
+</head>
+
+
+<body>
 
 
 
 
-<div class='wrapper'>
+	<div class='wrapper'>
 
-	<h1>Models List</h1>
-  <hr>
-  <article>
-		<a href="index.html">Back to the main page</a>
-			<p>On this page you'll find all the most common models to use with the webGUI along with some rarer models made by the community. Download links are provided for all models.</p>
+		<h1>Models List</h1>
+		<hr>
+		<article>
+			<a href="index.html">Back to the main page</a>
+			<p>On this page you'll find all the most common models to use with the webGUI along with some rarer models
+				made by the community. Download links are provided for all models.</p>
 
 			<section>
-			<h3>Stable Diffusion</h3>
-		  <textblock>
-		  <p>Stable Diffusion is the primary model that has they trained on a large variety of objects, places, things, art styles, etc. It is the best multi-purpose model.</p>
-			<p>The latest version of the Stable Diffusion model will be through the StabilityAI website, as it is a paid platform that helps support the continual progress of the model. You can try out the <a href="https://stabilityai.us.auth0.com/" target="_blank" rel="noreferrer">Stablitiy AI's website</a> here.</p>
-
-			<h4>Version 2.1</h4>
-			<p>Stable Diffusion 2.1 was released on December 8, 2022. In response to the controversial release of 2.0, Stability AI has improved upon their base model and fine-tuned it with a weaker NSFW filter applied to their dataset. This should address many of the criticisms of the previous version and result in more accurate generation of human bodies, celebrities, and other pop culture images. As this is a fine-tuned model, there are no major changes to its functionality, and the main purpose is to correct the mistakes of 2.0.</p>
-			<p>If these fixes are successful, 2.1 will be an excellent model with higher detail and quality in its outputs, as well as a stronger ability to be trained on specific themes, styles, and objects using techniques such as Dreambooth, Textual Inversion, and Hypernetworks. You can download the 2.1 Stable Diffusion model <a href="https://huggingface.co/stabilityai/stable-diffusion-2-1" target="_blank" rel="noreferrer">here</a> (requires a free account).</p>
-			<p>For more information, see the <a href="https://www.reddit.com/r/StableDiffusion/comments/zf21db/stable_diffusion_21_announcement/" target="_blank" rel="noreferrer">announcement post on Reddit</a>.</p>
-
-			<h4>Version 2.0 - TXT2IMG - DEPTH2IMG - Inpainting - Upscaling models</h4>
-			<p>On 24/11/22 Stable Diffusion version 2.0 was released, you can see the Reddit <a href="https://www.reddit.com/r/StableDiffusion/comments/z36mm2/stable_diffusion_20_announcement/" target="_blank" rel="noreferrer">announcement post</a> here for a brief overview.</p>
-			<p>2.0 has been trained from scratch meaning it has no relation to previous Stable Diffusion models and incorporates new technology the OpenCLIP text encoder & the <a href="https://laion.ai/blog/laion-5b/" target="_blank" rel="noreferrer">LAION-5B dataset</a> with NSFW images filtered out. To most peoples surprise, version 2.0 actually performs relatively worse in general tests of generating images, particularly with artstyles, celebrities and NSFW images. This is a conscious decision by the Stablility AI team for a few reasons and in my opinion would be related to legality issues that have arose from the growing popularity of AI generation.</p>
-			<p>There are multiple models available with 2.0 each with a different purpose. The most interesting new model is the depth model which is to be used with IMG2IMG and can actually detect depth information within and image and manipulate the image while retaining that depth information. It can be incredibly useful to edit your image without changing or adding/removing elements that aren't consistent with the original image.</p>
-			<p>One big improvement is the ability to generate images at 512x512 & 768x768. This means you can generate higher quality images natively with Stable Diffusion without the need of upscaling or using something like the "high-res fix" on the AUTOMATIC1111 WebGUI.</p>
-			<p>At the time of writing, these new models are not compatible with most UI programs as the core mechanics of the model have changed compared to previous models. But it should only be a matter of time before UI's are updated to support this model.</p>
-			<p>One drawback of this new model is that it will not work as well with NSFW images as Stablility AI have purposefully tried to filter out NSFW imagery. This shouldn't be a horrible thing for most people and for those that do want NSFW images, it will simply require others to train the model on those images for it to improve at them.</p>
-			<p>StabilityAI themselves have stated that this model is meant to be used as a base for other models to be trained on. So while the results of version 2.0 are not as amazing as people have hoped for, it opens the possibility of better dreambooth, fine-tuned, textual inversions and other model training methods to produce greater results.</p>
-			<p>You can download the 2.0 <a href="https://huggingface.co/stabilityai/stable-diffusion-2" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
-
-			<h4>Version 1.5 - Inpainting</h4>
-			<p>This model is basically a fork (a branching version) of the Stable Diffusion model that is based of version 1.5 of SD. It has been trained for 440k more steps than the original 1.5 to specialise in inpainting and improving the ability to remove, add and replace objects in a scene. The current version is 1.5 but it should not be confused with the original Stable Diffusion 1.5.</p>
-		  <p>You can download the latest <a href="https://huggingface.co/runwayml/stable-diffusion-inpainting" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
-			<h4>Version 1.5</h4>
-			<p>Stable Diffusion 1.5 has been released on 21/10/22. This version has been considered a minor improvement on the previous version with some better txt2img generation.</p>
-			<p>If you're only looking to generate images, make sure to down load the <tag>v1-5-pruned-emaonly.ckpt</tag> as it is a smaller file meaning it will use less VRAM. If you plan on training or fine-tuning the model, then you'll need the full <tag>v1-5-pruned.ckpt</tag> file.</p>
-		  <p>You can download the 1.5 <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
-
-			<h4>Version 1.4</h4>
-			<p>Version 1.4 is the model I began my AI journey with so I cannot speak on previous iterations.</p>
-			<p>You can download the 1.4 <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original" target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
-		  <!--<p>Below is an archive of models hosted on this website for preservation. They may be useful to use to recreate old seeds or simply see how older versions of the model worked.</p>-->
-		  </textblock>
-
-		  <h3>Waifu Diffusion</h3>
-		  <textblock>
-		  <p>Waifu Diffusion is a model trained on over 50 thousand anime related images and is continually being trained with improvements released regularly. It is currently the best model for creating anime characters, but is much weaker at realistic imagery and landscapes.</p>
-			<h4>1.4 Version Beta</h4>
-			<p>Waifu Diffusion 1.4 is still in very early stages, but they repo is already created so if you want to keep up to date on the latest WD version, you can check this repo and download the beta models as they become available.</p>
-			<p>As of 03/11/22 there is a ckpt model available on this repository named <tag>wd-1-3-penultimate-ucg-cont.ckpt</tag>. I have not tested it yet, but I believe it is an extension on the 1.3 model. From my limited testing and thanks to a comment by u/Ok-Power1447, I have tested using CLIP Skip with this model and my piliminary results do show that using CLIP Skip set to 2 does improve hands on characters.</p>
-			<center><img loading="lazy" src="assets/images/model_examples/wd_1_3_penulimate/clip_skip.webp" alt="Penultimate version clip skip" style="max-width: 1200px; width: 100%;"/></center>
-			<p>You can download the latest <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-4" target="_blank" rel="noreferrer">Beta model here</a> (requires free account).</p>
-			<h4>Version 1.3</h4>
-			<p>Version 1.3 model has greatly improved the consistency and variety of images the Waifu Diffusion can produce. However, older prompts will obviously create different images even if you use the same seed, prompts, etc. Because of this, it will take some time to figure out what new prompt lists you need to create your specific styles. I’d recommend doing a lot of testing yourself with different prompts, prompt order and other parameters to find what works with the new model. Another change to version 1.3 is that it relies on ‘comma separated tags’ more so than previous iterations. So, in the example <tag>a girl wearing a hoodie in the rain</tag> would will be easier for the AI to understand as <tag>original, 1girl, solo, portrait, hoodie, wearing hoodie</tag>. <a href="https://gist.github.com/harubaru/f727cedacae336d1f7877c4bbe2196e1" target="_blank" rel="noreferrer">Release notes for 1.3</a>.</p>
-		  <p>You can download the 1.3 <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3" target="_blank" rel="noreferrer">Waifu Diffusion model here</a> (requires free account).</p>
-
-		  </textblock>
-
-		  <h3>Trinart</h3>
-		  <textblock>
-		  <p>Trinart Stable Diffusion is another anime-based model. Its results are currently less cohesive compared to Waifu Diffusion, but it can still generate excellent results. It could also give you a unique art style compared to Waifu Diffusion because they trained it on a different dataset.</p>
-		  <p>You can download the latest <a href="https://huggingface.co/naclbit/trinart_stable_diffusion_v2" target="_blank" rel="noreferrer">Trinart model here</a> (requires free account).</p>
-		  </textblock>
-
-		  <h3>Eimis Anime Diffusion</h3>
-		  <textblock>
-		  <p>Eimis's Anime model is based on highly detailed anime images and produces images at the same quality as models like Novel AI's or Anything v3. It's a different style to those models and one I personally prefer. If you're going for the classic anime look, this may not be for you, but if you're wanting detailed Artstation-like anime, this is perfect.</p>
-		  <p>You can download the latest <a href="https://huggingface.co/eimiss/EimisAnimeDiffusion_1.0v" target="_blank" rel="noreferrer">Eimis Anime model here</a> (requires free account).</p>
-		  </textblock>
-
-			<h3>Hentai Diffusion</h3>
-			<textblock>
-		  <p>A model based on Waifu Diffusion 1.2 and trained on 150k images from R34 and gelbooru. As the name suggests, their focus is on hentai related images and improving hands, obscure poses and general consistency of the model.</p>
-			<p>Adding the prompt <tag>1girl</tag> to the start of your prompt list is recommended by rentry.org. You should also use tags from the sites they trained it on</p>
-			<h4>Update - 12/10/22</h4>
-			<p>The newest update to Hentai Diffusion has improved coherency of image sequences for better animation, more variety in obscure camera angles and better photo to anime conversion. I am yet to test this new model, but If it is anything like the jump Waifu Diffusion made between v1.2 and v1.3, it should be substantial.</p>
-
-		  <p>You can download the latest <a href="https://huggingface.co/Deltaadams/Hentai-Diffusion/tree/main" target="_blank" rel="noreferrer">Hentai Diffusion model here</a> (requires free account).</p>
-		  </textblock>
-
-			<h3>Lewd Diffusion</h3>
-			<textblock>
-		  <p>A model based on Waifu Diffusion 1.2 and trained on 70k explicit images from Danbooru. They have trained the current version for 2 epochs. As the only link to this model is via a torrent, I have self hosted the file. This means it may not always be the most up-to-date model. If you would like to download via torrent, the URL is:</p>
-			<tag>magnet:?xt=urn:btih:U5RICVYDEJL6LIJJWFKQOIVO5GMGCJNW&dn=last-pruned.ckpt&xl=3852165809&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce</tag>
-			<p>Self hosted file coming soon</p>
-		  <!--<p>You can download the latest <a href="/assets/models/lewd-diffusion-70k-2e.ckpt" download><button class="download">Lewd Diffusion model</button></a> (self hosted download).</p>-->
-		  </textblock>
-
-			<h3>R34 Diffusion</h3>
-			<textblock>
-		  <p>A model trained on images from the site rule34.xxx with the latest model being trained with 150k images for 5 epoch. It has a lot of variety in its lewd images and, without specifying a style, will create more realistic/ 3D model looking characters. If you’re trying to get a specific artist’s style, be sure to prefix it with  <tag>by</tag> for artists and use underscores for multi-word tags as would be used on rule34.xxx. While it does do a better job at creating explicit images, it lacks a lot of consistensy and creates deformed bodies more often than </p>
-		  <p>You can download the latest <a href="https://mega.nz/file/yJgDUCzA#zOD2yeE6QLBqPEjEpIi2b4FWOlb64yVUveOd_eW6teI" target="_blank" rel="noreferrer">R34 Diffusion model here</a>.</p>
-		  </textblock>
-
-			<h3>Zack3D Kinky Diffusion</h3>
-			<textblock>
-		  <p>A model based on Stable Diffusion that specializes in furry art and also more kinky art. But it will use a furry character as the subject. E621 tags are used with underscores for multi-word tags.</p>
-		  <p>You can download the latest <a href="https://pixeldrain.com/u/DEocAHsx" target="_blank" rel="noreferrer">Zach3D Kinky Diffusion model here</a>.</p>
-		  </textblock>
-
-			<h3>Furry Diffusion</h3>
-			<textblock>
-		  <p>A model trained on 300k images from e621. As the name suggests, this will only create furry art, so if you're looking for that, you've come to the right model.</p>
-		  <p>You can download the latest <a href="https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch3.ckpt" target="_blank" rel="noreferrer">Furry Diffusion model here</a>.</p>
-		  </textblock>
-
-			<h3>Yiffy Diffusion</h3>
-			<textblock>
-		  <p>Yiffy is yet another furry model. They have trained the most current model on 210k images from e621 for over 6 epochs (I’m unable to get a definitive number). One important note when using this model is that if you want to use the prompt <tag>explicit</tag> you will actually need to use the misspelling <tag>explict</tag> due to a mistake that occurred when the model was trained.</p>
-		  <p>You can download the latest <a href="https://sexy.canine.wf/file/yiffy-ckpt/yiffy-e18.ckpt" target="_blank" rel="noreferrer">Yiffy Diffusion model here</a>.</p>
-		  </textblock>
-
-			<h3>Studio Ghibli Diffusion</h3>
-			<textblock>
-		  <p>A model posted on Reddit that was trained by u/IShallRisEAgain that has been trained on roughly 20k images using the Studio Ghibli style. The model is based on Waifu Diffusion 1.3. <a href="https://www.reddit.com/r/sdforall/comments/y196fy/ive_further_refined_my_studio_ghilbi_model/" target="_blank" rel="noreferrer">Click here for the original Reddit post</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
-			<p>You can download the latest <a href="https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main" target="_blank" rel="noreferrer">Studio Ghibli Diffusion model here</a> (requires free account.)</p>
-		  </textblock>
+				<h2>Base Models</h2>
+				<p>Base models are versatile AI models that are capable of generating a wide range of styles,
+					characters, objects, and other types of content. Stable Diffusion is a popular base model that has
+					been used to train other models in different styles or to improve overall model performance. These
+					models often have their own VAE (Variable Auto-Encoder) that can be used interchangeably with other
+					models to produce slightly different outputs. Unlike Dreambooth models, base models do not require
+					an activator prompt and can be used in a more flexible way.</p>
+				<p>Stable Diffusion in particular is trained competely from scratch which is why it has the most
+					interesting and broard models like the text-to-depth and text-to-upscale models.</p>
 
 
-		  <h3>Dreambooth Models</h3>
-		  <h3>IMG2ASSET - VRoid Clothing Generator</h3>
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Stable Diffusion <img
+						loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+						style="width: 20px; margin-left:25px;" /></h3>
+				<hsection>
+					<textblock>
+						<p>Stable Diffusion is the primary model that has they trained on a large variety of objects,
+							places, things, art styles, etc. It is the best multi-purpose model.</p>
+						<p>The latest version of the Stable Diffusion model will be through the StabilityAI website, as
+							it is a paid platform that helps support the continual progress of the model. You can try
+							out the <a href="https://stabilityai.us.auth0.com/" target="_blank"
+								rel="noreferrer">Stablitiy AI's website</a> here.</p>
+
+						<h4>Version 2.1</h4>
+						<p>Stable Diffusion 2.1 was released on December 8, 2022. In response to the controversial
+							release of 2.0, Stability AI has improved upon their base model and fine-tuned it with a
+							weaker NSFW filter applied to their dataset. This should address many of the criticisms of
+							the previous version and result in more accurate generation of human bodies, celebrities,
+							and other pop culture images. As this is a fine-tuned model, there are no major changes to
+							its functionality, and the main purpose is to correct the mistakes of 2.0.</p>
+						<p>If these fixes are successful, 2.1 will be an excellent model with higher detail and quality
+							in its outputs, as well as a stronger ability to be trained on specific themes, styles, and
+							objects using techniques such as Dreambooth, Textual Inversion, and Hypernetworks. You can
+							download the 2.1 Stable Diffusion model <a
+								href="https://huggingface.co/stabilityai/stable-diffusion-2-1" target="_blank"
+								rel="noreferrer">here</a> (requires a free account).</p>
+						<p><strong>NOTE: </strong> In order to use the 2.1 version you will need to include a .yaml file
+							and rename it either <tag>v2-1_512-ema-pruned.yaml</tag> or <tag>v2-1_768-ema-pruned.yaml
+							</tag> for its respective model. You will then simply add this file to the same models
+							folder your .ckpt file is in. Without this file your model will not load.</p>
+						<p>For more information, see the <a
+								href="https://www.reddit.com/r/StableDiffusion/comments/zf21db/stable_diffusion_21_announcement/"
+								target="_blank" rel="noreferrer">announcement post on Reddit</a>.</p>
+
+						<h4>Version 2.0 - TXT2IMG - DEPTH2IMG - Inpainting - Upscaling models</h4>
+						<p>On 24/11/22 Stable Diffusion version 2.0 was released, you can see the Reddit <a
+								href="https://www.reddit.com/r/StableDiffusion/comments/z36mm2/stable_diffusion_20_announcement/"
+								target="_blank" rel="noreferrer">announcement post</a> here for a brief overview.</p>
+						<p>2.0 has been trained from scratch meaning it has no relation to previous Stable Diffusion
+							models and incorporates new technology the OpenCLIP text encoder & the <a
+								href="https://laion.ai/blog/laion-5b/" target="_blank" rel="noreferrer">LAION-5B
+								dataset</a> with NSFW images filtered out. To most peoples surprise, version 2.0
+							actually performs relatively worse in general tests of generating images, particularly with
+							artstyles, celebrities and NSFW images. This is a conscious decision by the Stablility AI
+							team for a few reasons and in my opinion would be related to legality issues that have arose
+							from the growing popularity of AI generation.</p>
+						<p>There are multiple models available with 2.0 each with a different purpose. The most
+							interesting new model is the depth model which is to be used with IMG2IMG and can actually
+							detect depth information within and image and manipulate the image while retaining that
+							depth information. It can be incredibly useful to edit your image without changing or
+							adding/removing elements that aren't consistent with the original image.</p>
+						<p>One big improvement is the ability to generate images at 512x512 & 768x768. This means you
+							can generate higher quality images natively with Stable Diffusion without the need of
+							upscaling or using something like the "high-res fix" on the AUTOMATIC1111 WebGUI. Be sure to
+							include the <tag>.yaml</tag> files that correspond to each model. You will need to have the
+							.yaml file in the same models folder as the model .ckpt file and name them the same as well
+							for the model to work correctly in the webGUI.</p>
+						<p>At the time of writing, these new models are not compatible with most UI programs as the core
+							mechanics of the model have changed compared to previous models. But it should only be a
+							matter of time before UI's are updated to support this model.</p>
+						<p>One drawback of this new model is that it will not work as well with NSFW images as
+							Stablility AI have purposefully tried to filter out NSFW imagery. This shouldn't be a
+							horrible thing for most people and for those that do want NSFW images, it will simply
+							require others to train the model on those images for it to improve at them.</p>
+						<p>StabilityAI themselves have stated that this model is meant to be used as a base for other
+							models to be trained on. So while the results of version 2.0 are not as amazing as people
+							have hoped for, it opens the possibility of better dreambooth, fine-tuned, textual
+							inversions and other model training methods to produce greater results.</p>
+						<p>You can download the 2.0 <a href="https://huggingface.co/stabilityai/stable-diffusion-2"
+								target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free
+							account).</p>
+
+						<h4>Version 1.5 - Inpainting</h4>
+						<p>This model is basically a fork (a branching version) of the Stable Diffusion model that is
+							based of version 1.5 of SD. It has been trained for 440k more steps than the original 1.5 to
+							specialise in inpainting and improving the ability to remove, add and replace objects in a
+							scene. The current version is 1.5 but it should not be confused with the original Stable
+							Diffusion 1.5.</p>
+						<p>You can download the latest <a
+								href="https://huggingface.co/runwayml/stable-diffusion-inpainting" target="_blank"
+								rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+						<h4>Version 1.5</h4>
+						<p>Stable Diffusion 1.5 has been released on 21/10/22. This version has been considered a minor
+							improvement on the previous version with some better txt2img generation.</p>
+						<p>If you're only looking to generate images, make sure to down load the <tag>
+								v1-5-pruned-emaonly.ckpt</tag> as it is a smaller file meaning it will use less VRAM. If
+							you plan on training or fine-tuning the model, then you'll need the full <tag>
+								v1-5-pruned.ckpt</tag> file.</p>
+						<p>You can download the 1.5 <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5"
+								target="_blank" rel="noreferrer">Stable Diffusion model here</a> (requires free
+							account).</p>
+
+						<h4>Version 1.4</h4>
+						<p>Version 1.4 is the model I began my AI journey with so I cannot speak on previous iterations.
+						</p>
+						<p>You can download the 1.4 <a
+								href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original" target="_blank"
+								rel="noreferrer">Stable Diffusion model here</a> (requires free account).</p>
+						<!--<p>Below is an archive of models hosted on this website for preservation. They may be useful to use to recreate old seeds or simply see how older versions of the model worked.</p>-->
+					</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Waifu Diffusion <img
+						loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+						style="width: 20px; margin-left:25px;" /></h3>
+				<hsection>
+					<textblock>
+						<p>Waifu Diffusion is a model trained on over 50 thousand anime related images and is
+							continually being trained with improvements released regularly. It is currently the best
+							model for creating anime characters, but is much weaker at realistic imagery and landscapes.
+						</p>
+						<h4>1.4 Version Beta</h4>
+						<p>Waifu Diffusion 1.4 is still in very early stages, but they repo is already created so if you
+							want to keep up to date on the latest WD version, you can check this repo and download the
+							beta models as they become available.</p>
+						<p>As of 03/11/22 there is a ckpt model available on this repository named <tag>
+								wd-1-3-penultimate-ucg-cont.ckpt</tag>. I have not tested it yet, but I believe it is an
+							extension on the 1.3 model. From my limited testing and thanks to a comment by
+							u/Ok-Power1447, I have tested using CLIP Skip with this model and my piliminary results do
+							show that using CLIP Skip set to 2 does improve hands on characters.</p>
+						<center><img loading="lazy" src="assets/images/model_examples/wd_1_3_penulimate/clip_skip.webp"
+								alt="Penultimate version clip skip" style="max-width: 1200px; width: 100%;" /></center>
+						<p>You can download the latest <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-4"
+								target="_blank" rel="noreferrer">Beta model here</a> (requires free account).</p>
+						<h4>Version 1.3</h4>
+						<p>Version 1.3 model has greatly improved the consistency and variety of images the Waifu
+							Diffusion can produce. However, older prompts will obviously create different images even if
+							you use the same seed, prompts, etc. Because of this, it will take some time to figure out
+							what new prompt lists you need to create your specific styles. I’d recommend doing a lot of
+							testing yourself with different prompts, prompt order and other parameters to find what
+							works with the new model. Another change to version 1.3 is that it relies on ‘comma
+							separated tags’ more so than previous iterations. So, in the example <tag>a girl wearing a
+								hoodie in the rain</tag> would will be easier for the AI to understand as <tag>original,
+								1girl, solo, portrait, hoodie, wearing hoodie</tag>. <a
+								href="https://gist.github.com/harubaru/f727cedacae336d1f7877c4bbe2196e1" target="_blank"
+								rel="noreferrer">Release notes for 1.3</a>.</p>
+						<p>You can download the 1.3 <a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3"
+								target="_blank" rel="noreferrer">Waifu Diffusion model here</a> (requires free account).
+						</p>
+
+					</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Trinart <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Trinart Stable Diffusion is another anime-based model. Its results are currently less cohesive
+						compared to Waifu Diffusion, but it can still generate excellent results. It could also give you
+						a unique art style compared to Waifu Diffusion because they trained it on a different dataset.
+					</p>
+					<p>You can download the latest <a href="https://huggingface.co/naclbit/trinart_stable_diffusion_v2"
+							target="_blank" rel="noreferrer">Trinart model here</a> (requires free account).</p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/trinart')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Eimis Anime Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Eimis's Anime model is based on highly detailed anime images and produces images at the same
+						quality as models like Novel AI's or Anything v3. It's a different style to those models and one
+						I personally prefer. If you're going for the classic anime look, this may not be for you, but if
+						you're wanting detailed Artstation-like anime, this is perfect.</p>
+						<p>There are two Eimis models, one for a strong anime style and one for a more realistic anime style. Both produce high quality images in an artistic style but will not be able to generate photorealistic images.</p>
+					<p>You can download the latest <a href="https://huggingface.co/eimiss/EimisAnimeDiffusion_1.0v"
+							target="_blank" rel="noreferrer">Eimis Anime model here</a> (requires free account).</p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/eimis_anime')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Anything 3.0 <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Anything 3.0 is a model similar to Waifu Diffusion, but with a more specific anime style. It has gained popularity for its ability to consistently produce high-quality artworks, some of which are on par with the closed-source NovelAI model. However, the distinct style of Anything 3.0 can be limiting, as it only allows for the generation of images in this specific art style, which can become repetitive over time.</p>
+					<p>You can download the latest <a href="https://huggingface.co/Linaqruf/anything-v3.0"
+							target="_blank" rel="noreferrer">Anything 3.0 model here</a> (requires free account).</p>
+							<p><a href="https://civitai.com/models/66/anything-v3"
+								target="_blank" rel="noreferrer">Alternate download link</a></p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/anything_v3')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Honey Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Honey Diffusion is a realistic anime-style model with a distinctive style characterized by a more desaturated look and limited facial features. It is known for producing consistently good-quality images with less deformity than other models, making it difficult to create a poor image. The model produces good 3D/2D images, has good anatomy, and produces good reflections in glass and mirrors. It is suitable for both SFW and NSFW images, although there is limited information available on how the model was created.</p>
+					<p>You can download the <a href="https://civitai.com/models/1483/honey-diffusion"
+							target="_blank" rel="noreferrer">Honey Diffusion model here</a></p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/honey_diffusion')"/>
+				</imagerow>
+				</hsection>
+
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Seek Art MEGA <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Seek.art MEGA is a model that has been fine-tuned on Stable Diffusion v1.5 with the goal of improving the overall quality of images while maintaining the flexibility of Stable Diffusion. It was trained on 10,000 high-quality public domain digital artworks, which is beneficial in the current state of copyright and other issues faced by AI generation. It is recommended to generate images at a size above 640px for optimal results.</p>
+					<p>The creator of Seek.art MEGA has indicated that they will update the model once tools are available to fine-tune based on Stable Diffusion v2.0.</p>
+					<caution><p>Please note that the creator of this model does not allow the commercial use of this model without express written permission. Use at your own risk.</p></caution>
+					<p>You can download the latest <a href="https://huggingface.co/coreco/seek.art_MEGA"
+							target="_blank" rel="noreferrer">Seek Art MEGA model here</a> (requires free account).</p>
+							<p><a href="https://civitai.com/models/1315/seekart-mega"
+								target="_blank" rel="noreferrer">Alertnate download link</a></p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/seek_art_mega')"/>
+				</imagerow>
+				</hsection>
+
+
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Hentai Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>A model based on Waifu Diffusion 1.2 and trained on 150k images from R34 and gelbooru. As the
+						name suggests, their focus is on hentai related images and improving hands, obscure poses and
+						general consistency of the model.</p>
+					<p>Adding the prompt <tag>1girl</tag> to the start of your prompt list is recommended by rentry.org.
+						You should also use tags from the sites they trained it on</p>
+					<h4>Update - 12/10/22</h4>
+					<p>The newest update to Hentai Diffusion has improved coherency of image sequences for better
+						animation, more variety in obscure camera angles and better photo to anime conversion. I am yet
+						to test this new model, but If it is anything like the jump Waifu Diffusion made between v1.2
+						and v1.3, it should be substantial.</p>
+
+					<p>You can download the latest <a
+							href="https://huggingface.co/Deltaadams/Hentai-Diffusion/tree/main" target="_blank"
+							rel="noreferrer">Hentai Diffusion model here</a> (requires free account).</p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/hentai_diffusion')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Lewd Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>A model based on Waifu Diffusion 1.2 and trained on 70k explicit images from Danbooru. They have
+						trained the current version for 2 epochs. As the only link to this model is via a torrent, I
+						have self hosted the file. This means it may not always be the most up-to-date model. If you
+						would like to download via torrent, the URL is:</p>
+					<tag>
+						magnet:?xt=urn:btih:U5RICVYDEJL6LIJJWFKQOIVO5GMGCJNW&dn=last-pruned.ckpt&xl=3852165809&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
+					</tag>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/lewd_diffusion')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">R34 Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>A model trained on images from the site rule34.xxx with the latest model being trained with 150k
+						images for 5 epoch. It has a lot of variety in its lewd images and, without specifying a style,
+						will create more realistic/ 3D model looking characters. If you’re trying to get a specific
+						artist’s style, be sure to prefix it with <tag>by</tag> for artists and use underscores for
+						multi-word tags as would be used on rule34.xxx. While it does do a better job at creating
+						explicit images, it lacks a lot of consistensy and creates deformed bodies more often than </p>
+					<p>You can download the latest <a
+							href="https://mega.nz/file/yJgDUCzA#zOD2yeE6QLBqPEjEpIi2b4FWOlb64yVUveOd_eW6teI"
+							target="_blank" rel="noreferrer">R34 Diffusion model here</a>.</p>
+				</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Zack3D Kinky Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>A model based on Stable Diffusion that specializes in furry art and also more kinky art. But it
+						will use a furry character as the subject. E621 tags are used with underscores for multi-word
+						tags.</p>
+					<p>You can download the latest <a href="https://pixeldrain.com/u/DEocAHsx" target="_blank"
+							rel="noreferrer">Zach3D Kinky Diffusion model here</a>.</p>
+				</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Furry Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>A model trained on 300k images from e621. As the name suggests, this will only create furry art,
+						so if you're looking for that, you've come to the right model.</p>
+					<p>You can download the latest <a
+							href="https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch3.ckpt"
+							target="_blank" rel="noreferrer">Furry Diffusion model here</a>.</p>
+				</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Yiffy Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p>Yiffy is yet another furry model. They have trained the most current model on 210k images from
+						e621 for over 6 epochs (I’m unable to get a definitive number). One important note when using
+						this model is that if you want to use the prompt <tag>explicit</tag> you will actually need to
+						use the misspelling <tag>explict</tag> due to a mistake that occurred when the model was
+						trained.</p>
+					<p>You can download the latest <a href="https://sexy.canine.wf/file/yiffy-ckpt/yiffy-e18.ckpt"
+							target="_blank" rel="noreferrer">Yiffy Diffusion model here</a>.</p>
+				</textblock>
+				</hsection>
+
+
+
+				<br>
+				<h2>Dreambooth Models</h2>
+				<p>Dreambooth models are specialized versions of larger base models like Stable Diffusion that have been
+					fine-tuned to produce a specific style or character in images. There are many Dreambooth models
+					available, but I will only mention those that are particularly notable or effective. One unique
+					aspect of Dreambooth models is that they require an "activator prompt" to activate the trained
+					style. Without this prompt, the model will behave like the original base model it was trained on.
+				</p>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Analog Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator prompt: analog style</tag></p>
+					<p>Analog Diffusion is a model trained from Stable Diffusion v1.5 and features a retro, analog style
+						photography that can produce very realistic, well-lit imagery. It does take a bit of playing
+						around with prompts to get good results, but if you use <tag>close up</tag> in your prompt and
+						<tag>hazy, blur</tag> in your negative prompts it will improve the quality of images.</p>
+					<p>Analog Diffusion also works very well with the hi-res fix feature of the webGUI and can create
+						great large portrait and landscape images. As wth all Dreambooth models, be sure to use the
+						activator prompt and I would recommend putting the prompt at the front of the list for greatest
+						effect.</p>
+					<p>A neat tip I found online to add more realism to Analog Diffusion images is to add a grainy
+						photography filter on top of the images. This will greatly improve realism and add the final
+						touch.</p>
+					<p><a href="https://huggingface.co/wavymulder/Analog-Diffusion" target="_blank"
+							rel="noreferrer">Click here for the download link.</a>.</p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/analog_diffusion')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Open Journey Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator Prompt: mdjrny-v4 style</tag></p>
+					<p>Midjourney is a popular AI image generator known for its detailed and realistic images. Unlike
+						the open model of Stable Diffusion, there is no open version of Midjourney available. This is
+						where the Dreambooth model "Open Journey" comes in. Open Journey is a model that has been
+						trained on a large collection of images generated by Midjourney, with the goal of allowing the
+						Stable Diffusion v1.5 model to produce results that are closer to the Midjourney style.</p>
+					<p><a href="https://huggingface.co/prompthero/openjourney" target="_blank" rel="noreferrer">Click
+							here for the download link.</a>.</p>
+				</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Studio Ghibli Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator Prompt: studio_ghibli_anime_style style</tag></p>
+					<p>A model posted on Reddit that was trained by u/IShallRisEAgain that has been trained on roughly
+						20k images using the Studio Ghibli style. The model is based on Waifu Diffusion 1.3. <a
+							href="https://www.reddit.com/r/sdforall/comments/y196fy/ive_further_refined_my_studio_ghilbi_model/"
+							target="_blank" rel="noreferrer">Click here for the original Reddit post</a>. As this model
+						is small and made by one enthusist, it may not be updated often and may even be unavailable at
+						some point. If this occurs, I will self host the file.</p>
+					<p>You can download the latest <a
+							href="https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main" target="_blank"
+							rel="noreferrer">Studio Ghibli Diffusion model here</a> (requires free account.)</p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/ghibli_diffusion')"/>
+				</imagerow>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Dungeons and Diffusion <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator Prompt: D&D Character</tag></p>
+					<p><tag>Supported classes/ races: aarakocra, aasimar, air_genasi, centaur, dragonborn, drow, dwarf, earth_genasi, elf, firbolg, fire_genasi, gith, gnome, goblin, goliath, halfling, human, illithid, kenku, kobold, lizardfolk, minotaur, orc, tabaxi, thrikreen, tiefling, tortle, warforged, water_genasi Classes in new version: Artificer, Bard, Barbarian, Cleric, Fighter, Druid, Monk, Paladin, Rogue, Ranger, Sorcerer, Warlock, Wizard, Noble, Townsperson</tag></p>
+					<p>A model, created by Reddit user u/FaelonAssere, has been trained to generate Dungeons and Dragons-inspired artwork. Although it is unclear which base model was used, the model was trained on approximately 2,500 images related to D&D races, with a focus on human characters.</p>
+					<p><a href="https://www.reddit.com/r/StableDiffusion/comments/zjbjh2/one_model_to_rule_them_all_my_dd_checkpoint/"
+							target="_blank" rel="noreferrer">Click here for the original Reddit post</a>.</p>
+					<p>You can download the latest <a
+							href="https://huggingface.co/0xJustin/Dungeons-and-Diffusion" target="_blank"
+							rel="noreferrer">Dungeons and Diffusion model here</a> (requires free account.)</p>
+				</textblock>
+				</hsection>
+
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Counterfeit <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator Prompt: girl (however in my testing this is not required.)</tag></p>
+					<p>I came across this model on civitai.com, but there was little information provided about it. Despite this, the example images appear to be of high quality, similar to the Anything model. It is not clear how this model was trained or what the base model was. While it is capable of generating male characters, it seems to have a focus on generating female characters, particularly in the form of wallpaper-style anime girls.</p>
+					<p>You can download the latest <a
+							href="https://civitai.com/models/1411/counterfeit" target="_blank"
+							rel="noreferrer">Counterfeit model here</a></p>
+				</textblock>
+				<imagerow>
+					<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'model_examples/counterfeit')"/>
+				</imagerow>
+				</hsection>
+
+				<!--<h3>IMG2ASSET - VRoid Clothing Generator</h3>
 		  <textblock>
 		  <p>This model is unique in it has a specific purpose and has a very practical use. IMG2ASS (asset) is used to create clothing patterns to be used with VRoid software to quickly create clothing designs that fit the specific VRoid format. There are a few steps to using this model as it isn't the same as other general use models.</p>
 		  <p>The steps are as followed as provided by u/Ne_Nel</p>
@@ -174,32 +515,29 @@
 		  <p>Overall, this model is a great idea and it would be interesting to see the concept of creating specific asset creators gather steam and see more models like this popping up.</p>
 		  <p><a href="https://www.reddit.com/user/Ne_Nel/submitted/" target="_blank" rel="noreferrer">u/Ne_Nei</a> has been very informative about this model and you can check out more comments he has left on his posts detailing what works best to create good clothing.</p>
 		  <a href="https://huggingface.co/Abysz/VRass1.2_Img2ass" target="_blank" rel="noreferrer">Click here for the download link.</a>
-		  </textblock>
+		  </textblock>-->
 
-			<h3>Archer Diffusion</h3>
-			<textblock>
-		  <p>A model posted on Reddit that was trained by u/Nitrosocke that has been trained to create images in the style of the animated TV show "Archer". This model has been trained using Dreambooth and fine-tuned based on the Stable Diffusion model (I assume v1.4). <a href="https://huggingface.co/nitrosocke/archer-diffusion" target="_blank" rel="noreferrer">Click here for the download link.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
-		  </textblock>
+				<br>
+				<h3>Character Specific Models</h3>
+				<h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Jinx from League of Legends - Model by Reddit user u/jinofcool <img
+					loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+					style="width: 20px; margin-left:25px;" /></h3>
+					<hsection>
+				<textblock>
+					<p><tag>Activator Prompt: sks jinx</tag></p>
+					<p>Another model posted on Reddit that was trained by u/jinofcool that has been trained to create
+						simplistic app icon style images. It was trained using Dreambooth. The author has not provided
+						much information on the model but it is free to download and use. <a
+							href="https://www.reddit.com/r/StableDiffusion/comments/y2avjq/my_jinx_form_arcane_dream_booth_model_download/"
+							target="_blank" rel="noreferrer">Click here for the original Reddit post with download in
+							the comments.</a>. As this model is small and made by one enthusist, it may not be updated
+						often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
+				</textblock>
+				</hsection>
 
-			<h3>Pixel Art Diffusion</h3>
-			<textblock>
-		  <p>A model posted on Reddit that was trained by u/Why_Soooo_Serious that has been trained to create pixel art style images. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y54isd/couldnt_generate_pixel_art_with_sd_so_i_trained_a/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
-		  </textblock>
-
-			<h3>App Icons Diffusion</h3>
-			<textblock>
-		  <p>Another model posted on Reddit that was trained by u/Why_Soooo_Serious that has been trained to create simplistic app icon style images. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y5rfff/app_icon_generator_v1_people_liked_the_pixel_art/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
-		  </textblock>
-
-			<br>
-			<h3>Character Specific Models</h3>
-			<h3>Jinx from League of Legends - Model by Reddit user u/jinofcool</h3>
-			<textblock>
-		  <p>Another model posted on Reddit that was trained by u/jinofcool that has been trained to create simplistic app icon style images. It was trained using Dreambooth. The author has not provided much information on the model but it is free to download and use. <a href="https://www.reddit.com/r/StableDiffusion/comments/y2avjq/my_jinx_form_arcane_dream_booth_model_download/" target="_blank" rel="noreferrer">Click here for the original Reddit post with download in the comments.</a>. As this model is small and made by one enthusist, it may not be updated often and may even be unavailable at some point. If this occurs, I will self host the file.</p>
-		  </textblock>
-
-		</section>
+			</section>
 		</article>
-         </div>
-  </body>
+	</div>
+</body>
+
 </html>
