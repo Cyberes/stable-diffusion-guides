@@ -48,9 +48,10 @@
   <hr>
   <article>
 		<a href="index.html">Back to the main page</a>
-		<p>On this page you will find information on all sampling methods available in the webGUI. Please note that the differences stated are very minor and all sampling methods can produce good results, there is no drop in quality between methods but they do generate slight variations on an image even when using the same seed. The art on this page has been cherrypicked to show the best images from each method.</p>
+		<p>On this page you will find information on all sampling methods (also known as schedulers) available in the webGUI. Please note that the differences stated are very minor and all sampling methods can produce good results, there is no drop in quality between methods but they do generate slight variations on an image even when using the same seed. The art on this page has been cherrypicked to show the best images from each method.</p>
 		<p>More research is needed into sampling methods. As it has been explained to me, there is no visual difference between methods and differences will only be based on how the internal calculations are made for rending images. The descriptions below should be taken with a grain of salt as they are simply my observational opinions on a small dataset.</p>
 		<p>If you're into reading a more technical write up about sampling methods, the Reddit user u/Remove_Ayys has been working on some detailed investigations into sampling methods. <a href="https://github.com/JohannesGaessler/stable-diffusion-insights" target="_blank" rel="noreferrer">Read more here</a>.</p>
+		<p>You can also find more official information about sampling methods on the <a href="https://huggingface.co/docs/diffusers/api/schedulers/overview" target="_blank" rel="noreferrer">Hugging Face documentation page</a>.</p>
 
 			<h3>Euler</h3>
 			<textblock>
@@ -61,7 +62,7 @@
 				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'euler_demo')"/>
 			</imagerow>
 
-			<h3>Euler A</h3>
+			<h3>Euler A (Euler ancestral)</h3>
 			<textblock>
 			<p>Euler A is very similar to Euler in the style and detail of images that it can produce. However, in my opinion, it does produce better looking images compared to  Euler, and can do it in less steps.</p>
 			<p>The one downside to Euler A is that it is not consistent and changing steps will change an image drastically even with 20 step changes. An extremely high step count may make images that look worse than something of a lower step count. This is very counterintuitive, but Euler A takes much more experimenting to find what works, and you have to find the “sweet spot” for every new type of image you try to create. Overall, though, it can produce high-quality art.</p>
@@ -71,7 +72,7 @@
 				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'euler_a_demo')"/>
 			</imagerow>
 
-			<h3>LMS</h3>
+			<h3>LMS - Linear Multistep Scheduler</h3>
 			<textblock>
 			<p>The LMS method is quite different to Euler and seems to do poorly with trying to generate people and animals. It will create a simple/ less detailed image for characters. It can create great scenery and landscape images, however. I would still prefer using Euler for most images, but LMS can be used for quick and detailed landscapes if you’re having trouble getting a good landscape in other models. This model has a much more artistic/ stylized look to it that looks more like a painting or visual novel background.</p>
 			</textblock>
@@ -108,7 +109,7 @@
 				<img loading="lazy" src="assets/images/load.gif" alt="load" onload="load_gallery(this, 'heun_demo')"/>
 			</imagerow>
 
-			<h3>DDIM</h3>
+			<h3>DDIM - Denoising Diffusion Implicit Models</h3>
 			<textblock>
 				<p>DDIM is another method that benefits from longer step counts and can create detailed images with the right prompts. There isn't that much more to add about this model as it is practically the same as the other non-A models.</p>
 			</textblock>

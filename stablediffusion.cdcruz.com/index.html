@@ -70,6 +70,33 @@
 
   <article id="contents">
   <h3 id="intro">Introduction</h3>
+
+  <h4>What is Stable Diffusion and its derivatives? (Simplified explanation)</h4>
+  <p>Stable Diffusion is an AI image generator developed by StablilityAI who strive to make AI image generation open source and ethically sound. It is easy to use for anyone with basic technical knowledge and a computer. It is the most popular model because it has served as the basis for many other AI models. In order to use the image generator, you need two things: the model (Stable Diffusion in this case) and a way to interface with the model. Many graphical user interfaces (GUIs) have been created to make it easy to interact with the model and adjust parameters to generate the images you want.</p>
+  <p>You might be wondering how the AI model works. In simple terms, it is trained on a large dataset of images and learns to associate certain words, phrases, or lists of words with each image. After training for an extended period of time on this dataset, the AI begins to understand what to generate; for example, when you ask it to create an image of a dog, it has learnt what a dog looks like from its training and will try to replicate a dog using all the knowledge it has gained. Rather than simply copying an image from its dataset, the AI generates an average image based on all the images related to the word "dog." It also adds randomness to the image by using noise as a base, which allows for the creation of many unique images from the same prompt. However, the generation process is not completely random; if you use the same parameters to generate an image, you will get the same exact image every time. To create a different image, you must change the randomness, also known as the "seed."</p>
+  <p>In summary, Stable Diffusion and its derivatives are complex topics that are constantly evolving with new technologies being developed all the time.</p>
+
+  <h4>What is Stable Diffusion? (Advanced explanation)</h4>
+  <p>Stable Diffusion is a type of generative model that uses artificial intelligence (AI) to generate images. It is based on the concept of latent diffusion, which involves breaking down images into noise and learning how to recreate the image from the noise through training. The model is built using a combination of convolutional neural networks (CNNs) and other techniques.
+  <p>The basic architecture of Stable Diffusion consists of three main components: CLIP (Contrastive Language-Image Pre-training), U-NET (denoising architecture), and VAE (Variational Auto-Encoder). These components work together to create the final model.</p>
+  <p>CLIP is an open source text encoder that converts descriptive words and prompts into a format that the AI can understand and interpret. It uses a combination of a transformer model and a CNN to process the text input and generate a representation of the input in the form of a tensor. This tensor is then used as a starting point for image generation.</p>
+  <p>U-NET is the main "brain" of the image model, responsible for generating the latent space that extracts meaning from random noise. It is a type of denoising architecture that uses a combination of convolutional and transposed convolutional layers to process the input noise and generate a latent representation of the image. This latent representation is then fed into the VAE for decoding and image generation.</p>
+  <p>VAE is a way to decode and encode images from their latent space representation into or out of a standard image. It consists of an encoder network and a decoder network, which work together to map images to and from the latent space. The encoder network takes an input image and compresses it into a latent representation, while the decoder network takes the latent representation and expands it back into an image. Together, the encoder and decoder networks form a generative model that can be used to generate new images from noise inputs.</p>
+  <p>In addition to these core components, there are also several other techniques and technologies that are used in the implementation of Stable Diffusion, such as weight normalization, gradient clipping, and Adam optimization. These techniques help to improve the stability and performance of the model.</p>
+  <p>Overall, Stable Diffusion is a powerful and flexible tool for generating high-quality images, and has a wide range of applications in fields such as computer graphics, machine learning, and data synthesis.</p>
+  <p>There are additional components in the diffusion model pipeline, but I do not have the knowledge to explain them in detail. If you would like to learn more about Stable Diffusion, here are a few resources:</p>
+
+  <creditblock>
+	<ul>
+  		<li><a href="https://github.com/CompVis/stable-diffusion" target="_blank" rel="noreferrer">https://github.com/CompVis/stable-diffusion</a></li>
+		<li><a href="https://the-decoder.com/new-clip-model-aims-to-make-stable-diffusion-even-better/" target="_blank" rel="noreferrer">https://the-decoder.com/new-clip-model-aims-to-make-stable-diffusion-even-better/</a></li>
+		<li><a href="https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/stable-diffusion-scratch" target="_blank" rel="noreferrer">https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/stable-diffusion-scratch</a></li>
+		<li><a href="https://nn.labml.ai/diffusion/stable_diffusion/model/unet.html" target="_blank" rel="noreferrer">https://nn.labml.ai/diffusion/stable_diffusion/model/unet.html</a></li>
+		<li><a href="https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion" target="_blank" rel="noreferrer">https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion</a></li>
+	</ul>
+</creditblock>
+
+  <h4>What topics does this webpage cover?</h4>
   <p>This page is dedicated to providing tips, tricks, and information on Stable Diffusion and Waifu Diffusion. Some of the information on this page has been sourced from other authors and will be credited where possible. The focus of this guide is on Waifu Diffusion and anime art styles, but the information provided should still be applicable to any kind of AI generation. This guide also makes reference to features available on the AUTOMATIC1111 webGUI, which may not be available on other user interfaces.</p>
 	<!--<p>If you'd like to see my gallery of my personal best images you can visit my <a href="image_gallery.html">Image Gallery</a> here.</p>-->
 
@@ -148,7 +175,7 @@
 	</section>
 
   <h3>Models</h3>
-	<p>Models are an essential component in the process of AI image generation. All models are checkpoint files with the <tag>.ckpt</tag> extension. The top models, such as Stable Diffusion and Waifu Diffusion, have been trained on large datasets and are regularly updated to improve their performance. While anyone with the necessary knowledge and computer specifications can create their own models, there is currently a diverse range of options available. As the field of AI generation continues to grow, it is likely that specialized models will emerge for different genres of imagery.</p>
+	<p>Models are an essential component in the process of AI image generation. All models are checkpoint files with the <tag>.ckpt</tag> extension, a new development has now made .ckpt files deprecated and it is now recommended to use <tag>.safetensor</tag> model files instead. There is no visual difference between .ckpt models and .safetensor models. As the name suggests, these models are safer to use and don't come with the same risks as normal .ckpt files. The top models, such as Stable Diffusion and Waifu Diffusion, have been trained on large datasets and are regularly updated to improve their performance. While anyone with the necessary knowledge and computer specifications can create their own models, there is currently a diverse range of options available. As the field of AI generation continues to grow, it is likely that specialized models will emerge for different genres of imagery.</p>
 	<p>The top models currently in use include Stable Diffusion, Waifu Diffusion, and Novel AI. However, Novel AI is a paid service and will not be discussed in this guide, which focuses on open-source projects. For more information on these models, please visit the <a href="https://stablediffusion.cdcruz.com/models.html">models page</a>.</p>
 	<section>
 	<h4>Model Information</h4>
@@ -177,6 +204,7 @@
 
 	<h4>Security Risks</h4>
 	<textblock>
+	<p>With the introduction of <tag>.safetensor</tag> models, the below is not a huge problem as long as you stick to .safetensor models. However, if you continue to use <tag>.ckpt</tag> models, be aware of the following.</p>
 	<p>It is important to note that models can potentially contain malicious code or viruses if created by nefarious individuals. These individuals could create an enticing looking model, but hide a virus within it that could potentially harm your computer. This is why you may see your antivirus software flag a model you download as "malware", however this does not always mean the model is bad as antivirus software is not always 100% accurate. It is recommended to stick with trusted and widely used models like Stable Diffusion and Waifu Diffusion to avoid potential risks. </p>
 	<p>However, not all models are dangerous and the AUTOMATIC1111 has built-in features to safeguard against harmful models. To ensure the safety of your computer, it is important to use caution when downloading and using AI models.</p>
 	<p>A Reddit user u/diStyR has also created a simple <a href="https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI" target="_blank" rel="noreferrer">model scanner</a> to allow you to scan model files to make sure they do not contain malware. This software only works on Windows at the time of writing. A advantage to using this software is that you can enter URL links to a model and the software can check those models without you needing to download it yourself (and risk downloading a malicious file). As with other anti-virus software is not 100% accurate and this program can flag safe models as dangerous or vice versa, use at your own discretion. To run, find the <tag>GUI.exe</tag> file within the zipped folder.</p>
@@ -391,6 +419,7 @@
 		<li><a href="https://www.youtube.com/watch?v=1_dViOW3Vy4" target="_blank" rel="noreferrer">Youtuber: ChamferZone AI Video: Stable Diffusion - Master AI Art</a></li>
 		<li><a href="https://www.youtube.com/watch?v=8NDz0YmSGVU" target="_blank" rel="noreferrer">Youtuber: bycloud Video: AI Generated Art Is Getting Out of Hand</a></li>
 		<li><a href="https://www.reddit.com/r/sdforall/comments/yu43oj/textual_inversion_vs_dreambooth/" target="_blank" rel="noreferrer">Redditer: u/ai-design-firm Post: Textual Inversion vs Dreambooth</a></li>
+		<li><a href="https://stable-diffusion-art.com/depth-to-image/" target="_blank" rel="noreferrer">Depth-to-image in Stable Diffusion 2: All you need to know</a></li>
 		</ul>
   </creditblock>
 
