@@ -65,19 +65,24 @@
 		</div>
 	</div>
   <hr>
-  <h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Contents <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
-  <hsection id="toc"></hsection>
 
   <article id="contents">
   <h3 id="intro">Introduction</h3>
 
-  <h4>What is Stable Diffusion and its derivatives? (Simplified explanation)</h4>
-  <p>Stable Diffusion is an AI image generator developed by StablilityAI who strive to make AI image generation open source and ethically sound. It is easy to use for anyone with basic technical knowledge and a computer. It is the most popular model because it has served as the basis for many other AI models. In order to use the image generator, you need two things: the model (Stable Diffusion in this case) and a way to interface with the model. Many graphical user interfaces (GUIs) have been created to make it easy to interact with the model and adjust parameters to generate the images you want.</p>
-  <p>You might be wondering how the AI model works. In simple terms, it is trained on a large dataset of images and learns to associate certain words, phrases, or lists of words with each image. After training for an extended period of time on this dataset, the AI begins to understand what to generate; for example, when you ask it to create an image of a dog, it has learnt what a dog looks like from its training and will try to replicate a dog using all the knowledge it has gained. Rather than simply copying an image from its dataset, the AI generates an average image based on all the images related to the word "dog." It also adds randomness to the image by using noise as a base, which allows for the creation of many unique images from the same prompt. However, the generation process is not completely random; if you use the same parameters to generate an image, you will get the same exact image every time. To create a different image, you must change the randomness, also known as the "seed."</p>
-  <p>In summary, Stable Diffusion and its derivatives are complex topics that are constantly evolving with new technologies being developed all the time.</p>
+  <h4>What is Stable Diffusion? (ELI5 explanation)</h4>
+  <p>Stable Diffusion is a special program that helps people make pictures using a computer. It's very good at it because it's learned about lots of different kinds of pictures and what they look like. When you ask it to make a picture of something, it uses all of the things it knows about to try to make a good picture. It also adds some special stuff to make the picture a little different each time. Some people use it to make lots of different kinds of pictures and share them with other people. It's really cool!</p>
 
-  <h4>What is Stable Diffusion? (Advanced explanation)</h4>
-  <p>Stable Diffusion is a type of generative model that uses artificial intelligence (AI) to generate images. It is based on the concept of latent diffusion, which involves breaking down images into noise and learning how to recreate the image from the noise through training. The model is built using a combination of convolutional neural networks (CNNs) and other techniques.
+  <h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">What is Stable Diffusion? (Simplified explanation) <img
+	loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+	style="width: 20px; margin-left:25px;" /></h4>
+  <hsection><p>Stable Diffusion is an AI image generator developed by StablilityAI who strive to make AI image generation open source and ethically sound. It is easy to use for anyone with basic technical knowledge and a computer. It is the most popular model because it has served as the basis for many other AI models. In order to use the image generator, you need two things: the model (Stable Diffusion in this case) and a way to interface with the model. Many graphical user interfaces (GUIs) have been created to make it easy to interact with the model and adjust parameters to generate the images you want.</p>
+  <p>You might be wondering how the AI model works. In simple terms, it is trained on a large dataset of images and learns to associate certain words, phrases, or lists of words with each image. After training for an extended period of time on this dataset, the AI begins to understand what to generate; for example, when you ask it to create an image of a dog, it has learnt what a dog looks like from its training and will try to replicate a dog using all the knowledge it has gained. Rather than simply copying an image from its dataset, the AI generates an average image based on all the images related to the word "dog." It also adds randomness to the image by using noise as a base, which allows for the creation of many unique images from the same prompt. However, the generation process is not completely random; if you use the same parameters to generate an image, you will get the same exact image every time. To create a different image, you must change the randomness, also known as the "seed."</p>
+  <p>In summary, Stable Diffusion and its derivatives are complex topics that are constantly evolving with new technologies being developed all the time.</p></hsection>
+
+  <h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">What is Stable Diffusion? (Advanced explanation) <img
+	loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+	style="width: 20px; margin-left:25px;" /></h4>
+  <hsection><p>Stable Diffusion is a type of generative model that uses artificial intelligence (AI) to generate images. It is based on the concept of latent diffusion, which involves breaking down images into noise and learning how to recreate the image from the noise through training. The model is built using a combination of convolutional neural networks (CNNs) and other techniques.
   <p>The basic architecture of Stable Diffusion consists of three main components: CLIP (Contrastive Language-Image Pre-training), U-NET (denoising architecture), and VAE (Variational Auto-Encoder). These components work together to create the final model.</p>
   <p>CLIP is an open source text encoder that converts descriptive words and prompts into a format that the AI can understand and interpret. It uses a combination of a transformer model and a CNN to process the text input and generate a representation of the input in the form of a tensor. This tensor is then used as a starting point for image generation.</p>
   <p>U-NET is the main "brain" of the image model, responsible for generating the latent space that extracts meaning from random noise. It is a type of denoising architecture that uses a combination of convolutional and transposed convolutional layers to process the input noise and generate a latent representation of the image. This latent representation is then fed into the VAE for decoding and image generation.</p>
@@ -94,30 +99,35 @@
 		<li><a href="https://nn.labml.ai/diffusion/stable_diffusion/model/unet.html" target="_blank" rel="noreferrer">https://nn.labml.ai/diffusion/stable_diffusion/model/unet.html</a></li>
 		<li><a href="https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion" target="_blank" rel="noreferrer">https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion</a></li>
 	</ul>
-</creditblock>
+	</creditblock>
+  </hsection>
+
+  
 
   <h4>What topics does this webpage cover?</h4>
   <p>This page is dedicated to providing tips, tricks, and information on Stable Diffusion and Waifu Diffusion. Some of the information on this page has been sourced from other authors and will be credited where possible. The focus of this guide is on Waifu Diffusion and anime art styles, but the information provided should still be applicable to any kind of AI generation. This guide also makes reference to features available on the AUTOMATIC1111 webGUI, which may not be available on other user interfaces.</p>
 	<!--<p>If you'd like to see my gallery of my personal best images you can visit my <a href="image_gallery.html">Image Gallery</a> here.</p>-->
 
   <h3>Getting Started</h3>
-	<section>
+
 		<p>Stable Diffusion is open source, meaning it can be used and installed in a variety of ways. For those who are technically inclined, Stable Diffusion can be run entirely through command line commands. There are even methods for running Stable Diffusion in the cloud, such as through Google Colab. This guide will focus on methods for running Stable Diffusion locally on your own computer, without requiring extensive technical knowledge or steps to get started.</p>
 
-	<h4>AUTOMATIC111 WebGUI</h4>
-	<textblock>
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">AUTOMATIC111 WebGUI <img
+		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+		style="width: 20px; margin-left:25px;" /></h4>
+		<hsection>
 		<caution><p>Please be aware that at the time of writing the AUTOMATIC111 Github repository does not contain a license of any kind. This legally means by default all of the code in the repository is owned by the individual people who have contributed code. This means that any contributer could take down the repo with a DMCA request as their intellectual property is being used. It is an unlikely event, but a possible one & without Github's terms of service, it would not even be legal to use the WebGUI. (It may technically not be legal right now, I'm not sure, I'm not a lawyer). For more information on this, visit <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222" target="_blank" rel="noreferrer">Pull Request 4222</a>, <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059" target="_blank" rel="noreferrer">Issue 2059</a>, & <a href="https://choosealicense.com/no-permission/" target="_blank" rel="noreferrer">Information on no license</a>. Use at your own risk.</p></caution>
 
 	<p>The AUTOMATIC1111 webGUI is the most popular locally run user interface for Stable Diffusion, largely due to its ease of installation and frequent updates with new features. Following Voldy's Guide, you should be able to install it without much difficulty.</p>
 	<p>Rentry has created an excellent guide on how to use the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noreferrer">AUTOMATIC1111 webGUI</a> locally on your computer. <a href="https://rentry.org/voldy" target="_blank" rel="noreferrer">Voldy's Guide</a> provides a wealth of information on getting started with Stable Diffusion and Waifu Diffusion.</p>
 	<p>I have also created my own guide based on Voldy's that provides more detailed information and instructions for installing on macOS M1/M2 Macs. You can find my guide <a href="https://stablediffusion.cdcruz.com/install.html">here</a>.</p>
 	<p>The AUTOMATIC1111 webGUI has many features, and I have created a separate page to properly display and describe these features. You can find this page <a href="https://stablediffusion.cdcruz.com/automatic1111.html">here</a>.</p>
-	</textblock>
-	<br>
+	</hsection>
 	
-
-	<h4>NMKD GUI - One Click Installer</h4>
-	<textblock>
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">NMKD GUI - One Click Installer <img
+		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+		style="width: 20px; margin-left:25px;" /></h4>
+	<hsection>
 	<p>If you have difficulty following the guide for AUTOMATIC111's webGUI or simply want to try a different user interface, N00MKRAD on itch.io is developing a standalone program for running Stable Diffusion. As of October 17, 2022, this program includes core features and support for dreambooth training on 24GB Nvidia GPUs. The developer is also working to reduce the VRAM requirement. While this tool is available free of charge, I recommend supporting its development through a donation.</p>
 	<p>To use the program, simply download and unzip the file on your computer, then run the <tag>StableDiffusionGui.exe</tag> file. That's all there is to it!</p>
 	<p>While this guide primarily focuses on the AUTOMATIC111 webGUI due to its quick implementation of new features and extensive functionality, the information provided should apply to other user interfaces as they are all based on Stable Diffusion.</p>
@@ -136,10 +146,12 @@
 		<p><tag>32GB RAM minimum</tag></p>
 		<p><tag>12GB - 37GB free space on an NVME SSD</tag></p>
 	<p>You can download the NMKD GUI at its <a href="https://nmkd.itch.io/t2i-gui" target="_blank" rel="noreferrer">itch.io page</a>.</p>
-	</textblock>
+	</hsection>
 
-	<h4>Artroom.ai - One Click Installer </h4>
-	<textblock>
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Artroom.ai - One Click Installer <img
+		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+		style="width: 20px; margin-left:25px;" /></h4>
+	<hsection>
 		<p>Another easy to use local way to run Stable Diffusion released on 17/11/22 and features a simple/ sleek interface while still providing great control over model parameters.</p>
 		<p>It's an easy setup process that can take upwards of 10 minutes to install everything and then you're good to go. As with most UI's it is not as feature rich as AUTOMATIC1111's Web GUI, but it is more stable and a much better user experience that includes a introduction tutorial when you first launch the program. The creator of this software has stated they will keep the Artroom software free forever and only monetize through other means. So you will be able to create new art as long as you want completely for free and without the headaches of working with the extremely experimental and fast moving AUTOMATIC1111 Web GUI.</p>
 		<center><img loading="lazy" src="assets/images/examples/artroom_free_screenshot.webp" alt="u/arturmame stating Artroom will stay free." style="max-width: 600px; width: 100%;"/></center>
@@ -152,10 +164,12 @@
 		<p><tag>Can also run on CPU but is much slower</tag></p>
 		<p><tag>16GB RAM minimum</tag></p>
 		<p>You can download Artroom.ai at its <a href="https://artroom.ai/download-app" target="_blank" rel="noreferrer">official website</a>.</p>
-	</textblock>
+	</hsection>
 
-	<h4>DiffusionBee - SD for M1/M2 Macs</h4>
-	<textblock>
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">DiffusionBee - SD for M1/M2 Macs <img
+		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+		style="width: 20px; margin-left:25px;" /></h4>
+	<hsection>
 	<p>While not as feature rich as Windows or Linux programs for Stable Diffusion, DiffusionBee is a free and open source app that brings local generation to your Mac products. It is the only MacOS program that I have currently found that installs as easy as any other app on your Mac. Simply download, open & drag to your application folder. This is by far the best installation flow of any Stable Diffusion program on any platform, it will even automatically download the Stable Diffusion model to get you started. The only downside is that is it incredibly bare bones in functionality at the current time. I am also unsure how many features are planned for this program as there is not a lot of information available on their website.</p>
 	<p>Current features include, Text to Image, Image to Image and Outpainting. Those should be enough for anyone who is wanting to dabble in image generation and its ease-of-use makes up for its current lack of features.</p>
 	<p>On 04/11/22 Diffusion be was updated with more features including inpainting, upscaling and improvements to all other features.</p>
@@ -171,8 +185,7 @@
 	<br/>
 	<h5>Models directory</h5>
 	<p>The Stable Diffusion model is located at <tag>~/.diffusionbee/downloads</tag>. You can copy in your own model to this directory if you would like to use it instead of the model that downloads automatically by DiffusionBee. However, I have looked at this directory, and it seems that DiffusionBee uses <tag>.h5</tag> files instead of the standard <tag>.ckpt</tag> file.</p>
-	</textblock>
-	</section>
+	</hsection>
 
   <h3>Models</h3>
 	<p>Models are an essential component in the process of AI image generation. All models are checkpoint files with the <tag>.ckpt</tag> extension, a new development has now made .ckpt files deprecated and it is now recommended to use <tag>.safetensor</tag> model files instead. There is no visual difference between .ckpt models and .safetensor models. As the name suggests, these models are safer to use and don't come with the same risks as normal .ckpt files. The top models, such as Stable Diffusion and Waifu Diffusion, have been trained on large datasets and are regularly updated to improve their performance. While anyone with the necessary knowledge and computer specifications can create their own models, there is currently a diverse range of options available. As the field of AI generation continues to grow, it is likely that specialized models will emerge for different genres of imagery.</p>
@@ -397,6 +410,15 @@
 			<p>You can create really good NSFW imagery with a lot of time and patience and finding the correct prompts, but results will vary a lot and the more niche your NSFW image is, the less likely it will create good results.</p>
 		</textblock>
 	</section>
+
+
+	<h3>Interesting Use-Cases for Stable Diffusion</h3>
+	<h4>Materials for 3D Texturing: Using the Open Source Software Materialize</h4>
+	<p>Texturing 3D modeled objects can be time-consuming, and using texture libraries can be costly if you want high-quality textures. However, Stable Diffusion can help create seamless, tileable textures using the "tiling" checkbox on the AUTO webUI. Once you have created a seamless texture, you can then use another open-source program called <a href="https://boundingboxsoftware.com/materialize/index.php" target="_blank" rel="noreferrer">Materialize</a> to generate the normal map, roughness map, and other image maps needed to properly display the texture in 3D software like Blender or Unity.</p>
+	<p>Materialize is not directly related to artificial intelligence, but it is a fast and easy way to process normal images. Currently, Materialize is only available for Windows. While the GUI may seem outdated, this <a href="https://youtu.be/zKYr3Ca-xqg" target="_blank" rel="noreferrer">Youtube video</a> by Smeaf provides a good overview of how to use Materialize.</p>
+
+
+	
   <h3>Credits/ Resources</h3>
   <creditblock>
 		<ul>
@@ -430,39 +452,6 @@
 	<tag>Discord: CDcruz#7499</tag>
 	<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a waifu pillow', '#29abe0', 'A0A85XKO6');kofiwidget2.draw();</script>
   </article>
-
-
-<script>
-
-window.onload = function () {
-    let contents = document.getElementById("contents").childNodes;
-    document.getElementById("toc").innerHTML = create_toc(contents);
-};
-
-function create_toc(contents) {
-	let toc = "";
-	contents.forEach(function(item, i, arr) {
-		let id = "";
-		switch (item.nodeName) {
-			case "H3":
-				item.id = item.innerHTML;
-				id = (item.id == undefined) ? "" : `#${item.id}`;
-				toc += `<list1><a href="${window.location.href}/${id}">${item.innerHTML}</a></list1>`;
-				break;
-			case "H4":
-				item.id = item.innerHTML;
-				id = (item.id == undefined) ? "" : `#${item.id}`;
-				toc += `<list2><a href="${window.location.href}/${id}">${item.innerHTML}</a></list2>`;
-				break;
-			case "SECTION":
-				toc += create_toc(item.childNodes);
-				break;
-		}
-	});
-	return toc;
-}
-
-</script>
 
          </div>
   </body>

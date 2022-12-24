@@ -49,7 +49,8 @@
     <hr>
     <article>
 		<a href="index.html">Back to the main page</a>
-		<p>This is an installation guide for how to install the AUTOMATIC1111 WebGUI (mainly as a reminder for my future self). I have tested installing on Windows 10 & 11 and I plan to try to install on my Macbook as well to provide a guide on that. Most of this information has been taken from Rentry.org but I have added information or clarity were I feel appropriate.</p>
+		<p>Training machine learning models can be a demanding and time-consuming process, and it often requires a high-powered computer to achieve meaningful results. Here is a simple guide to help you get started with training your own models, along with brief explanations of the various types of models and embeddings that you can currently train.</p>
+    <p>Each type of model or embedding has its own strengths and limitations, and it's important to choose the one that best fits your needs and goals. Don't be afraid to experiment and try out different options to see what works best for you.</p>
 		
 		<section>
 
@@ -140,6 +141,20 @@
               <caution><p>Some users have reported that installing this extension can break the webGUI. I did not experience this issue, but I did have difficulty getting Dreambooth training to work even with CPU processing.</p></caution>
               <p>Dreambooth is based on research by Google and is an improvement on textual inversion. With Dreambooth, users can create their own image models (for a specific character/art style) in a fraction of the time (less than an hour) with higher quality compared to using textual inversion. As Dreambooth creates its own models, they are .ckpt files, which can be cumbersome if you want to have multiple variations. Additionally, Dreambooth model files are much larger as they are considered full models. This is where the modularity of Embeddings shines, as it is more user-friendly to train and generate with.</p>
               <p>Reddit user u/wuduzodemu has created a Dreambooth GUI that offers an easy installation and training interface. I have not yet tested it, but it appears promising and can also run on 10GB VRAM instead of the usual 24GBs required for local Dreambooth training. This is a major improvement and it is hoped that more accessible options like this will continue to be developed for all users. To download the Dreambooth GUI, visit the <a href="https://github.com/smy20011/dreambooth-gui" target="_blank" rel="noreferrer">GitHub page</a>.</p>
+            </hsection>
+
+            <br/>
+            <h2>Model Training GUI's</h2>
+            <p>Training machine learning models can be a complex and time-consuming process, and it may not be feasible if you don't have access to a powerful computer. However, there are several options available that can help make the process of training models easier, including graphical user interfaces (GUIs) and specialized programs. Some of these tools are cloud-based, which means that you can use remote servers to train your models, even if your own computer doesn't have the necessary processing power. Here are a few notable programs and services you can use for model training:</p>
+            <p>Due to the constraints of my own PC, I have not been able to personally test any of the local training methods.</p>
+            <h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">StableTuner <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
+            <hsection>
+              <p><tag>Requires a RTX 3090/4090</tag></p>
+              <p>StableTuner is a user-friendly GUI training software that allows you to perform Dreambooth, Fine-tuning, and LORA (TBA) training. This software is focused on training, and it provides all the necessary parameters for you to customize the training of your model using simple sliders and drop-down menus.</p>
+              <p>In my opinion, StableTuner is currently the best training software available, and it is easy to install with some basic technical knowledge. All required dependencies are automatically downloaded as you begin training. Once you launch the program, it is easy to get started, and all options have tooltips that provide information on their function simply by hovering over them. StableTuner also makes it easy to manage datasets with visual icons and simple methods for adding and deleting dataset concepts, tokens, and class images.</p>
+              <p>Additionally, StableTuner allows you to convert models between .ckpt files and diffuser models, making it easy to use these models in other software, such as automatic1111's GUI.</p>
+              <p>If you have the processing power, I would highly recommend using StableTuner to train your next model.</p>
+              <p>To download the GUI, visit the <a href="https://github.com/devilismyfriend/StableTuner" target="_blank" rel="noreferrer">GitHub page</a>.</p>
             </hsection>
         
             </section>
