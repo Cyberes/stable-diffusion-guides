@@ -143,6 +143,13 @@
               <p>Reddit user u/wuduzodemu has created a Dreambooth GUI that offers an easy installation and training interface. I have not yet tested it, but it appears promising and can also run on 10GB VRAM instead of the usual 24GBs required for local Dreambooth training. This is a major improvement and it is hoped that more accessible options like this will continue to be developed for all users. To download the Dreambooth GUI, visit the <a href="https://github.com/smy20011/dreambooth-gui" target="_blank" rel="noreferrer">GitHub page</a>.</p>
             </hsection>
 
+            <h3 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">LORA - Low-rank Adaptation <img loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret" style="width: 20px; margin-left:25px;"/></h3>
+            <hsection>
+              <p>LORA is a method introduced in December 2022 that aims to combine the quality of Dreambooth with the portability of textual inversion embeddings. It is still in development, but it already has some promising features that are available to try out. One notable feature is the ability to train models with much lower VRAM usage compared to Dreambooth.</p>
+              <p>At the moment, LORA needs to be incorporated into a .ckpt model, but in the future, it could potentially become a standalone embedding that can be used in a similar way to textual inversions. If the developers are successful in making LORA easy to use and producing high-quality images, it may become the best option for training new ideas and concepts. However, it is still an emerging technology, and it remains to be seen how it will progress in the future.</p>
+              <p>For more information on LORA and how to use it with AUTO1111's webGUI, check out this <a href="https://www.youtube.com/watch?v=gw2XQ8HKTAI" target="_blank" rel="noreferrer">Youtube video</a> by Nerdy Rodent. You can also visit the LORA <a href="https://github.com/cloneofsimo/lora" target="_blank" rel="noreferrer">GitHub page</a> for more technical details.</p>
+            </hsection>
+
             <br/>
             <h2>Model Training GUI's</h2>
             <p>Training machine learning models can be a complex and time-consuming process, and it may not be feasible if you don't have access to a powerful computer. However, there are several options available that can help make the process of training models easier, including graphical user interfaces (GUIs) and specialized programs. Some of these tools are cloud-based, which means that you can use remote servers to train your models, even if your own computer doesn't have the necessary processing power. Here are a few notable programs and services you can use for model training:</p>
@@ -156,6 +163,8 @@
               <p>If you have the processing power, I would highly recommend using StableTuner to train your next model.</p>
               <p>To download the GUI, visit the <a href="https://github.com/devilismyfriend/StableTuner" target="_blank" rel="noreferrer">GitHub page</a>.</p>
             </hsection>
+
+            
         
             </section>
     </article>
