@@ -15,11 +15,12 @@ download() {
 	for i in {1...10}; do
 		TMP="$(mktemp -d)/$2"
 		mkdir -p $(dirname $TMP)
-		wget -T 15 "$1" -O "$TMP" && break
+		wget -T 60 "$1" -O "$TMP" && break
+		sleep 10
 	done
 	CK_1=($(md5sum "$TMP"))
 	CK_2=($(md5sum "$2"))
-	echo "$CK_1 -> $CK_2"
+	echo "Checksums: $CK_1 -> changed to -> $CK_2"
 	if [[ ! -f "$2" ]]; then
 		mv "$TMP" "$2"
 	elif [[ $CK_1 != $CK_2 ]]; then
