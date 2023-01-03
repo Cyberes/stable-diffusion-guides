@@ -18,7 +18,10 @@ download() {
 		wget -T 15 "$1" -O "$TMP" && break
 	done
 	CK_1=$(md5sum "$TMP")
-	if [[ -f "$2" ]] && [[ $CK_1 == $(md5sum "$2") ]]; then
+	echo $(md5sum "$2") $CK_1
+	if [[ ! -f "$2" ]]; then
+		mv "$TMP" "$2"
+	elif [[ $CK_1 == $(md5sum "$2") ]]; then
 		mv "$TMP" "$2"
 	else
 		echo "$2 file unchanged"
