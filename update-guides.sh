@@ -14,6 +14,7 @@ rm -rf .git/modules
 download() {
 	for i in {1...10}; do
 		TMP="$(mktemp -d)/$2"
+		mkdir -p $(dirname $TMP)
 		wget -T 15 "$1" -O "$TMP" && break
 	done
 	CK_1=$(md5sum "$TMP")
