@@ -13,8 +13,15 @@ rm -rf .git/modules
 
 download() {
 	for i in {1...10}; do
-		wget -T 15 "$1" -O "$2" && break
+		TMP="$(mktemp -d)/$2"
+		wget -T 15 "$1" -O "$TMP" && break
 	done
+	CK_1=$(md5sum "$TMP")
+	if [[ -f "$2" ]] && [[ $CK_1 == $(md5sum "$2") ]]; then
+		mv "$TMP" "$2"
+	else
+		echo "$2 file unchanged"
+	fi
 }
 
 download "https://rentry.org/voldy/pdf" "archives/VOLDY RETARD GUIDE.pdf"
@@ -37,6 +44,17 @@ download "https://rentry.org/sdupdates2/pdf" "archives/sdupdates2.pdf"
 download "https://rentry.org/artists_sd-v1-4/pdf" "archives/list of artists for SD v1.4.pdf"
 download "https://rentry.org/hypernetwork4dumdums/pdf" "archives/hypernetwork4dumdums.pdf"
 download "https://rentry.org/LFTBL/pdf" "archives/Model Mixes.pdf"
+download "https://rentry.org/sdupdates3/pdf" "archives/SD Updates 3.pdf"
+download "https://rentry.org/sdg-link/pdf" "archives/More sdg links.pdf" 
+download "https://rentry.org/hdgrecipes/pdf" "archives/hd/ Stable Diffusion Models Cookbook.pdf"
+download "https://rentry.org/LFTBL/pdf" "archives/STABLE DIFFUSION MIXING EMPORIUM.pdf"
+download "https://rentry.org/embeddings/pdf" "archives/List of Textual Inversion embeddings.pdf"
+downwload "https://rentry.org/dummySD2/pdf" "archives/SDv2.0 Guide.pdf"
+download "https://rentry.org/AnimAnon/pdf" "archives/FizzleDorf's Animation Guide.pdf"
+download "https://rentry.org/sdgoldmine/pdf" "archives/SD RESOURCE GOLDMINE.pdf"
+download "https://rentry.org/safetensorsguide/pdf" "archives/Guide to convert .ckpt models to .safetensors.pdf"
+download "https://rentry.org/54d9o/pdf" "archives/sdg example prompts.pdf"
+
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
