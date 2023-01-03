@@ -42,7 +42,6 @@ download "https://rentry.org/ayymd-stable-diffustion-v1_4-guide/pdf" "archives/A
 download "https://rentry.org/sdamd/pdf" "archives/Stable Diffusion AMD.pdf"
 download "https://rentry.org/yrpvv/pdf" "archives/Stable Diffusion Models.pdf"
 download "https://rentry.org/sdupscale/pdf" "archives/Larger resolutions with Stable Diffusion.pdf"
-download "https://rentry.org/male-to-anime-girl/pdf" "archives/How to Turn Yourself Into a Cute Anime Girl.pdf"
 download "https://rentry.org/sdmodels/pdf" "archives/Stable Diffusion Models.pdf"
 download "https://rentry.org/sdg_FAQ/pdf" "archives/sdg FAQ.pdf"
 download "https://rentry.org/sdupdates/pdf" "archives/sdupdates.pdf"
