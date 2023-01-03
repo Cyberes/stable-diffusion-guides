@@ -58,8 +58,10 @@ downwload "https://rentry.org/dummySD2/pdf" "archives/SDv2.0 Guide.pdf"
 download "https://rentry.org/AnimAnon/pdf" "archives/FizzleDorf's Animation Guide.pdf"
 download "https://rentry.org/sdgoldmine/pdf" "archives/SD RESOURCE GOLDMINE.pdf"
 download "https://rentry.org/safetensorsguide/pdf" "archives/Guide to convert .ckpt models to .safetensors.pdf"
-download "https://rentry.org/54d9o/pdf" "archives/sdg example prompts.pdf"
-
+download "https://rentry.org/54d9o/pdf" "archives/sdg example prompts 1.pdf"
+download "https://rentry.org/9dn5g/pdf" "archives/sdg example prompts 2.pdf"
+download "https://rentry.org/u9ehi/pdf" "archives/sdg example prompts 3.pdf"
+download "https://rentry.org/p9yoo/pdf" "archives/sdg example prompts 4.pdf"
 
 wkhtmltopdf --encoding "UTF-8" "https://wiki.installgentoo.com/index.php?title=Stable_Diffusion&printable=yes" "archives/wiki.installgentoo.com Stable Diffusion Guide.pdf"
 #wkhtmltopdf --encoding "UTF-8" "https://stablediffusion.cdcruz.com/" "archives/CDcruz Stable Diffusion Guide.pdf"
