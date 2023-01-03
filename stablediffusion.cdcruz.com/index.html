@@ -124,6 +124,20 @@
 	<p>I have also created my own guide based on Voldy's that provides more detailed information and instructions for installing on macOS M1/M2 Macs. You can find my guide <a href="https://stablediffusion.cdcruz.com/install.html">here</a>.</p>
 	<p>The AUTOMATIC1111 webGUI has many features, and I have created a separate page to properly display and describe these features. You can find this page <a href="https://stablediffusion.cdcruz.com/automatic1111.html">here</a>.</p>
 	</hsection>
+
+	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">Invoke AI - Stable Diffusion Toolkit <img
+		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
+		style="width: 20px; margin-left:25px;" /></h4>
+	<hsection>
+		<p>If you're looking for an alternative to AUTOMATIC1111's webGUI, Invoke AI is a good option to consider. It features a sleek GUI, more support and documentation, and overall feels like a more professional product compared to AUTO. The installation process is similar to AUTO's webGUI and requires Python and a few command-line prompts to get everything set up. If you just want the basic setup, it is straightforward and can even be downloaded as a zip file with the required files included.</p>
+		<p>Compared to AUTO's webGUI, Invoke AI's layout is more streamlined and visually appealing. However, I find it harder to customize and add my own models, embeddings, and other features, however as of 03/01/2023 there is a proper GUI model manager within the program that lets you add local models and also download models from sites like HuggingFace. Invoke AI is actively being developed, but it doesn't have the same up-to-date features as AUTO's GUI. Currently, the main features of Invoke AI include txt-to-image, img-to-img, inpainting, and an impressive and intuitive outpainting feature known as the "unified canvas." These features are more limited than those offered by AUTO, but they should be sufficient for getting started. There are also some promising additions that could be included in future updates, such as a node tree for image processing.</p>
+	<h5>Minimum Requirements</h5>
+		<p><tag>Windows OS, Linux OS, Mac OS (M1 & M2)</tag></p>
+		<p><tag>Nvidia GPU with minimum 4GB VRAM</tag></p>
+		<p><tag>12GB RAM minimum</tag></p>
+		<p><tag>18GB Disk Space minimum</tag></p>
+	<p>You can download the Invoke AI at its <a href="https://invoke-ai.github.io/InvokeAI/" target="_blank" rel="noreferrer">Github page</a>.</p>
+	</hsection>
 	
 	<h4 onclick="toggleHsection(this);" style="cursor:pointer; display: flex;">NMKD GUI - One Click Installer <img
 		loading="lazy" src="assets/images/icons/down_caret.svg" alt="down_caret"
@@ -350,6 +364,10 @@
 	<p>I have not dived deep into training models due to the data and processing requirements, so my current knowledge is only from what I have learnt from other sources. Due to this, please do your own research as mine may be inaccurate and is just to give you a basic idea of the concepts.</p>
 	<p>For more information visit the <a href="https://stablediffusion.cdcruz.com/model_training.html">Model Training page</a>.</p>
 	<p>For a list of custom embeddings, models, hypernetworks and aesthetic gradients go to the <a href="https://stablediffusion.cdcruz.com/embeddings.html">Embeddings page</a> for more information.</p>
+
+	<h3>Checkpoint Merger - Model Mixing</h3>
+	<p>One unique feature available on the AUTO111 webGUI is the ability to mix two or more model files together using a mathematical mixing algorithm. This feature, known as the "Checkpoint Merger," can be a powerful tool when used correctly, allowing you to create more unique styles or strengthen the weak points of a model by combining the best aspects of different models. Model mixing can be a useful technique for enhancing your models and creating new styles.</p>
+	<p>Visit the <a href="https://stablediffusion.cdcruz.com/model_mixing.html">Model Mixing page</a> for more information.</p>
 	
 
 	<h3>Upscalers</h3>
@@ -385,7 +403,7 @@
 	</textblock>
 	<h4>Topaz Labs Gigapixel AI</h4>
 	<textblock>
-	<p>This is a paid software ($99USD at time of writing) so it doesn't fit with the open source theme of my guide, but I felt it was worth adding as it is one of the more user friendly options for more customized upscaling with multiple unique models available, multi-view rendering, batch upscaling and more. While its upscalers are more skewed to photography than artistic styles, it can still produce good results. As its a paid service (one time fee with option yearly fees), you can expect consistent updates and support using this software.</p>
+	<p>This is a paid software ($99USD at time of writing) so it doesn't fit with the open source theme of my guide, but I felt it was worth adding as it is one of the more user friendly options for more customized upscaling with multiple unique models available, multi-view rendering, batch upscaling and more. While its upscalers are more skewed to photography than artistic styles, it can still produce good results. As its a paid service (one time fee with optional yearly fees for updates), you can expect consistent updates and support using this software.</p>
 	<p>You can visit Topaz Lab's <a href="https://www.topazlabs.com/gigapixel-ai" target="_blank" rel="noreferrer">official website</a> for more information.</p>
 	</textblock>
 	</section>
@@ -399,11 +417,15 @@
 			</textblock>
 		<h4>Male Characters</h4>
 		<textblock>
-			<p>This limitation mostly relates to Waifu Diffusion, as Stable Diffusion is very good at creating male characters, however Waifu Diffusion has very obviously been trained on mainly anime women which makes male characters look quite bad compared to what the AI can generate for female characters. With WD 1.3 there have been improvements on male characters, but it could still be improved with more variety and detail for male characters.</p>
+			<p>This limitation mainly affects Waifu Diffusion, as Stable Diffusion is generally able to create male characters that are of good quality. However, Waifu Diffusion has been primarily trained on anime women, which leads to male characters that are of lower quality compared to the images generated for female characters. With the release of WD 1.3, there have been some improvements in the quality of male characters, but there is still room for more variety and detail in the way male characters are generated. Improving the quality and consistency of male characters generated by Waifu Diffusion would be a valuable addition to this model.</p>
 		</textblock>
 		<h4>Distant Characters</h4>
 		<textblock>
 			<p>All models are quite good at generating characters close up, usually from the bust up, but once you try to get a full body shot or include scenery it can cause problems. The futher away a character is, the less likely they will be generated properly. It's not a solution, but the AI can generate distant characters better if they are portrayed as a silhouette as it doesn't need to create details like the face.</p>
+		</textblock>
+		<h4>Consistant subjects</h4>
+		<textblock>
+			<p>One significant limitation of AI image generation is the inability to accurately replicate a specific character in different angles, poses, locations, and shot types. While it is possible to achieve this for well-known characters or celebrities, it is not as straightforward to create your own original character and generate consistent images between generations using prompts. The only way to overcome this limitation at the moment is to create an original character and then train an embedding or custom model, but the results can vary and may not be polished enough to achieve the desired consistency. This lack of consistency is a major hurdle that prevents AI image generation from reaching its full potential.</p>
 		</textblock>
 		<h4>NSFW Art</h4>
 		<textblock>

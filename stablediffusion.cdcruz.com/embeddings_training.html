@@ -47,7 +47,8 @@
   <hr>
   <article>
 		<a href="index.html">Back to the main page</a>
-		<p>This page will provide detailed instructions on conducting your own textural inversion training to create embeddings and use them in image generation. This guide is largely based on the YouTube video <a href="https://www.youtube.com/watch?v=7Lxdk89W2K0" target="_blank" rel="noreferrer">Textual Inversion - Make Anything In Stable Diffusion!</a>. In addition, this page will include any additional findings discovered through the use of textural inversion.
+		<p>This page will provide detailed instructions on conducting your own textural inversion training to create embeddings and use them in image generation. This guide is largely based on the YouTube video <a href="https://www.youtube.com/watch?v=7Lxdk89W2K0" target="_blank" rel="noreferrer">Textual Inversion - Make Anything In Stable Diffusion!</a>. In addition, this page will include any additional findings discovered through the use of textural inversion.</p>
+		<p>It is essential to keep in mind that embeddings are generally only compatible with the models they were trained on. For example, an embedding for an SD v1.x model will only work with other models trained on the SD v1.x architecture. Similarly, an embedding for an SD 2.x model will only work with models trained on the SD 2.x architecture, and will not be compatible with any previous versions of the model.</p>
 			<h3>Requirements</h3>
 			<p><tag>VRAM - 8GB minimum</tag></p>
 			<p><tag>System RAM - 16GB minimum</tag></p>
@@ -91,9 +92,19 @@
 		<p><tag>Save a copy of embedding to log directory every N steps, 0 to disable</tag> Similar to the previous field, this option allows for the regular saving of embeddings at set intervals. This can be useful for reverting to an older version of the embedding if the final results are not satisfactory. To disable this function, set the value to 0.</p>
 		<p><tag>Save images with embedding in PNG chunks</tag> This is a recent feature that creates an image that can also be used as an embedding for the model. Please refer to the main page for more information on this function.</p>
 		<p><tag>Read parameters from txt2img tab when making previews</tag> This setting only affects the appearance of preview images, and allows the specification of the prompt that the model will use when displaying the preview image with the embedding.</p>
+		<p><tag>Shuffle tags by ',' when creating prompts</tag> Tick this box if you'd like the comma seperated prompts to be shuffled each time they are read. I personally don't believe this would help that much, but it could be useful for creating more variety in your dataset.</p>
+		<p><tag>Drop out tags when creating prompts</tag> Similar to the above option, the drop out option will remove some tags from your prompt list randomly to create more variety in your dataset. It's recommended to set this to 0.1.</p>
+		<p><tag>Choose latent sampling method</tag> Not much is currently known about this option as yet, but it has been recommended to select the "deterministic" option for best results.</p>
 		<p>Once the appropriate settings have been selected, click "Train embedding" to begin the training process. Please note that this may take several hours. Enjoy your new embedding and space heater.</p>
 		<br>
 		<p>I am still learning a lot when it comes to textual inversion, but one thing to pay attention to is the loss value that is displayed in the output box underneath the images. The goal of the AI is to try and make the loss value as close to 0 as possible. 0 means the model would theoretically be able to generate all images in the dataset 100% accurately. However, this is impossible in the real world and is not an outcome you would want anyway. But it is important to know about the loss value and understand that it is a good estimate of how well your model is training.</p>
+
+		<h3>Embedding Resources</h3>
+		<creditblock>
+			<ul>
+		  <li><a href="https://www.reddit.com/r/StableDiffusion/comments/zxkukk/detailed_guide_on_training_embeddings_on_a/" target="_blank" rel="noreferrer">Guide by u/Zyin</a></li>
+			</ul>
+	  </creditblock>
   </article>
          </div>
   </body>
