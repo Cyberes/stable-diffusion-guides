@@ -19,7 +19,7 @@ download() {
 	done
 	CK_1=($(md5sum "$TMP"))
 	CK_2=($(md5sum "$2"))
-	echo $CK_1 $CK_2
+	echo "$CK_1 -> $CK_2"
 	if [[ ! -f "$2" ]]; then
 		mv "$TMP" "$2"
 	elif [[ $CK_1 != $CK_2 ]]; then
